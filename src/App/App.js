@@ -11,6 +11,7 @@ import PivotPartnersPage from '../pages/PivotPartnersPage/PivotPartnersPage';
 import PivotGraduatesPage from '../pages/PivotGraduatesPage/PivotGraduatesPage';
 import ScholarshipApplicationPage from '../pages/ScholarshipApplicationPage/ScholarshipApplicationPage';
 import PivotApplicationPage from '../pages/PivotApplicationPage/PivotApplicationPage';
+import WebDevelopmentPage from '../pages/WebDevelopmentPage/WebDevelopmentPage';
 
 function App() {
 	return (
@@ -25,6 +26,7 @@ function App() {
 					<Route path="/mentor-program" component={MentorProgramPage} />
 					<Route path="/pivot-partners" component={PivotPartnersPage} />
 					<Route path="/pivot-graduates" component={PivotGraduatesPage} />
+					<Route path="/web-development" component={WebDevelopmentPage} />
 					<Route
 						path="/scholarship-application"
 						component={ScholarshipApplicationPage}
