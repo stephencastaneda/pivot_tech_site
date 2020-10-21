@@ -1,11 +1,14 @@
-.pivot-card img {
+.team-photo {
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(100%); 
+  width: 235px;
+  height: 233px;
 }
 
 .pivot-card {
   color: white;
   perspective: 1000px;
+  
 }
 
 .team-name {
@@ -34,3 +37,23 @@
 .pivot-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.card-back {
+  color: white;
+  transform: rotateY(180deg);
+}
+
+
