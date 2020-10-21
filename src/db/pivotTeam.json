@@ -4,9 +4,9 @@
       "lastName": "Mundy",
 			"image": "https://drive.google.com/file/d/1kZSVDQ5Aiht8Osz7HZ-pxa4d0gMndrTo/view?usp=sharing",
       "gif": "",
-      "position": "Chief Executive Officer",
+      "position": "",
       "linkedIn": "https://www.linkedin.com/in/joshua-mundy-3bb86118/",
-      "department": "" 
+      "department": "Executive" 
     },
 	"pivotTeam2": {
     "firstName": "",
@@ -15,7 +15,7 @@
     "gif": "",
     "position": "",
     "linkedIn": "",
-    "department": "" 
+    "department": "Executive" 
     },
 	"pivotTeam3": {
     "firstName": "",
@@ -23,7 +23,8 @@
 			"image": "",
       "gif": "",
       "position": "",
-      "linkedIn": "" 
+      "linkedIn": "",
+      "department": "Executive"  
     },
 	"pivotTeam4": {
     "firstName": "",
@@ -31,7 +32,8 @@
 			"image": "",
       "gif": "",
       "position": "",
-      "linkedIn": "" 
+      "linkedIn": "",
+      "department": "Web Development"
     },
 	"pivotTeam5": {
     "firstName": "",
@@ -39,7 +41,8 @@
 			"image": "",
       "gif": "",
       "position": "",
-      "linkedIn": "" 
+      "linkedIn": "",
+      "department": "Web Development"
     },
 	"pivotTeam6": {
     "firstName": "",
@@ -47,7 +50,8 @@
     "image": "",
     "gif": "",
     "position": "",
-    "linkedIn": "" 
+    "linkedIn": "",
+    "department": "" 
     },
 	"pivotTeam7": {
     "firstName": "",
@@ -55,7 +59,8 @@
     "image": "",
     "gif": "",
     "position": "",
-    "linkedIn": "" 
+    "linkedIn": "",
+    "department": "" 
     },
 	"pivotTeam8": {
     "firstName": "",
@@ -63,7 +68,8 @@
     "image": "",
     "gif": "",
     "position": "",
-    "linkedIn": "" 
+    "linkedIn": "",
+    "department": "" 
     },
 	"pivotTeam9": {
     "firstName": "",
@@ -71,7 +77,8 @@
     "image": "",
     "gif": "",
     "position": "",
-    "linkedIn": "" 
+    "linkedIn": "",
+    "department": "" 
     },
 	"pivotTeam10": {
     "firstName": "",
@@ -79,7 +86,8 @@
     "image": "",
     "gif": "",
     "position": "",
-    "linkedIn": "" 
+    "linkedIn": "",
+    "department": "" 
     },
 	"pivotTeam11": {
     "firstName": "",
@@ -87,7 +95,8 @@
     "image": "",
     "gif": "",
     "position": "",
-    "linkedIn": "" 
+    "linkedIn": "",
+    "department": "" 
     },
 	"pivotTeam12": {
     "firstName": "",
@@ -95,7 +104,8 @@
     "image": "",
     "gif": "",
     "position": "",
-    "linkedIn": "" 
+    "linkedIn": "",
+    "department": ""
     },
 	"pivotTeam13": {
     "firstName": "",
@@ -103,7 +113,8 @@
     "image": "",
     "gif": "",
     "position": "",
-    "linkedIn": "" 
+    "linkedIn": "",
+    "department": ""
     },
 	"pivotTeam14": {
     "firstName": "",
@@ -111,7 +122,8 @@
     "image": "",
     "gif": "",
     "position": "",
-    "linkedIn": "" 
+    "linkedIn": "",
+    "department": "" 
     },
 	"pivotTeam15": {
     "firstName": "",
@@ -119,7 +131,8 @@
     "image": "",
     "gif": "",
     "position": "",
-    "linkedIn": "" 
+    "linkedIn": "",
+    "department": "" 
 		}
 }
   

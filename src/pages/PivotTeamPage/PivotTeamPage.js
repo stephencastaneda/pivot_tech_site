@@ -5,15 +5,20 @@ import pivotTeamData from '../../helpers/data/pivotTeam';
 function PivotTeamPage() {
 
 const [pivotTeam, setPivotTeam] = useState([])
+const [executiveTeamMember, setExecutiveTeamMember] = useState([])
+
 
 const getPivotTeam = () => {
 	pivotTeamData.getAllPivotTeam()
-	.then((pivotTeam) => setPivotTeam(pivotTeam))
-} 
+	.then((pivotTeam) => {
+		let getExecTeamMember = pivotTeam.filter(pivotTeam => pivotTeam.department === "Executive" )
+		setExecutiveTeamMember(getExecTeamMember)
+	} 
+	)} 
 
-// useEffect(() => {
-// 	getPivotTeam()
-// }, []);
+useEffect(() => {
+	getPivotTeam()
+}, []);
 
 useEffect(getPivotTeam, [])
 
@@ -28,8 +33,8 @@ useEffect(getPivotTeam, [])
 		<div>
 			<h2 className="text-center pt-5 text-white">Meet The Team</h2>
 		</div>
-		<div className="d-flex flex-wrap home-flex" style={{ "padding" : "20px", "align-items" : "center" }}>
-            {pivotTeam.map(employee => <PivotTeamCard key={employee.id} employeeId={employee.id} getPivotTeam={getPivotTeam} pivotTeam={employee} />)}
+		<div className="d-flex flex-wrap home-flex">
+          {executiveTeamMember.map(execTeamMember => <PivotTeamCard key={execTeamMember.id} execTeamMemberId={execTeamMember.id} execTeamMember={execTeamMember} />)}
         </div>
 
 		</>

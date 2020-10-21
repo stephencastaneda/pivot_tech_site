@@ -1,14 +1,16 @@
 import React from 'react';
-import pivotTeam from '../../helpers/data/pivotTeam';
 
-function PivotPartnersPage(props) {
+function PivotTeamCard(props) {
 	return (
+		<>
 		<div className="pivot-card col-3">
       <div className="card">
-			<p>{ props.pivotTeam.id }</p>
       </div>
 		</div>
+					<h1>{ props.execTeamMember.firstName }</h1>
+		</>
 	);
 }
 
-export default PivotPartnersPage;
+
+export default PivotTeamCard;
