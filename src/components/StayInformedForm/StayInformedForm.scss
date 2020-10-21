@@ -1,0 +1,19 @@
+.names-container {
+	display: flex;
+	justify-content: space-between;
+	.name {
+		width: 220px;
+	}
+}
+
+.submit-div {
+	display: flex;
+	justify-content: flex-end;
+	width: auto;
+	button {
+		background-color: white;
+		width: 220px;
+		color: black;
+		border: none;
+	}
+}

@@ -1,5 +1,7 @@
 import React from 'react';
 import './WebDevelopmentPage.scss'
+import MyFooter from '../../components/MyFooter/MyFooter';
+
 
 function WebDevelopmentPage() {
 	return (
@@ -92,9 +94,10 @@ function WebDevelopmentPage() {
 </div>
 </div>
 <div className="apply-btn-flex">
-<button type="button" className="btn apply-btn rounded-pill text-white btn-lg">Apply Now</button>
+<button type="button" className="btn apply-btn rounded-pill text-white btn-lg font-weight-bold">Apply Now</button>
 </div>
-  </div>
+</div>
+  <MyFooter />
   </>
 	);
 }
