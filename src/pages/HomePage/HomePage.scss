@@ -209,6 +209,7 @@
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
+		margin-top: 60px;
 
 		.events-container {
 			display: flex;
@@ -220,7 +221,6 @@
 		.event-cards-container {
 			height: 700px;
 			width: 800px;
-			border: 1px solid white;
 			border-radius: 1rem;
 			background-color: #4b7791;
 			overflow: auto;
