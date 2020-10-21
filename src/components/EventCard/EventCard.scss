@@ -1,0 +1,25 @@
+.event-card-container {
+	display: flex;
+	align-items: center;
+	height: 275px;
+	width: auto;
+	border-radius: 1rem;
+	border-top: 1px solid white;
+	padding: 10px 20px;
+
+	.event-image {
+		height: 250px;
+		width: 250px;
+		border-radius: 1rem;
+	}
+
+	.event-card-text {
+		display: flex;
+		flex-direction: column;
+		margin-left: 20px;
+
+		p {
+			margin: 0;
+		}
+	}
+}
