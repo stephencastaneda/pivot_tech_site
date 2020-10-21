@@ -3,7 +3,7 @@
       "firstName": "Joshua",
       "lastName": "Mundy",
 			"image": "https://i.imgur.com/dVBkpqn.jpg",
-      "gif": "",
+      "gif": "https://media.giphy.com/media/3mgqwegejHVVj0KIUb/giphy.gif",
       "position": "Chief Executive Officer",
       "linkedIn": "https://www.linkedin.com/in/joshua-mundy-3bb86118/",
       "department": "Executive" 
@@ -12,7 +12,7 @@
     "firstName": "Quawn",
     "lastName": "Clark",
     "image": "https://i.imgur.com/7zWRUk6.jpg",
-    "gif": "",
+    "gif": "https://media.giphy.com/media/g0dlZhgIbvmu0cDUlm/giphy.gif",
     "position": "COO/President",
     "linkedIn": "https://www.linkedin.com/in/quawn-clark-58643517/",
     "department": "Executive" 
@@ -21,7 +21,7 @@
     "firstName": "Isaac",
       "lastName": "Addae",
 			"image": "https://i.imgur.com/aUB0Z0a.jpg",
-      "gif": "",
+      "gif": "https://media.giphy.com/media/jUcETcDU7LuzeJCqyn/giphy.gif",
       "position": "Chief Development Officer",
       "linkedIn": "https://www.linkedin.com/in/yaoaddae/",
       "department": "Executive"  
@@ -30,7 +30,7 @@
     "firstName": "Courtenay",
       "lastName": "Rogers",
 			"image": "https://i.imgur.com/b0UKqix.jpg",
-      "gif": "",
+      "gif": "https://media.giphy.com/media/nfLpqTrNPpqcE/giphy.gif",
       "position": "Sr Operations Consultant",
       "linkedIn": "https://www.linkedin.com/in/courtenayrogers/",
       "department": "Operations"
@@ -39,7 +39,7 @@
     "firstName": "Ashanti",
       "lastName": "Reed-Hawkins",
 			"image": "https://i.imgur.com/gCYvWP5.jpg",
-      "gif": "",
+      "gif": "https://media.giphy.com/media/j3gsT2RsH9K0w/giphy.gif",
       "position": "Executive Admin/Student Liaison",
       "linkedIn": "https://www.linkedin.com/in/ashanti-reed-hawkins-8477b322/",
       "department": "Operations"
@@ -48,7 +48,7 @@
     "firstName": "Warren",
     "lastName": "Sadler",
     "image": "https://i.imgur.com/FfGIvDC.jpg",
-    "gif": "",
+    "gif": "https://media.giphy.com/media/MF8H7YGMlwSm4/giphy.gif",
     "position": "Director of Systems & Infrastructure",
     "linkedIn": "https://www.linkedin.com/in/warren-sadler-24638466/",
     "department": "Operations" 
@@ -57,7 +57,7 @@
     "firstName": "Jay",
     "lastName": "Roy",
     "image": "https://i.imgur.com/qsacIZC.jpg",
-    "gif": "",
+    "gif": "https://media.giphy.com/media/MF8H7YGMlwSm4/giphy.gif",
     "position": "Program Manager/Lead Instructor",
     "linkedIn": "https://www.linkedin.com/in/jayroydashboards1/",
     "department": "Data" 
@@ -66,7 +66,7 @@
     "firstName": "Sekou",
     "lastName": "Tyler",
     "image": "https://i.imgur.com/PUKUo3y.jpg",
-    "gif": "",
+    "gif": "https://media.giphy.com/media/xULW8PLGQwyZNaw68U/giphy.gif",
     "position": "Data Visualization Instructor",
     "linkedIn": "https://www.linkedin.com/in/sekoutyler/",
     "department": "Data" 
@@ -75,7 +75,7 @@
     "firstName": "Tarama",
     "lastName": "Carver",
     "image": "https://i.imgur.com/Q4xJhYm.jpg",
-    "gif": "",
+    "gif": "https://media.giphy.com/media/sE6jQonM5S8mI/giphy.gif",
     "position": "Data Architecture Instructor",
     "linkedIn": "https://www.linkedin.com/in/tarama-carver-223b294/",
     "department": "Data" 
@@ -84,7 +84,7 @@
     "firstName": "Anna",
     "lastName": "Vastardis",
     "image": "https://i.imgur.com/6YJy5dw.jpg",
-    "gif": "",
+    "gif": "https://media.giphy.com/media/Jk4ZT6R0OEUoM/giphy.gif",
     "position": "Advanced Excel Instructor",
     "linkedIn": "https://www.linkedin.com/in/vastardis/",
     "department": "Data" 
@@ -93,7 +93,7 @@
     "firstName": "Warren",
     "lastName": "Sadler",
     "image": "https://i.imgur.com/FfGIvDC.jpg",
-    "gif": "",
+    "gif": "https://media.giphy.com/media/tHy9Qsv4svHXt7Eiq5/giphy.gif",
     "position": "Software Engineer Lead Instructor",
     "linkedIn": "https://www.linkedin.com/in/warren-sadler-24638466/",
     "department": "Web" 
@@ -102,7 +102,7 @@
     "firstName": "Marqueze",
     "lastName": "Sawyers",
     "image": "https://i.imgur.com/zhJRVP4.jpg",
-    "gif": "",
+    "gif": "https://media.giphy.com/media/1d7F9xyq6j7C1ojbC5/giphy.gif",
     "position": "Software Engineer Instructor",
     "linkedIn": "https://www.linkedin.com/in/marqueze-sawyers-7a430467/",
     "department": "Web"
@@ -111,7 +111,7 @@
     "firstName": "Trevor",
     "lastName": "Guinn",
     "image": "https://i.imgur.com/qgobVun.jpg",
-    "gif": "",
+    "gif": "https://media.giphy.com/media/3ornkdtVzQfIRpwfug/giphy.gif",
     "position": "Front End Development Instructor",
     "linkedIn": "https://www.linkedin.com/in/trevor-guinn-aba48274/",
     "department": "Web"
@@ -119,8 +119,8 @@
 	"pivotTeam14": {
     "firstName": "Stephen",
     "lastName": "Castaneda",
-    "image": "https://i.imgur.com/fBoyk1o.jpg",
-    "gif": "",
+    "image": "https://i.imgur.com/KExJB28.jpg",
+    "gif": "https://media.giphy.com/media/p3cgmVTX2kcdV3GUUj/giphy.gif",
     "position": "Front End Development Instructor",
     "linkedIn": "https://www.linkedin.com/in/stephencastaneda40/",
     "department": "Web" 
@@ -129,7 +129,7 @@
     "firstName": "Namita",
     "lastName": "Manohar",
     "image": "https://i.imgur.com/mgkjBWp.jpg",
-    "gif": "",
+    "gif": "https://media.giphy.com/media/WpBkkui8fZGs6wOhQy/giphy.gif",
     "position": "Front End Development Instructor",
     "linkedIn": "https://www.linkedin.com/in/namita-manohar/",
     "department": "Web" 
@@ -138,7 +138,7 @@
       "firstName": "Austin",
       "lastName": "Cumberlander",
       "image": "https://i.imgur.com/eKrbXQI.jpg",
-      "gif": "",
+      "gif": "https://media.giphy.com/media/dUrwRoytlqEuvruSjq/giphy.gif",
       "position": "Front End Development Instructor",
       "linkedIn": "https://www.linkedin.com/in/namita-manohar/",
       "department": "Web" 
