@@ -12,6 +12,7 @@ import PivotGraduatesPage from '../pages/PivotGraduatesPage/PivotGraduatesPage';
 import ScholarshipApplicationPage from '../pages/ScholarshipApplicationPage/ScholarshipApplicationPage';
 import PivotApplicationPage from '../pages/PivotApplicationPage/PivotApplicationPage';
 import WebDevelopmentPage from '../pages/WebDevelopmentPage/WebDevelopmentPage';
+import DataPage from '../pages/DataPage/DataPage';
 
 function App() {
 	return (
@@ -27,6 +28,7 @@ function App() {
 					<Route path="/pivot-partners" component={PivotPartnersPage} />
 					<Route path="/pivot-graduates" component={PivotGraduatesPage} />
 					<Route path="/web-development" component={WebDevelopmentPage} />
+					<Route path="/data-analytics" component={DataPage} />
 					<Route
 						path="/scholarship-application"
 						component={ScholarshipApplicationPage}
