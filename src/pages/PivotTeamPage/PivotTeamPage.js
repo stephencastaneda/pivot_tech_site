@@ -44,9 +44,15 @@ useEffect(getPivotTeam, [])
 				 <p className=''>By the end of 2020, a projected 100 students will graduate from Pivot Tech</p>
 		</div>
 		<div className="pivot-team-cards">
-		<div>
-			<h2 className="text-center pt-5 text-white">Meet The Team</h2>
-		</div>
+	
+		<section className="mt-5 mb-5">
+			<img 
+			className="team-collage"
+			src={require('../../images/pivot_collage1.jpg')}
+			alt="Cute cat" 
+			/>
+	</section>
+
 		<h2 className="text-white executive-title mb-5"><span>Executive Team</span></h2>
 		<div className="d-flex flex-wrap home-flex justify-content-around">
           {executiveTeamMember.map(execTeamMember => <PivotExecTeamCard key={execTeamMember.id} execTeamMemberId={execTeamMember.id} execTeamMember={execTeamMember} />)}
