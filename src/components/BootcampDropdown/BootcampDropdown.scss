@@ -1,0 +1,61 @@
+.selector {
+	background-color: #ef8c35;
+	border-radius: 0.5rem !important;
+	margin: 0 !important;
+	cursor: pointer;
+}
+
+.the-body {
+	display: grid;
+	grid-column-gap: 50px;
+	grid-row-gap: 50px;
+	grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+	padding: 0 100px !important;
+	height: 400px;
+	flex-wrap: wrap;
+	width: 100%;
+	overflow: auto;
+}
+
+.course-card-container {
+	display: flex;
+	justify-content: center !important;
+
+	.body-container {
+		display: flex;
+		justify-content: center;
+	}
+
+	.card-body {
+		background-color: #edc39b;
+	}
+}
+
+.program-card {
+	max-width: 450px;
+	height: 200px;
+	color: #245482;
+	text-align: center;
+	margin: 20px;
+	background-color: white !important;
+
+	.card-button-div {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		Button {
+			background-color: #ef8c35;
+			border: none;
+			border-radius: 2rem;
+			width: 150px;
+			height: 50px;
+			margin: 0 15px;
+			box-shadow: 5px 3px 10px gray;
+		}
+	}
+
+	.card-text {
+		display: flex;
+		flex-direction: column;
+	}
+}
