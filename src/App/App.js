@@ -12,7 +12,8 @@ import PivotGraduatesPage from '../pages/PivotGraduatesPage/PivotGraduatesPage';
 import ScholarshipApplicationPage from '../pages/ScholarshipApplicationPage/ScholarshipApplicationPage';
 import PivotApplicationPage from '../pages/PivotApplicationPage/PivotApplicationPage';
 import WebDevelopmentPage from '../pages/WebDevelopmentPage/WebDevelopmentPage';
-import DataPage from '../pages/DataPage/DataPage';
+import DataAnalyticsPage from '../pages/DataAnalyticsPage/DataAnalyticsPage';
+import CyberSecurityPage from '../pages/CyberSecurityPage/CyberSecurityPage';
 
 function App() {
 	return (
@@ -21,6 +22,7 @@ function App() {
 				<MyNavbar />
 				<Switch>
 					<Route path="/" exact component={HomePage} />
+					<Route path="/home" exact component={HomePage} />
 					<Route path="/programs" component={ProgramsPage} />
 					<Route path="/pivot-team" component={PivotTeamPage} />
 					<Route path="/assessment" component={AssessmentPage} />
@@ -28,7 +30,8 @@ function App() {
 					<Route path="/pivot-partners" component={PivotPartnersPage} />
 					<Route path="/pivot-graduates" component={PivotGraduatesPage} />
 					<Route path="/web-development" component={WebDevelopmentPage} />
-					<Route path="/data-analytics" component={DataPage} />
+					<Route path="/data-analytics" component={DataAnalyticsPage} />
+					<Route path="/cyber-security" component={CyberSecurityPage} />
 					<Route
 						path="/scholarship-application"
 						component={ScholarshipApplicationPage}
