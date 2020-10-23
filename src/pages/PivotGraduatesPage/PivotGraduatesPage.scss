@@ -1,0 +1,77 @@
+
+blockquote-wrapper {
+  display: flex;
+  height: 100vh;
+  padding: 0 20px;
+}
+
+.quote-author {
+  font-weight: 400px;
+  color: navy !important;
+}
+
+.quote-school {
+  color: navy;
+  margin-bottom: 40px;
+  font-size: 50px;
+}
+/* Blockquote main style */
+.blockquote {
+   position: relative;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 800;
+   color: navy;
+   padding: 30px 0;
+   width: 100%;
+   max-width: 700px;
+   z-index: 1;
+   margin: 80px auto;
+   align-self: center;
+   border-top: solid 1px;
+   border-bottom: solid 1px;
+}
+
+/* Blockquote header */
+.blockquote h1 {
+   position: relative;
+   color: navy;
+   font-size: 40px;
+   font-weight: 800;
+   line-height: 1;
+   margin: 0;
+}
+
+/* Blockquote right double quotes */
+.blockquote:after {
+   position: absolute;
+   content: "”";
+   color:navy;
+   font-size: 10rem;
+   line-height: 0;
+   bottom: -43px;
+   right: 30px;
+}
+
+/* increase header size after 600px */
+@media all and (min-width: 600px) {
+   .blockquote h1 {
+       font-size: 60px;
+  }
+
+}
+
+/* Blockquote subheader */
+.blockquote h4 {
+   position: relative;
+   color: #292a2b;
+   font-size: 1.4rem;
+   font-weight: normal;
+   line-height: 1;
+   margin: 0;
+   padding-top: 20px;
+   z-index: 1;
+}
+
+.footer-div {
+  margin-top: 200px;
+}
