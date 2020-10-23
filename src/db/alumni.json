@@ -1,0 +1,108 @@
+{
+    "alumni1": {
+        "firstName": "Melinda",
+        "lastName": "Sewak",
+        "image": "https://i.imgur.com/5COH4ov.jpg",
+        "cohort": "Cohort 1",
+        "linkedIn": "https://www.linkedin.com/in/melindasewak/",
+        "program": "Data Analytics" 
+      },
+      "alumni2": {
+        "firstName": "Frank",
+        "lastName": "Smith",
+        "image": "https://i.imgur.com/7iJaQZg.jpg",
+        "cohort": "Cohort 1",
+        "linkedIn": "https://www.linkedin.com/in/frank-smith-jr/",
+        "program": "Data Analytics" 
+      }, 
+      "alumni3": {
+        "firstName": "Tonisha",
+        "lastName": "Gordon",
+        "image": "https://i.imgur.com/gA8iyRj.jpg",
+        "cohort": "Cohort 1",
+        "linkedIn": "https://www.linkedin.com/in/tonisha-gordon-0133985b/",
+        "program": "Data Analytics" 
+      },
+      "alumni4": {
+        "firstName": "Danielle",
+        "lastName": "Paige",
+        "image": "https://i.imgur.com/uTDNTrL.jpg",
+        "cohort": "Cohort 1",
+        "linkedIn": "https://www.linkedin.com/in/danielle-paige-80b78a11/",
+        "program": "Data Analytics" 
+      },
+      "alumni5": {
+        "firstName": "Michael",
+        "lastName": "Paul",
+        "image": "https://i.imgur.com/YZ8wY8Z.jpg",
+        "cohort": "Cohort 1",
+        "linkedIn": "https://www.linkedin.com/in/michael-paul-2a63821b6/",
+        "program": "Data Analytics" 
+      },
+      "alumni6": {
+        "firstName": "Sharonese",
+        "lastName": "Henderson",
+        "image": "https://i.imgur.com/HLh6iSQ.jpg",
+        "cohort": "Cohort 1",
+        "linkedIn": "https://www.linkedin.com/in/sharonese-henderson-015a874/",
+        "program": "Data Analytics" 
+      },
+      "alumni7": {
+        "firstName": "Curtis",
+        "lastName": "Austin",
+        "image": "https://i.imgur.com/lBO67R9.jpg",
+        "cohort": "Cohort 1",
+        "linkedIn": "https://www.linkedin.com/in/curtis-austin-iii/",
+        "program": "Data Analytics" 
+      },
+      "alumni9": {
+        "firstName": "Tamika",
+        "lastName": "Carter",
+        "image": "https://i.imgur.com/t2vuGab.jpg",
+        "cohort": "Cohort 1",
+        "linkedIn": "https://www.linkedin.com/in/tamika-carter-92bb42131/",
+        "program": "Data Analytics" 
+      },
+      "alumni10": {
+        "firstName": "Nicolas",
+        "lastName": "Oldham",
+        "image": "https://i.imgur.com/hKw9r3Q.jpg",
+        "cohort": "Cohort 1",
+        "linkedIn": "https://www.linkedin.com/in/nicholas-oldham-ma-35b3a73a/",
+        "program": "Data Analytics" 
+      },
+      "alumni11": {
+        "firstName": "Jamekia",
+        "lastName": "Clark",
+        "image": "https://i.imgur.com/m6nf2oG.jpg",
+        "cohort": "Cohort 1",
+        "linkedIn": "https://www.linkedin.com/in/jamekia-clark-65a03362/",
+        "program": "Data Analytics" 
+      },
+      "alumni12": {
+        "firstName": "Shontrell",
+        "lastName": "Majors",
+        "image": "https://i.imgur.com/YRtNn8z.jpg",
+        "cohort": "Cohort 1",
+        "linkedIn": "https://www.linkedin.com/in/shontrell-majors-993906174/",
+        "program": "Web Development" 
+      },
+      "alumni13": {
+        "firstName": "Tiara",
+        "lastName": "Williams",
+        "image": "https://i.imgur.com/jhFPzo1.jpg",
+        "cohort": "Cohort 1",
+        "linkedIn": "https://www.linkedin.com/in/tiara-williams-974b6798/",
+        "program": "Web Development" 
+      },
+      "alumni14": {
+        "firstName": "Mariah",
+        "lastName": "Beverly",
+        "image": "https://i.imgur.com/TPkv0Qm.jpg",
+        "cohort": "Cohort 1",
+        "linkedIn": "https://www.linkedin.com/in/mariah-beverly-5ab421179/",
+        "program": "Web Development" 
+      }
+}
+
+  
