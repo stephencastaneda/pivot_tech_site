@@ -5,7 +5,7 @@ import { Button, Form, FormGroup, Input } from 'reactstrap';
 const StayInformedForm = (props) => {
 	return (
 		<Form>
-			<h4>Stay Informed with Pivot</h4>
+			<h4 className="footer-header">Stay Informed with Pivot</h4>
 			<div className="names-container">
 				<FormGroup className="name">
 					<Input
