@@ -1,7 +1,7 @@
 .homepage-container {
 	overflow: auto;
 	height: 100%;
-	color: white;
+	color: #245482;
 
 	// top info section
 	#info-section-container {
@@ -19,8 +19,9 @@
 				display: flex;
 				justify-content: center;
 				Button {
-					background-color: white;
-					color: black;
+					background-color: #ef8c35;
+					color: #fff;
+					border: none;
 				}
 			}
 		}
@@ -33,7 +34,7 @@
 
 		.info-section {
 			max-width: 335px;
-			color: white;
+			color: #245482;
 		}
 
 		.bullet-list {
@@ -73,6 +74,8 @@
 		.bold-text {
 			color: #245482;
 			font-weight: bold;
+			font-size: 16px;
+			text-decoration: none;
 		}
 
 		.card-text {
@@ -118,8 +121,8 @@
 		.second-card-dots-outer {
 			height: 180px;
 			width: 180px;
-			border-bottom: 7px dotted white;
-			border-left: 7px dotted white;
+			border-bottom: 7px dotted #245482;
+			border-left: 7px dotted #245482;
 			padding: 18px;
 			grid-area: 1/1/2/2;
 			margin-left: 165px;
@@ -141,7 +144,7 @@
 		.third-card-dots {
 			height: 230px;
 			width: 550px;
-			border-right: 7px dotted white;
+			border-right: 7px dotted #245482;
 			padding: 15px;
 			grid-area: 1/1/2/2;
 			margin-left: 440px;
@@ -165,10 +168,6 @@
 		padding: 0 150px;
 		width: 100%;
 
-		.program-header {
-			// padding-left: 140px;
-		}
-
 		.card-button-div {
 			width: 100%;
 			display: flex;
@@ -188,7 +187,6 @@
 			display: flex;
 			justify-content: space-between;
 			flex-wrap: wrap;
-			// padding: 0 120px;
 
 			.program-card {
 				max-width: 450px;

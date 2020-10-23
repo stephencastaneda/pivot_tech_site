@@ -44,26 +44,50 @@ function MyFooter() {
 				</a>
 			</div>
 			<div class="social-media">
-				<img
-					classname="social-icon"
-					src={require('../../icons/facebook.png')}
-					alt="facebook"
-				/>
-				<img
-					classname="social-icon"
-					src={require('../../icons/instagram.png')}
-					alt="facebook"
-				/>
-				<img
-					classname="social-icon"
-					src={require('../../icons/twitter.png')}
-					alt="facebook"
-				/>
-				<img
-					classname="social-icon"
-					src={require('../../icons/linkedin.png')}
-					alt="facebook"
-				/>
+				<a
+					target="_blank"
+					rel="noopener noreferrer"
+					href="https://www.facebook.com/pivottechschool/"
+				>
+					<img
+						classname="social-icon"
+						src={require('../../icons/facebook.png')}
+						alt="facebook"
+					/>
+				</a>
+				<a
+					target="_blank"
+					rel="noopener noreferrer"
+					href="https://www.instagram.com/pivottechschool/"
+				>
+					<img
+						classname="social-icon"
+						src={require('../../icons/instagram.png')}
+						alt="instagram"
+					/>
+				</a>
+				<a
+					target="_blank"
+					rel="noopener noreferrer"
+					href="https://www.twitter.com/pivottechschool/"
+				>
+					<img
+						classname="social-icon"
+						src={require('../../icons/twitter.png')}
+						alt="twitter"
+					/>
+				</a>
+				<a
+					target="_blank"
+					rel="noopener noreferrer"
+					href="https://www.linkedin.com/company/pivot-technology-school/"
+				>
+					<img
+						classname="social-icon"
+						src={require('../../icons/linkedin.png')}
+						alt="linkedin"
+					/>
+				</a>
 			</div>
 		</div>
 	);
