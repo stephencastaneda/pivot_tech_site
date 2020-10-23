@@ -12,7 +12,7 @@
         "lastName": "Smith",
         "image": "https://i.imgur.com/7iJaQZg.jpg",
         "cohort": "Cohort 1",
-        "linkedIn": "https://www.linkedin.com/in/joshua-mundy-3bb86118/",
+        "linkedIn": "https://www.linkedin.com/in/frank-smith-jr/",
         "program": "Data Analytics" 
       }, 
       "alumni3": {
@@ -68,7 +68,7 @@
         "lastName": "Oldham",
         "image": "https://i.imgur.com/hKw9r3Q.jpg",
         "cohort": "Cohort 1",
-        "linkedIn": "https://i.imgur.com/hKw9r3Q.jpg",
+        "linkedIn": "https://www.linkedin.com/in/nicholas-oldham-ma-35b3a73a/",
         "program": "Data Analytics" 
       },
       "alumni11": {
@@ -84,7 +84,7 @@
         "lastName": "Majors",
         "image": "https://i.imgur.com/YRtNn8z.jpg",
         "cohort": "Cohort 1",
-        "linkedIn": "https://www.linkedin.com/in/joshua-mundy-3bb86118/",
+        "linkedIn": "https://www.linkedin.com/in/shontrell-majors-993906174/",
         "program": "Web Development" 
       },
       "alumni13": {
@@ -100,7 +100,7 @@
         "lastName": "Beverly",
         "image": "https://i.imgur.com/TPkv0Qm.jpg",
         "cohort": "Cohort 1",
-        "linkedIn": "https://www.linkedin.com/in/tiara-williams-974b6798/",
+        "linkedIn": "https://www.linkedin.com/in/mariah-beverly-5ab421179/",
         "program": "Web Development" 
       }
 }

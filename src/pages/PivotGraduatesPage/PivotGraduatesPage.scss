@@ -1,15 +1,26 @@
+
 blockquote-wrapper {
   display: flex;
   height: 100vh;
   padding: 0 20px;
 }
 
+.quote-author {
+  font-weight: 400px;
+  color: navy !important;
+}
+
+.quote-school {
+  color: navy;
+  margin-bottom: 40px;
+  font-size: 50px;
+}
 /* Blockquote main style */
 .blockquote {
    position: relative;
    font-family: 'Montserrat', sans-serif;
    font-weight: 800;
-   color: #ffffff;
+   color: navy;
    padding: 30px 0;
    width: 100%;
    max-width: 700px;
@@ -23,7 +34,7 @@ blockquote-wrapper {
 /* Blockquote header */
 .blockquote h1 {
    position: relative;
-   color: #FFFFFF;
+   color: navy;
    font-size: 40px;
    font-weight: 800;
    line-height: 1;
@@ -34,7 +45,7 @@ blockquote-wrapper {
 .blockquote:after {
    position: absolute;
    content: "”";
-   color: rgba(255, 255, 255, 1);
+   color:navy;
    font-size: 10rem;
    line-height: 0;
    bottom: -43px;
@@ -61,3 +72,6 @@ blockquote-wrapper {
    z-index: 1;
 }
 
+.footer-div {
+  margin-top: 200px;
+}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import AlumCard from '../../components/AlumCard/AlumCard'
+import MyFooter from '../../components/MyFooter/MyFooter';
 import alumniData from '../../helpers/data/alumni'
 import './PivotGraduatesPage.scss'
 
@@ -27,12 +28,13 @@ useEffect(getAlumni, [])
 			<h1>
 				A lot of jobs have already been replaced by technology with many many more to come and I couldn't afford to be left behind.
 			 </h1>
-			<h4>&mdash;Shontrell<br></br>Pivot Tech Alumni</h4>
+			<h4 className="quote-author">&mdash;<strong>Shontrell Majors</strong><br></br><em>Pivot Tech Alumni</em></h4>
 		</div>
-		<h2 className="text-white text-center mt-5">Pivot Tech Alumni</h2>
-		<div className="d-flex flex-wrap home-flex justify-content-around">
+		<h2 className="quote-school text-center mt-5"><strong>Pivot Tech Alumni</strong></h2>
+		<div className="alumni-grid">
 				  {alumni.map(alum=> <AlumCard key={alum.id} alumId={alum.id} alum={alum} />)}
 		</div>
+		<div className="footer-div"><MyFooter /></div>
 	</div>
 	</>
 		
