@@ -1,0 +1,30 @@
+.sidebar-container {
+	height: 100vh;
+	width: 300px;
+	background-color: #063767;
+
+	.tab-container {
+		display: flex;
+		flex-direction: column;
+
+		.sidebar-tab {
+			width: 300px;
+			border: 1px solid gray;
+			height: 100px;
+			cursor: pointer;
+			color: white;
+			padding: 28px;
+			text-align: center;
+		}
+
+		.active-sidebar-tab {
+			width: 300px;
+			background-color: #fff;
+			// border: 1px solid gray;
+			height: 100px;
+			color: #063767;
+			padding: 28px;
+			text-align: center;
+		}
+	}
+}

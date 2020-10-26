@@ -14,6 +14,7 @@ import PivotApplicationPage from '../pages/PivotApplicationPage/PivotApplication
 import WebDevelopmentPage from '../pages/WebDevelopmentPage/WebDevelopmentPage';
 import DataAnalyticsPage from '../pages/DataAnalyticsPage/DataAnalyticsPage';
 import CyberSecurityPage from '../pages/CyberSecurityPage/CyberSecurityPage';
+import AdminPage from '../pages/AdminPage/AdminPage';
 
 function App() {
 	return (
@@ -32,6 +33,7 @@ function App() {
 					<Route path="/web-development" component={WebDevelopmentPage} />
 					<Route path="/data-analytics" component={DataAnalyticsPage} />
 					<Route path="/cyber-security" component={CyberSecurityPage} />
+					<Route path="/admin" component={AdminPage} />
 					<Route
 						path="/scholarship-application"
 						component={ScholarshipApplicationPage}

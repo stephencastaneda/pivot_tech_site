@@ -14,7 +14,7 @@ import {
 	DropdownItem,
 	Button,
 } from 'reactstrap';
-import './MyNavbar.scss'
+import './MyNavbar.scss';
 
 const Example = (props) => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -62,6 +62,9 @@ const Example = (props) => {
 								</DropdownItem>
 								<DropdownItem tag={Link} href="/scholarship-application">
 									Scholarship Application
+								</DropdownItem>
+								<DropdownItem tag={Link} href="/admin">
+									Admin Login
 								</DropdownItem>
 							</DropdownMenu>
 						</UncontrolledDropdown>
