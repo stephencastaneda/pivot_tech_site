@@ -1,0 +1,16 @@
+.admin-page-container {
+	display: flex;
+
+	.main-container {
+		padding: 50px;
+		width: 100%;
+
+		.admin-card {
+			background-color: #ef8c35;
+		}
+
+		.table {
+			width: 100%;
+		}
+	}
+}
