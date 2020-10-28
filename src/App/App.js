@@ -2,6 +2,7 @@ import React from 'react';
 import './App.scss';
 import MyNavbar from '../components/MyNavbar/MyNavbar';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import { IntercomProvider, useIntercom } from 'react-use-intercom';
 import HomePage from '../pages/HomePage/HomePage';
 import ProgramsPage from '../pages/ProgramsPage/ProgramsPage';
 import PivotTeamPage from '../pages/PivotTeamPage/PivotTeamPage';
@@ -16,7 +17,10 @@ import DataAnalyticsPage from '../pages/DataAnalyticsPage/DataAnalyticsPage';
 import CyberSecurityPage from '../pages/CyberSecurityPage/CyberSecurityPage';
 import AdminPage from '../pages/AdminPage/AdminPage';
 
+const INTERCOM_APP_ID = 'th8jjpv0'
+
 function App() {
+	
 	return (
 		<div className="App">
 			<BrowserRouter>
@@ -41,6 +45,9 @@ function App() {
 					<Route path="/pivot-application" component={PivotApplicationPage} />
 				</Switch>
 			</BrowserRouter>
+			<IntercomProvider 
+			appId={INTERCOM_APP_ID} autoBoot={true}>	
+			</IntercomProvider>
 		</div>
 	);
 }
