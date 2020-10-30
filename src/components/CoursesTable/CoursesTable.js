@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { AgGridColumn, AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
+import requests from '../../helpers/data/pivotRequests';
 
-function CoursesTable({ rowData }) {
+function CoursesTable() {
+	const [courses, setCourses] = useState([]);
+
+	useEffect(() => {
+		getCourses();
+	}, [courses]);
+
+	const getCourses = () => {
+		requests.getCourses().then((results) => {
+			setCourses(results);
+		});
+	};
+
 	return (
 		<div>
 			<div className="card-body admin-card">
@@ -13,7 +26,7 @@ function CoursesTable({ rowData }) {
 				className="table ag-theme-alpine"
 				style={{ height: 700, width: '100%' }}
 			>
-				<AgGridReact rowData={rowData}>
+				<AgGridReact rowData={courses}>
 					<AgGridColumn
 						width={300}
 						sortable={true}
