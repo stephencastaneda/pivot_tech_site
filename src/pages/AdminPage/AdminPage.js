@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './AdminPage.scss';
 import MyFooter from '../../components/MyFooter/MyFooter';
 import AdminSideBar from '../../components/AdminSideBar/AdminSideBar';
@@ -9,6 +9,7 @@ import ApplicantsTable from '../../components/ApplicantsTable/ApplicantsTable';
 import CoursesTable from '../../components/CoursesTable/CoursesTable';
 import EventsTable from '../../components/EventsTable/EventsTable';
 import StudentsTable from '../../components/StudentsTable/StudentsTable';
+import requests from '../../helpers/data/pivotRequests';
 
 function AdminPage() {
 	const [gridApi, setGridApi] = useState(null);
@@ -17,10 +18,6 @@ function AdminPage() {
 	const [coursesView, setCoursesView] = useState(false);
 	const [eventsView, setEventsView] = useState(false);
 	const [studentsView, setStudentsView] = useState(false);
-
-	const [rowData, setRowData] = useState([
-		{ 'First Name': 'Austin', model: 'Celica', price: 35000 },
-	]);
 
 	return (
 		<>
@@ -32,10 +29,10 @@ function AdminPage() {
 					setStudentsView={setStudentsView}
 				/>
 				<div className="main-container">
-					{applicantsView ? <ApplicantsTable rowData={rowData} /> : null}
-					{coursesView ? <CoursesTable rowData={rowData} /> : null}
-					{eventsView ? <EventsTable rowData={rowData} /> : null}
-					{studentsView ? <StudentsTable rowData={rowData} /> : null}
+					{studentsView ? <StudentsTable /> : null}
+					{applicantsView ? <ApplicantsTable /> : null}
+					{coursesView ? <CoursesTable /> : null}
+					{eventsView ? <EventsTable /> : null}
 				</div>
 			</div>
 			<MyFooter />

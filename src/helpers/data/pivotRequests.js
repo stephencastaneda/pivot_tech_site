@@ -21,7 +21,117 @@ const getAllPivotTeam = () =>
 			.catch((err) => reject(err));
 	});
 
+// Applicant Requests
+const getApplicants = () =>
+	new Promise((resolve, reject) => {
+		axios
+			.get(`${baseUrl}/applicants.json`)
+			.then((response) => {
+				const applicantObj = response.data;
+				const applicants = [];
+				if (applicantObj !== null) {
+					Object.keys(applicantObj).forEach((applicantId) => {
+						applicantObj[applicantId].uid = applicantId;
+						applicants.push(applicantObj[applicantId]);
+					});
+				}
+				resolve(applicants);
+			})
+			.catch((err) => reject(err));
+	});
+
 const postApplicant = (newApplicant) =>
 	axios.post(`${baseUrl}/applicants.json`, newApplicant);
 
-export default { getAllPivotTeam, postApplicant };
+const deleteApplicant = (applicantId) =>
+	axios.delete(`${baseUrl}/applicants/${applicantId}.json`);
+
+// Student Requests
+const getStudents = () =>
+	new Promise((resolve, reject) => {
+		axios
+			.get(`${baseUrl}/students.json`)
+			.then((response) => {
+				const studentObj = response.data;
+				const students = [];
+				if (studentObj !== null) {
+					Object.keys(studentObj).forEach((studentId) => {
+						studentObj[studentId].uid = studentId;
+						students.push(studentObj[studentId]);
+					});
+				}
+				resolve(students);
+			})
+			.catch((err) => reject(err));
+	});
+
+const postStudent = (newStudent) =>
+	axios.post(`${baseUrl}/students.json`, newStudent);
+
+const deleteStudent = (studentId) =>
+	axios.delete(`${baseUrl}/students/${studentId}.json`);
+
+// Course Requests
+const getCourses = () =>
+	new Promise((resolve, reject) => {
+		axios
+			.get(`${baseUrl}/courses.json`)
+			.then((response) => {
+				const courseObj = response.data;
+				const courses = [];
+				if (courseObj !== null) {
+					Object.keys(courseObj).forEach((courseId) => {
+						courseObj[courseId].uid = courseId;
+						courses.push(courseObj[courseId]);
+					});
+				}
+				resolve(courses);
+			})
+			.catch((err) => reject(err));
+	});
+
+const postCourse = (newCourse) =>
+	axios.post(`${baseUrl}/courses.json`, newCourse);
+
+const deleteCourse = (courseId) =>
+	axios.delete(`${baseUrl}/courses/${courseId}.json`);
+
+// Student Requests
+const getEvents = () =>
+	new Promise((resolve, reject) => {
+		axios
+			.get(`${baseUrl}/events.json`)
+			.then((response) => {
+				const eventObj = response.data;
+				const events = [];
+				if (eventObj !== null) {
+					Object.keys(eventObj).forEach((EventId) => {
+						eventObj[EventId].uid = EventId;
+						events.push(eventObj[EventId]);
+					});
+				}
+				resolve(events);
+			})
+			.catch((err) => reject(err));
+	});
+
+const postEvents = (newEvent) => axios.post(`${baseUrl}/events.json`, newEvent);
+
+const deleteEvent = (EventId) =>
+	axios.delete(`${baseUrl}/events/${EventId}.json`);
+
+export default {
+	getAllPivotTeam,
+	postApplicant,
+	getApplicants,
+	getStudents,
+	getCourses,
+	getEvents,
+	postStudent,
+	postCourse,
+	postEvents,
+	deleteApplicant,
+	deleteStudent,
+	deleteCourse,
+	deleteEvent,
+};
