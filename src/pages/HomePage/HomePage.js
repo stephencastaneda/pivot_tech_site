@@ -1,6 +1,7 @@
 import React from 'react';
 import HomeCarousel from '../../components/HomeCarousel/HomeCarousel';
 import { Button, Card, CardTitle, CardText } from 'reactstrap';
+import { Player } from 'video-react';
 import './HomePage.scss';
 import EventCard from '../../components/EventCard/EventCard';
 import MyFooter from '../../components/MyFooter/MyFooter';

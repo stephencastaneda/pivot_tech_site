@@ -1,3 +1,11 @@
+.header {
+  color: navy;
+}
+
+.header-sub {
+  color: orange;
+}
+
 .team-photo {
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(100%); 
@@ -6,9 +14,13 @@
 }
 
 .pivot-card {
-  color: white;
+  color: navy;
   perspective: 1000px;
   
+}
+
+.pivot-team-cards {
+  color: navy;
 }
 
 .team-name {
@@ -52,7 +64,7 @@
 }
 
 .card-back {
-  color: white;
+  color: navy;
   transform: rotateY(180deg);
 }
 
@@ -61,7 +73,8 @@
 }
 
 .team-collage {
-  max-width: 100%;
+  max-width: 100% !important;
+  margin: 0;
   height: auto;
   width: auto;
 }
