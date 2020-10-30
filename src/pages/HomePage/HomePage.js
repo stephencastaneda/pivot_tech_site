@@ -1,7 +1,7 @@
 import React from 'react';
 import HomeCarousel from '../../components/HomeCarousel/HomeCarousel';
 import { Button, Card, CardTitle, CardText } from 'reactstrap';
-import { Player } from 'video-react';
+import LazyHero from 'react-lazy-hero'
 import './HomePage.scss';
 import EventCard from '../../components/EventCard/EventCard';
 import MyFooter from '../../components/MyFooter/MyFooter';
@@ -9,8 +9,10 @@ import MyFooter from '../../components/MyFooter/MyFooter';
 function HomePage() {
 	return (
 		<div className="homepage-container">
-			<HomeCarousel />
-			<div id="info-section-container">
+			<LazyHero className="hero-image" minHeight="60vh" opacity='0.3' imageSrc="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+			</LazyHero>
+			<div className="mb-5" id="info-section-container">
+				<div className="card hero-card-border">
 				<div class="icon-and-info">
 					<img
 						className="medium-icon"
@@ -37,6 +39,8 @@ function HomePage() {
 						</div>
 					</div>
 				</div>
+				</div>
+				<div className="card hero-card-border">
 				<div className="icon-and-info">
 					<img
 						className="medium-icon"
@@ -59,8 +63,11 @@ function HomePage() {
 						<div class="info-section-button">
 							<Button>Learn More</Button>
 						</div>
+					
 					</div>
 				</div>
+				</div>
+				<div className="card hero-card-border">
 				<div className="icon-and-info">
 					<img
 						className="medium-icon"
@@ -83,6 +90,7 @@ function HomePage() {
 							<Button>Coming Soon!</Button>
 						</div>
 					</div>
+				</div>
 				</div>
 			</div>
 			<div className="mission-section">
