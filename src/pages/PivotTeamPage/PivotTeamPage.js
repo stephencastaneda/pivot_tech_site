@@ -43,16 +43,13 @@ function PivotTeamPage() {
 	return (
 		<>
 			<div className="card text-center mt-5">
-				<h2 className="pivot-team-title pt-4">
-					Our team is rapidly growing with some of the most talented &amp;
-					passionate professionals in the field
+				<h2 className="pivot-team-title pt-4 header">
+					Teamwork makes the dream work
 				</h2>
-				<p className="">
-					By the end of 2020, a projected 100 students will graduate from Pivot
-					Tech
+				<p className="header-sub">
+					Meet the team that makes it all happen
 				</p>
 			</div>
-			<div className="pivot-team-cards">
 				<section className="mt-5 mb-5">
 					<img
 						className="team-collage"
@@ -60,8 +57,8 @@ function PivotTeamPage() {
 						alt="Cute cat"
 					/>
 				</section>
-
-				<h2 className="text-white executive-title mb-5">
+				<div className="pivot-team-cards">
+				<h2 className="executive-title title mb-5">
 					<span>Executive Team</span>
 				</h2>
 				<div className="d-flex flex-wrap home-flex justify-content-around">
@@ -73,7 +70,7 @@ function PivotTeamPage() {
 						/>
 					))}
 				</div>
-				<h2 className="text-white operation-title mt-3 mb-5">Operations</h2>
+				<h2 className="operation-title title mt-3 mb-5">Operations</h2>
 				<div className="d-flex flex-wrap home-flex justify-content-around">
 					{operationsTeamMember.map((opsTeamMember) => (
 						<PivotOperationsTeamCard
@@ -83,7 +80,7 @@ function PivotTeamPage() {
 						/>
 					))}
 				</div>
-				<h2 className="text-white data-title mt-3 mb-5">
+				<h2 className="data-title title mt-3 mb-5">
 					Data Science and Analytics
 				</h2>
 				<div className="d-flex flex-wrap home-flex justify-content-around">
@@ -95,7 +92,7 @@ function PivotTeamPage() {
 						/>
 					))}
 				</div>
-				<h2 className="text-white web-title mt-3 mb-5">Web Development</h2>
+				<h2 className="web-title title mt-3 mb-5">Web Development</h2>
 				<div className="d-flex flex-wrap home-flex justify-content-around">
 					{webTeamMembers.map((webTeamMember) => (
 						<PivotWebTeamCard
