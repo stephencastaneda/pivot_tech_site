@@ -11,7 +11,7 @@ function StudentsTable() {
 
 	useEffect(() => {
 		getStudents();
-	}, [students]);
+	}, []);
 
 	const getStudents = () => {
 		requests.getStudents().then((results) => {
