@@ -1,0 +1,34 @@
+.modal-header {
+	background-color: #ef8c35;
+	color: white;
+	button {
+		color: white;
+	}
+	button:hover {
+		color: white;
+	}
+}
+
+.submit-button-div {
+	display: flex;
+	justify-content: center;
+
+	Button {
+		width: 250px;
+	}
+}
+
+.password-div {
+	display: flex;
+	align-items: center;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+
+	Input {
+		border: 0;
+	}
+
+	.eye-icon {
+		margin: 0 10px;
+	}
+}

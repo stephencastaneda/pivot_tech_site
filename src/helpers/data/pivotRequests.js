@@ -1,8 +1,78 @@
 import axios from 'axios';
 import apiKeys from '../apiKeys.json';
+import firebase from 'firebase/app';
 
 const baseUrl = apiKeys.firebaseKeys.databaseURL;
 
+// Firebase login
+const loginUser = (e, email, password) => {
+	e.preventDefault();
+	firebase
+		.auth()
+		.signInWithEmailAndPassword(email, password)
+		.then(() => {
+			window.location.assign('./admin');
+		})
+		.catch((err) => {
+			let errorCode = err.code;
+			let errorMessage = err.message;
+			if (errorCode === 'auth/wrong-password') {
+				errorMessage = 'Username or password is invalid.';
+			} else if (errorCode === 'auth/user-not-found') {
+				errorMessage = 'Username or password is invalid.';
+			}
+			alert(errorMessage);
+		});
+};
+
+// Returns array of user objects
+const getAllUsers = () =>
+	new Promise((resolve, reject) => {
+		axios
+			.get(`${baseUrl}/users.json`)
+			.then((result) => {
+				const userObject = result.data;
+				const userArray = [];
+				if (userObject != null) {
+					Object.keys(userObject).forEach((userId) => {
+						userObject[userId].id = userId;
+						userArray.push(userObject[userId]);
+					});
+				}
+				resolve(userArray);
+			})
+			.catch((error) => {
+				reject(error);
+			});
+	});
+
+// Creates new user in firebase
+const createUser = (user) => axios.post(`${baseUrl}/users.json`, user);
+
+const getUserByUid = (uid) =>
+	new Promise((resolve, reject) => {
+		axios
+			.get(`${baseUrl}/users.json?orderBy="uid"&equalTo="${uid}"`)
+			.then((result) => {
+				const userObject = result.data;
+				let userKeys = '';
+				if (userObject != null) {
+					Object.keys(userObject).forEach((userId) => {
+						userObject[userId].id = userId;
+						userKeys = userObject[userId];
+					});
+				}
+				resolve(userKeys);
+			})
+			.catch((error) => {
+				reject(error);
+			});
+	});
+
+// Logs user out
+const logoutUser = () => firebase.auth().signOut();
+
+// Gets all Pivot staff and graduates
 const getAllPivotTeam = () =>
 	new Promise((resolve, reject) => {
 		axios
@@ -151,4 +221,9 @@ export default {
 	deleteEvent,
 	editCourse,
 	pinIdToCourse,
+	loginUser,
+	getAllUsers,
+	createUser,
+	getUserByUid,
+	logoutUser,
 };
