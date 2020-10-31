@@ -1,11 +1,15 @@
 {
-  "firebaseKeys" : {
-    "apiKey": "AIzaSyCD-SCcylQdveWt2kyqpyHS5A-rXgEXRuw",
-    "authDomain": "pivot-dac4c.firebaseapp.com",
-    "databaseURL": "https://pivot-dac4c.firebaseio.com",
-    "projectId": "pivot-dac4c",
-    "storageBucket": "pivot-dac4c.appspot.com",
-    "messagingSenderId": "377273085845",
-    "appId": "1:377273085845:web:416bcd273c68f2d523509c"
-  }
+	"firebaseKeys": {
+		"apiKey": "AIzaSyCD-SCcylQdveWt2kyqpyHS5A-rXgEXRuw",
+		"authDomain": "pivot-dac4c.firebaseapp.com",
+		"databaseURL": "https://pivot-dac4c.firebaseio.com",
+		"projectId": "pivot-dac4c",
+		"storageBucket": "pivot-dac4c.appspot.com",
+		"messagingSenderId": "377273085845",
+		"appId": "1:377273085845:web:416bcd273c68f2d523509c",
+		"intercomApiId": "th8jjpv0"
+	},
+	"intercomApiKey": {
+		"intercomApiId": "th8jjpv0"
+	}
 }

@@ -61,12 +61,12 @@ function CoursesTable() {
 					rowData={courses}
 					modules={[RowGroupingModule]}
 					rowSelection="multiple"
-					autoGroupColumnDef={{ minWidth: 200 }}
+					autoGroupColumnDef={{ minWidth: 250 }}
+					defaultColDef={{ resizable: true }}
 				>
 					<AgGridColumn field="courseName" rowGroup={true} hide={true} />
 					<AgGridColumn field="startDate" rowGroup={true} hide={true} />
 					<AgGridColumn
-						width={300}
 						sortable={true}
 						filter={true}
 						field="firstName"
@@ -74,56 +74,48 @@ function CoursesTable() {
 						checkboxSelection={true}
 					></AgGridColumn>
 					<AgGridColumn
-						width={400}
 						sortable={true}
 						filter={true}
 						headerName="Last Name"
 						field="lastName"
 					></AgGridColumn>
 					<AgGridColumn
-						width={400}
 						sortable={true}
 						filter={true}
 						field="email"
 						headerName="Email"
 					></AgGridColumn>
 					<AgGridColumn
-						width={400}
 						sortable={true}
 						filter={true}
 						field="phone"
 						headerName="Phone"
 					></AgGridColumn>
 					<AgGridColumn
-						width={400}
 						sortable={true}
 						filter={true}
 						field="birthday"
 						headerName="Birthday"
 					></AgGridColumn>
 					<AgGridColumn
-						width={400}
 						sortable={true}
 						filter={true}
 						field="techKnowledge"
 						headerName="Tech Knowledge Rating"
 					></AgGridColumn>
 					<AgGridColumn
-						width={400}
 						sortable={true}
 						filter={true}
 						field="employed"
 						headerName="Employed"
 					></AgGridColumn>
 					<AgGridColumn
-						width={400}
 						sortable={true}
 						filter={true}
 						field="workExperience"
 						headerName="Employment Description"
 					></AgGridColumn>
 					<AgGridColumn
-						width={400}
 						sortable={true}
 						filter={true}
 						field="highestEducation"

@@ -69,6 +69,7 @@ const AddEventModal = ({ toggle, modal }) => {
 								type="text"
 								name="eventTitle"
 								id="eventTitle"
+								placeholder="Event Title"
 								onChange={eventTitleChange}
 								value={event.eventTitle}
 							/>
@@ -104,7 +105,7 @@ const AddEventModal = ({ toggle, modal }) => {
 								type="text"
 								name="description"
 								id="description"
-								placeholder="Type"
+								placeholder="Description"
 								onChange={descriptionChange}
 								value={event.description}
 							/>

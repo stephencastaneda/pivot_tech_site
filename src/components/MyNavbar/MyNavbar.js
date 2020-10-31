@@ -15,14 +15,19 @@ import {
 	Button,
 } from 'reactstrap';
 import './MyNavbar.scss';
+import AdminLoginModal from '../AdminLoginModal/AdminLoginModal';
 
-const Example = (props) => {
+const Example = ({ userObject, isAuthed, logoutClickEvent }) => {
 	const [isOpen, setIsOpen] = useState(false);
+	const [adminModal, setAdminModal] = useState(false);
 
-	const toggle = () => setIsOpen(!isOpen);
+	const modalToggle = () => setAdminModal(!adminModal);
+
+	const navToggle = () => setIsOpen(!isOpen);
 
 	return (
 		<div>
+			<AdminLoginModal toggle={modalToggle} modal={adminModal} />
 			<Navbar color="blue" light expand="md">
 				<NavbarBrand href="/">
 					<img
@@ -31,7 +36,7 @@ const Example = (props) => {
 						alt="Pivot Tech Logo"
 					/>
 				</NavbarBrand>
-				<NavbarToggler onClick={toggle} />
+				<NavbarToggler onClick={navToggle} />
 				<Collapse isOpen={isOpen} navbar>
 					<Nav className="ml-auto" navbar>
 						<NavItem>
@@ -63,9 +68,23 @@ const Example = (props) => {
 								<DropdownItem tag={Link} href="/scholarship-application">
 									Scholarship Application
 								</DropdownItem>
-								<DropdownItem tag={Link} href="/admin">
-									Admin Login
-								</DropdownItem>
+
+								{!isAuthed ? (
+									<>
+										<DropdownItem onClick={modalToggle}>
+											Admin Login
+										</DropdownItem>
+									</>
+								) : (
+									<>
+										<DropdownItem tag={Link} href="/admin">
+											Admin Page
+										</DropdownItem>
+										<DropdownItem onClick={logoutClickEvent}>
+											Logout
+										</DropdownItem>
+									</>
+								)}
 							</DropdownMenu>
 						</UncontrolledDropdown>
 					</Nav>
