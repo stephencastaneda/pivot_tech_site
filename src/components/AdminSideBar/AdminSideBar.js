@@ -80,6 +80,13 @@ function AdminSideBar({
 					<h2>Applicants</h2>
 				</div>
 				<div
+					className={studentsActive ? 'active-sidebar-tab' : 'sidebar-tab'}
+					id="students"
+					onClick={setActiveTab}
+				>
+					<h2>Students</h2>
+				</div>
+				<div
 					className={coursesActive ? 'active-sidebar-tab' : 'sidebar-tab'}
 					id="courses"
 					onClick={setActiveTab}
@@ -92,13 +99,6 @@ function AdminSideBar({
 					onClick={setActiveTab}
 				>
 					<h2>Events</h2>
-				</div>
-				<div
-					className={studentsActive ? 'active-sidebar-tab' : 'sidebar-tab'}
-					id="students"
-					onClick={setActiveTab}
-				>
-					<h2>Students</h2>
 				</div>
 			</div>
 		</div>
