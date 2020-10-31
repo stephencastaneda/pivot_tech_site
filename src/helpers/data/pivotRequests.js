@@ -81,7 +81,7 @@ const getCourses = () =>
 				const courses = [];
 				if (courseObj !== null) {
 					Object.keys(courseObj).forEach((courseId) => {
-						courseObj[courseId].uid = courseId;
+						courseObj[courseId].id = courseId;
 						courses.push(courseObj[courseId]);
 					});
 				}
@@ -90,8 +90,23 @@ const getCourses = () =>
 			.catch((err) => reject(err));
 	});
 
+const pinIdToCourse = (idToPin) => {
+	getCourses()
+		.then((results) => {
+			const matchingCourse = results.filter(
+				(course) => course.id === idToPin
+			)[0];
+			matchingCourse.id = idToPin;
+			editCourse(idToPin, matchingCourse);
+		})
+		.catch((err) => console.error('could not pin id to course', err));
+};
+
 const postCourse = (newCourse) =>
 	axios.post(`${baseUrl}/courses.json`, newCourse);
+
+const editCourse = (courseId, course) =>
+	axios.put(`${baseUrl}/courses/${courseId}.json`, course);
 
 const deleteCourse = (courseId) =>
 	axios.delete(`${baseUrl}/courses/${courseId}.json`);
@@ -115,7 +130,7 @@ const getEvents = () =>
 			.catch((err) => reject(err));
 	});
 
-const postEvents = (newEvent) => axios.post(`${baseUrl}/events.json`, newEvent);
+const postEvent = (newEvent) => axios.post(`${baseUrl}/events.json`, newEvent);
 
 const deleteEvent = (EventId) =>
 	axios.delete(`${baseUrl}/events/${EventId}.json`);
@@ -129,9 +144,11 @@ export default {
 	getEvents,
 	postStudent,
 	postCourse,
-	postEvents,
+	postEvent,
 	deleteApplicant,
 	deleteStudent,
 	deleteCourse,
 	deleteEvent,
+	editCourse,
+	pinIdToCourse,
 };

@@ -12,7 +12,7 @@ function ApplicantsTable() {
 
 	useEffect(() => {
 		getApplicants();
-	}, [applicants]);
+	}, []);
 
 	const getApplicants = () => {
 		requests.getApplicants().then((results) => {

@@ -3,6 +3,7 @@ import './PivotApplicationPage.scss';
 import { Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import MyFooter from '../../components/MyFooter/MyFooter';
 import pivotRequests from '../../helpers/data/pivotRequests';
+import moment from 'moment';
 
 const defaultApplicant = {
 	firstName: '',
@@ -17,12 +18,15 @@ const defaultApplicant = {
 	workExperience: null,
 	highestEducation: null,
 	canPayDeposit: null,
+	course: '',
 	uid: '',
 	date: new Date(),
 };
 
 function PivotApplicationPage() {
 	const [applicant, setApplicant] = useState(defaultApplicant);
+	const [courses, setCourses] = useState([]);
+	const [selectedCourse, setSelectedCourse] = useState({});
 
 	const formFieldStringState = (name, e) => {
 		e.preventDefault();
@@ -39,22 +43,40 @@ function PivotApplicationPage() {
 	const phoneChange = (e) => formFieldStringState('phone', e);
 	const birthdayChange = (e) => formFieldStringState('birthday', e);
 	const techKnowledgeChange = (e) => formFieldStringState('techKnowledge', e);
-	const techTrackChange = (e) => formFieldStringState('techTrack', e);
+	const techTrackChange = (e) => {
+		getCourses(e.target.value);
+		return formFieldStringState('techTrack', e);
+	};
 	const whyApplyChange = (e) => formFieldStringState('whyApply', e);
+	const courseChange = (e) => formFieldStringState('course', e);
 	const employedChange = (e) => formFieldStringState('employed', e);
 	const workExperienceChange = (e) => formFieldStringState('workExperience', e);
 	const highestEducationChange = (e) =>
 		formFieldStringState('highestEducation', e);
 	const canPayDepositChange = (e) => formFieldStringState('canPayDeposit', e);
 
-	// pushes new applicant to firebase
+	// Pushes new applicant to firebase
 	const addApplicant = (newApplicant) => {
 		pivotRequests
 			.postApplicant(newApplicant)
 			.then(() => {
-				window.location.assign('/home');
+				// window.location.assign('/home');
 			})
 			.catch((err) => console.error('error with applicant post', err));
+	};
+
+	// Gets all available courses
+	const getCourses = (courseName) => {
+		pivotRequests
+			.getCourses()
+			.then((results) => {
+				const filteredResults = results.filter(
+					(course) => course.courseName === courseName
+				);
+				console.log(filteredResults);
+				setCourses(filteredResults);
+			})
+			.catch((err) => console.error('error getting courses', err));
 	};
 
 	// Validates some fields and then submits the application to firebase
@@ -70,6 +92,14 @@ function PivotApplicationPage() {
 			return;
 		}
 
+		pivotRequests.pinIdToCourse(applicant.course);
+		pivotRequests.getCourses().then((results) => {
+			const matchingCourse = results.filter(
+				(course) => course.id === applicant.course
+			)[0];
+			matchingCourse.students = [applicant];
+			pivotRequests.editCourse(applicant.course, matchingCourse);
+		});
 		addApplicant(myApplicant);
 		setApplicant(defaultApplicant);
 	};
@@ -244,6 +274,34 @@ function PivotApplicationPage() {
 										All Women's Data Analytics
 									</Label>
 								</FormGroup>
+							</Col>
+						</FormGroup>
+
+						<p className="question">
+							Which course would you like to enroll in?
+						</p>
+						<FormGroup row>
+							<Col sm={10}>
+								<Input
+									type="select"
+									name="course"
+									id="course"
+									onChange={courseChange}
+									value={applicant.course}
+								>
+									<option selected={false}>Select a Course</option>
+									{courses.map((course) => (
+										<>
+											course ? (
+											<option value={course.id} key={course.id}>
+												{course.courseName}:{' '}
+												{moment(course.startDate).format('LL')} -{' '}
+												{moment(course.endDate).format('LL')}
+											</option>
+											) : null );
+										</>
+									))}
+								</Input>
 							</Col>
 						</FormGroup>
 
