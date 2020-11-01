@@ -55,7 +55,7 @@ function EventsTable() {
 					/>
 					<span>Add Event</span>
 				</div>
-				<div /*onClick={deleteSelected}*/ className="icon-wrapper">
+				<div onClick={deleteSelected} className="icon-wrapper">
 					<img
 						className="icon"
 						src={require('../../icons/delete.png')}
@@ -66,7 +66,7 @@ function EventsTable() {
 			</div>
 			<div
 				className="table ag-theme-alpine"
-				style={{ height: 700, width: '100%' }}
+				style={{ height: 600, width: '100%' }}
 			>
 				<AgGridReact
 					onSelectionChanged={onSelectionChanged}

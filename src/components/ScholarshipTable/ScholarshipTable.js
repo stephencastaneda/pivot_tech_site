@@ -1,23 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { AgGridColumn, AgGridReact } from 'ag-grid-react';
+import { RowGroupingModule } from '@ag-grid-enterprise/row-grouping';
+import { Button } from 'reactstrap';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import requests from '../../helpers/data/pivotRequests';
+import moment from 'moment';
+import './ScholarshipTable.scss';
 
-function StudentsTable() {
+function ScholarshipTable() {
 	const [gridApi, setGridApi] = useState(null);
-	const [selectedStudents, setSelectedStudents] = useState([]);
-	const [students, setStudents] = useState([]);
+	const [scholarships, setScholarships] = useState([]);
+	const [selectedScholarships, setSelectedScholarships] = useState([]);
 
 	useEffect(() => {
-		getStudents();
+		getScholarships();
 	}, []);
-
-	const getStudents = () => {
-		requests.getStudents().then((results) => {
-			setStudents(results);
-		});
-	};
 
 	const onGridReady = (params) => {
 		setGridApi(params.api);
@@ -25,43 +23,56 @@ function StudentsTable() {
 
 	const onSelectionChanged = () => {
 		const selectedRows = gridApi.getSelectedRows();
-		setSelectedStudents(selectedRows);
-		console.log(selectedRows);
+		setSelectedScholarships(selectedRows);
+	};
+
+	const getScholarships = () => {
+		requests.getScholarships().then((results) => {
+			results.forEach((scholarship) => {
+				scholarship.date = moment(scholarship.startDate).format('LL');
+			});
+			setScholarships(results);
+		});
 	};
 
 	const deleteSelected = () => {
-		selectedStudents.forEach((applicant) => {
-			requests.deleteApplicant(applicant.uid);
+		selectedScholarships.forEach((scholarship) => {
+			requests.deleteScholarship(scholarship.id);
+		});
+		requests.getScholarships().then((results) => {
+			setScholarships(results);
 		});
 	};
 
 	return (
 		<div>
 			<div className="card-body admin-card">
-				<h1 className="admin-title text-center text-white">Students</h1>
+				<h1 className="admin-title text-center text-white">Scholarships</h1>
 			</div>
 			<div className="actions-container">
-				<div onClick={deleteSelected} className="icon-wrapper">
+				<Button onClick={deleteSelected} className="icon-wrapper">
 					<img
 						className="icon"
 						src={require('../../icons/delete.png')}
 						alt="delete"
 					/>
-					<span>Delete</span>
-				</div>
+					<span>Remove Applicant</span>
+				</Button>
 			</div>
 			<div
 				className="table ag-theme-alpine"
-				style={{ height: 700, width: '100%' }}
+				style={{ height: 600, width: '100%' }}
 			>
 				<AgGridReact
 					onSelectionChanged={onSelectionChanged}
 					onGridReady={onGridReady}
-					rowData={students}
+					rowData={scholarships}
+					modules={[RowGroupingModule]}
 					rowSelection="multiple"
+					autoGroupColumnDef={{ minWidth: 250 }}
+					defaultColDef={{ resizable: true }}
 				>
 					<AgGridColumn
-						width={300}
 						sortable={true}
 						filter={true}
 						field="firstName"
@@ -69,74 +80,34 @@ function StudentsTable() {
 						checkboxSelection={true}
 					></AgGridColumn>
 					<AgGridColumn
-						width={400}
 						sortable={true}
 						filter={true}
 						field="lastName"
 						headerName="Last Name"
 					></AgGridColumn>
 					<AgGridColumn
-						width={400}
 						sortable={true}
 						filter={true}
 						field="email"
 						headerName="Email"
 					></AgGridColumn>
 					<AgGridColumn
-						width={400}
 						sortable={true}
 						filter={true}
 						field="phone"
 						headerName="Phone"
 					></AgGridColumn>
 					<AgGridColumn
-						width={400}
 						sortable={true}
 						filter={true}
-						field="birthday"
-						headerName="Birthday"
+						field="program"
+						headerName="Program"
 					></AgGridColumn>
 					<AgGridColumn
-						width={400}
 						sortable={true}
 						filter={true}
-						field="techTrack"
-						headerName="Tech Track"
-					></AgGridColumn>
-					<AgGridColumn
-						width={400}
-						sortable={true}
-						filter={true}
-						field="techKnowledge"
-						headerName="Tech Knowledge Rating"
-					></AgGridColumn>
-					<AgGridColumn
-						width={400}
-						sortable={true}
-						filter={true}
-						field="employed"
-						headerName="Employed"
-					></AgGridColumn>
-					<AgGridColumn
-						width={400}
-						sortable={true}
-						filter={true}
-						field="workExperience"
-						headerName="Employment Description"
-					></AgGridColumn>
-					<AgGridColumn
-						width={400}
-						sortable={true}
-						filter={true}
-						field="highestEducation"
-						headerName="Highest Education"
-					></AgGridColumn>
-					<AgGridColumn
-						width={400}
-						sortable={true}
-						filter={true}
-						field="canPayDeposit"
-						headerName="Can Pay Deposit"
+						field="dreamCareer"
+						headerName="Dream Career"
 					></AgGridColumn>
 				</AgGridReact>
 			</div>
@@ -144,4 +115,4 @@ function StudentsTable() {
 	);
 }
 
-export default StudentsTable;
+export default ScholarshipTable;
