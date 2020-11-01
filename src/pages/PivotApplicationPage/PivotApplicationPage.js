@@ -18,15 +18,15 @@ const defaultApplicant = {
 	workExperience: null,
 	highestEducation: null,
 	canPayDeposit: null,
-	course: '',
+	courseId: '',
+	enrolled: false,
 	uid: '',
-	date: new Date(),
+	date: moment(new Date()).format('LL'),
 };
 
 function PivotApplicationPage() {
 	const [applicant, setApplicant] = useState(defaultApplicant);
 	const [courses, setCourses] = useState([]);
-	const [selectedCourse, setSelectedCourse] = useState({});
 
 	const formFieldStringState = (name, e) => {
 		e.preventDefault();
@@ -48,7 +48,7 @@ function PivotApplicationPage() {
 		return formFieldStringState('techTrack', e);
 	};
 	const whyApplyChange = (e) => formFieldStringState('whyApply', e);
-	const courseChange = (e) => formFieldStringState('course', e);
+	const courseChange = (e) => formFieldStringState('courseId', e);
 	const employedChange = (e) => formFieldStringState('employed', e);
 	const workExperienceChange = (e) => formFieldStringState('workExperience', e);
 	const highestEducationChange = (e) =>
@@ -60,7 +60,8 @@ function PivotApplicationPage() {
 		pivotRequests
 			.postApplicant(newApplicant)
 			.then(() => {
-				// window.location.assign('/home');
+				setApplicant(defaultApplicant);
+				window.location.assign('/home');
 			})
 			.catch((err) => console.error('error with applicant post', err));
 	};
@@ -79,10 +80,20 @@ function PivotApplicationPage() {
 			.catch((err) => console.error('error getting courses', err));
 	};
 
+	const formatPhoneNumber = (phoneNumberString) => {
+		const cleaned = ('' + phoneNumberString).replace(/\D/g, '');
+		const match = cleaned.match(/^(1|)?(\d{3})(\d{3})(\d{4})$/);
+		if (match) {
+			const intlCode = match[1] ? '+1 ' : '';
+			return [intlCode, '(', match[2], ') ', match[3], '-', match[4]].join('');
+		}
+		return null;
+	};
+
 	// Validates some fields and then submits the application to firebase
 	const submitApplication = (e) => {
 		e.preventDefault();
-		const myApplicant = { ...applicant };
+		let myApplicant = { ...applicant };
 		const firstName = myApplicant.firstName;
 		const lastName = myApplicant.lastName;
 		const alphabet = /^[A-Za-z ']+$/;
@@ -92,16 +103,25 @@ function PivotApplicationPage() {
 			return;
 		}
 
-		pivotRequests.pinIdToCourse(applicant.course);
-		pivotRequests.getCourses().then((results) => {
-			const matchingCourse = results.filter(
-				(course) => course.id === applicant.course
-			)[0];
-			matchingCourse.students = [applicant];
-			pivotRequests.editCourse(applicant.course, matchingCourse);
+		pivotRequests.getCourseById(applicant.courseId).then((course) => {
+			const courseName = course.courseName;
+			const courseType = course.courseType;
+			const startDate = moment(course.startDate).format('LL');
+			const endDate = moment(course.endDate).format('LL');
+
+			myApplicant.birthday = moment(applicant.birthday).format('LL');
+			myApplicant.phone = formatPhoneNumber(applicant.phone);
+
+			myApplicant = {
+				...applicant,
+				courseName,
+				courseType,
+				startDate,
+				endDate,
+			};
+
+			addApplicant(myApplicant);
 		});
-		addApplicant(myApplicant);
-		setApplicant(defaultApplicant);
 	};
 
 	return (
@@ -287,7 +307,7 @@ function PivotApplicationPage() {
 									name="course"
 									id="course"
 									onChange={courseChange}
-									value={applicant.course}
+									value={applicant.courseId}
 								>
 									<option selected={false}>Select a Course</option>
 									{courses.map((course) => (

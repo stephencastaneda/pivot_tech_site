@@ -7,7 +7,8 @@ import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import ApplicantsTable from '../../components/ApplicantsTable/ApplicantsTable';
 import CoursesTable from '../../components/CoursesTable/CoursesTable';
 import EventsTable from '../../components/EventsTable/EventsTable';
-import StudentsTable from '../../components/StudentsTable/StudentsTable';
+import PartnersTable from '../../components/PartnersTable/PartnersTable';
+import ScholarshipTable from '../../components/ScholarshipTable/ScholarshipTable';
 import AccessModal from '../../components/AccessModal/AccessModal';
 import { Spinner } from 'reactstrap';
 
@@ -15,7 +16,8 @@ function AdminPage({ isAuthed, isPending }) {
 	const [applicantsView, setApplicantsView] = useState(true);
 	const [coursesView, setCoursesView] = useState(false);
 	const [eventsView, setEventsView] = useState(false);
-	const [studentsView, setStudentsView] = useState(false);
+	const [partnersView, setPartnersView] = useState(false);
+	const [scholarshipsView, setScholarshipsView] = useState(false);
 
 	return (
 		<>
@@ -35,13 +37,15 @@ function AdminPage({ isAuthed, isPending }) {
 									setApplicantsView={setApplicantsView}
 									setCoursesView={setCoursesView}
 									setEventsView={setEventsView}
-									setStudentsView={setStudentsView}
+									setPartnersView={setPartnersView}
+									setScholarshipsView={setScholarshipsView}
 								/>
 								<div className="main-container">
-									{studentsView ? <StudentsTable /> : null}
 									{applicantsView ? <ApplicantsTable /> : null}
 									{coursesView ? <CoursesTable /> : null}
 									{eventsView ? <EventsTable /> : null}
+									{partnersView ? <PartnersTable /> : null}
+									{scholarshipsView ? <ScholarshipTable /> : null}
 								</div>
 							</div>
 							<MyFooter />{' '}

@@ -113,8 +113,23 @@ const getApplicants = () =>
 const postApplicant = (newApplicant) =>
 	axios.post(`${baseUrl}/applicants.json`, newApplicant);
 
+const editApplicant = (applicantId, applicant) =>
+	axios.put(`${baseUrl}/applicants/${applicantId}.json`, applicant);
+
 const deleteApplicant = (applicantId) =>
 	axios.delete(`${baseUrl}/applicants/${applicantId}.json`);
+
+const markAsEnrolled = (applicants) =>
+	new Promise((resolve, reject) => {
+		applicants.forEach((applicant) => {
+			applicant.enrolled = true;
+			editApplicant(applicant.uid, applicant)
+				.then(() => {
+					resolve();
+				})
+				.catch((err) => reject(err));
+		});
+	});
 
 // Student Requests
 const getStudents = () =>
@@ -160,6 +175,12 @@ const getCourses = () =>
 			.catch((err) => reject(err));
 	});
 
+const getCourseById = (courseId) =>
+	axios.get(`${baseUrl}/courses/${courseId}.json`).then((response) => {
+		const course = response.data;
+		return course;
+	});
+
 const pinIdToCourse = (idToPin) => {
 	getCourses()
 		.then((results) => {
@@ -181,7 +202,7 @@ const editCourse = (courseId, course) =>
 const deleteCourse = (courseId) =>
 	axios.delete(`${baseUrl}/courses/${courseId}.json`);
 
-// Student Requests
+// Event Requests
 const getEvents = () =>
 	new Promise((resolve, reject) => {
 		axios
@@ -205,6 +226,62 @@ const postEvent = (newEvent) => axios.post(`${baseUrl}/events.json`, newEvent);
 const deleteEvent = (EventId) =>
 	axios.delete(`${baseUrl}/events/${EventId}.json`);
 
+// Partner Requests
+const getPartners = () =>
+	new Promise((resolve, reject) => {
+		axios
+			.get(`${baseUrl}/partners.json`)
+			.then((response) => {
+				const partnerObj = response.data;
+				const partners = [];
+				if (partnerObj !== null) {
+					Object.keys(partnerObj).forEach((partnerId) => {
+						partnerObj[partnerId].uid = partnerId;
+						partners.push(partnerObj[partnerId]);
+					});
+				}
+				resolve(partners);
+			})
+			.catch((err) => reject(err));
+	});
+
+const postPartner = (newPartner) =>
+	axios.post(`${baseUrl}/partners.json`, newPartner);
+
+const editPartner = (partnerId, partner) =>
+	axios.put(`${baseUrl}/partners/${partnerId}.json`, partner);
+
+const deletePartner = (partnerId) =>
+	axios.delete(`${baseUrl}/partners/${partnerId}.json`);
+
+// Scholarship Requests
+const getScholarships = () =>
+	new Promise((resolve, reject) => {
+		axios
+			.get(`${baseUrl}/scholarships.json`)
+			.then((response) => {
+				const scholarshipObj = response.data;
+				const scholarships = [];
+				if (scholarshipObj !== null) {
+					Object.keys(scholarshipObj).forEach((scholarshipId) => {
+						scholarshipObj[scholarshipId].uid = scholarshipId;
+						scholarships.push(scholarshipObj[scholarshipId]);
+					});
+				}
+				resolve(scholarships);
+			})
+			.catch((err) => reject(err));
+	});
+
+const postScholarship = (newScholarship) =>
+	axios.post(`${baseUrl}/scholarships.json`, newScholarship);
+
+const editScholarship = (scholarshipId, scholarship) =>
+	axios.put(`${baseUrl}/scholarships/${scholarshipId}.json`, scholarship);
+
+const deleteScholarship = (scholarshipId) =>
+	axios.delete(`${baseUrl}/scholarships/${scholarshipId}.json`);
+
 export default {
 	getAllPivotTeam,
 	postApplicant,
@@ -212,18 +289,28 @@ export default {
 	getStudents,
 	getCourses,
 	getEvents,
+	getPartners,
+	getScholarships,
 	postStudent,
 	postCourse,
 	postEvent,
+	postPartner,
+	postScholarship,
 	deleteApplicant,
 	deleteStudent,
 	deleteCourse,
 	deleteEvent,
+	deleteScholarship,
 	editCourse,
+	editScholarship,
 	pinIdToCourse,
 	loginUser,
 	getAllUsers,
 	createUser,
 	getUserByUid,
 	logoutUser,
+	getCourseById,
+	markAsEnrolled,
+	editPartner,
+	deletePartner,
 };
