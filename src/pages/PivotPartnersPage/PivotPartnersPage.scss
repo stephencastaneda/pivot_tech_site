@@ -66,12 +66,6 @@
 		align-items: center;
 		margin-top: 30px;
 		margin-bottom: 30px;
-
-		Button {
-			margin-right: 20px;
-			background-color: #ef8c35;
-			border: none;
-		}
 	}
 
 	.info-bullet {
@@ -81,6 +75,14 @@
 
 	.application-header {
 		margin-bottom: 0px;
+	}
+
+	#why-partner {
+		margin: 0;
+	}
+
+	#all-that-apply {
+		margin-top: 20px;
 	}
 
 	.submit-button-div {

@@ -14,19 +14,16 @@ function HomePage(props) {
 	const webDevCourses = courses
 		.filter((course) => course.courseName === 'Web Development')
 		.map((course) => {
-			console.log(course);
 			return <CourseCard key={course.id} course={course} />;
 		});
 	const dataAnalyticsCourses = courses
 		.filter((course) => course.courseName === 'Data Analytics')
 		.map((course) => {
-			console.log(course);
 			return <CourseCard key={course.id} course={course} />;
 		});
 	const cyberSecurityCourses = courses
 		.filter((course) => course.courseName === 'Cyber Security')
 		.map((course) => {
-			console.log(course);
 			return <CourseCard key={course.id} course={course} />;
 		});
 
