@@ -19,7 +19,6 @@ const defaultCourse = {
 	endDate: '',
 	courseType: 'Accelerated Part Time',
 	courseName: 'Web Development',
-	students: [],
 };
 
 const AddCourseModal = ({ toggle, modal }) => {

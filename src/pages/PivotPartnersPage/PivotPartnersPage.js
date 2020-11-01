@@ -1,9 +1,66 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './PivotPartnersPage.scss';
 import { Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import MyFooter from '../../components/MyFooter/MyFooter';
+import pivotRequests from '../../helpers/data/pivotRequests';
+import moment from 'moment';
+
+const defaultPartner = {
+	firstName: '',
+	lastName: '',
+	email: '',
+	phone: '',
+	company: '',
+	whyPartner: '',
+	date: moment(new Date()).format('LL'),
+};
 
 function PivotPartnersPage() {
+	const [partner, setPartner] = useState(defaultPartner);
+
+	const formFieldStringState = (name, e) => {
+		e.preventDefault();
+		e.persist();
+		const tempPartner = { ...partner };
+		tempPartner[name] = e.target.value;
+		setPartner(tempPartner);
+	};
+
+	// Form change functions. Updates the applicant state whenever the user types something new.
+	const firstNameChange = (e) => formFieldStringState('firstName', e);
+	const lastNameChange = (e) => formFieldStringState('lastName', e);
+	const emailChange = (e) => formFieldStringState('email', e);
+	const phoneChange = (e) => formFieldStringState('phone', e);
+	const companyChange = (e) => formFieldStringState('company', e);
+	const whyPartnerChange = (e) => formFieldStringState('whyPartner', e);
+
+	// Pushes new partner to firebase
+	const addPartner = (newPartner) => {
+		pivotRequests
+			.postPartner(newPartner)
+			.then(() => {
+				setPartner(defaultPartner);
+				window.location.assign('/home');
+			})
+			.catch((err) => console.error('error with applicant post', err));
+	};
+
+	// Validates some fields and then submits the application to firebase
+	const submitApplication = (e) => {
+		e.preventDefault();
+		let myPartner = { ...partner };
+		const firstName = myPartner.firstName;
+		const lastName = myPartner.lastName;
+		const alphabet = /^[A-Za-z ']+$/;
+
+		if (!firstName.match(alphabet) || !lastName.match(alphabet)) {
+			alert(`Invalid symbol(s) in name field.`);
+			return;
+		}
+
+		addPartner(myPartner);
+	};
+
 	return (
 		<>
 			<div className="partner-page-container">
@@ -98,6 +155,8 @@ function PivotPartnersPage() {
 									name="firstName"
 									id="firstName"
 									placeholder="First Name"
+									onChange={firstNameChange}
+									value={partner.firstName}
 								/>
 							</FormGroup>
 						</Col>
@@ -109,6 +168,8 @@ function PivotPartnersPage() {
 									name="lastName"
 									id="lastName"
 									placeholder="Last Name"
+									onChange={lastNameChange}
+									value={partner.lastName}
 								/>
 							</FormGroup>
 						</Col>
@@ -122,6 +183,8 @@ function PivotPartnersPage() {
 									name="email"
 									id="email"
 									placeholder="Email"
+									onChange={emailChange}
+									value={partner.email}
 								/>
 							</FormGroup>
 						</Col>
@@ -133,6 +196,8 @@ function PivotPartnersPage() {
 									name="phone"
 									id="phone"
 									placeholder="Phone Number"
+									onChange={phoneChange}
+									value={partner.phone}
 								/>
 							</FormGroup>
 						</Col>
@@ -140,44 +205,72 @@ function PivotPartnersPage() {
 
 					<p className="question">Company</p>
 
-					<FormGroup row>
-						<Col sm={10}>
-							<Input type="textarea" name="why-apply" id="why-apply" />
-						</Col>
-					</FormGroup>
+					<Col md={6}>
+						<FormGroup row>
+							<Input
+								type="text"
+								name="company"
+								id="company"
+								placeholder="Company"
+								onChange={companyChange}
+								value={partner.company}
+							/>
+						</FormGroup>
+					</Col>
 
-					<p className="question">How would you like to partner?</p>
+					<p id="why-partner">How would you like to partner?</p>
 					<i>Select all that apply</i>
 
-					<FormGroup tag="fieldset" row>
+					<FormGroup
+						id="all-that-apply"
+						onChange={whyPartnerChange}
+						tag="fieldset"
+						row
+					>
 						<Col sm={10}>
 							<FormGroup check>
 								<Label check>
-									<Input type="radio" name="sponsor-student" />
+									<Input
+										type="radio"
+										name="whyPartner"
+										value="Sponsor a Student"
+									/>
 									Sponsor a Student
 								</Label>
 							</FormGroup>
 							<FormGroup check>
 								<Label check>
-									<Input type="radio" name="hire-talent" />
+									<Input
+										type="radio"
+										name="whyPartner"
+										value="Partner to Hire Talent"
+									/>
 									Partner to Hire Talent
 								</Label>
 							</FormGroup>
 							<FormGroup check>
 								<Label check>
-									<Input type="radio" name="hire-talent" />
+									<Input
+										type="radio"
+										name="whyPartner"
+										value="Become a Mentor"
+									/>
 									Become a Mentor
 								</Label>
 							</FormGroup>
 							<FormGroup check>
 								<Label check>
-									<Input type="radio" name="hire-talent" />
+									<Input
+										type="radio"
+										name="whyPartner"
+										value="Work w/ Pivot Community Initiatives"
+									/>
 									Work w/ Pivot Community Initiatives
 								</Label>
 							</FormGroup>
 							<FormGroup check>
 								<Label check>
-									<Input type="radio" name="other" />
+									<Input type="radio" name="whyPartner" value="Other" />
 									Other
 								</Label>
 							</FormGroup>
@@ -186,7 +279,7 @@ function PivotPartnersPage() {
 
 					<FormGroup check row>
 						<Col className="submit-button-div">
-							<Button>Submit</Button>
+							<Button onClick={submitApplication}>Submit</Button>
 						</Col>
 					</FormGroup>
 				</Form>

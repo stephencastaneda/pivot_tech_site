@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './ApplicantsTable.scss';
 import { AgGridColumn, AgGridReact } from 'ag-grid-react';
+import { RowGroupingModule } from '@ag-grid-enterprise/row-grouping';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import requests from '../../helpers/data/pivotRequests';
@@ -27,20 +28,19 @@ function ApplicantsTable() {
 	const onSelectionChanged = () => {
 		const selectedRows = gridApi.getSelectedRows();
 		setSelectedApplicants(selectedRows);
-		console.log(selectedRows);
 	};
 
 	const deleteSelected = () => {
 		selectedApplicants.forEach((applicant) => {
 			requests.deleteApplicant(applicant.uid);
 		});
+		requests.getApplicants().then((results) => {
+			setApplicants(results);
+		});
 	};
 
 	const transitionToStudent = () => {
-		selectedApplicants.forEach((applicant) => {
-			requests.postStudent(applicant);
-			requests.deleteApplicant(applicant.uid);
-		});
+		requests.markAsEnrolled(selectedApplicants);
 	};
 
 	return (
@@ -63,19 +63,25 @@ function ApplicantsTable() {
 						src={require('../../icons/delete.png')}
 						alt="delete"
 					/>
-					<span>Delete</span>
+					<span>Delete Applicant</span>
 				</div>
 			</div>
 			<div
 				className="table ag-theme-alpine"
-				style={{ height: 700, width: '100%' }}
+				style={{ height: 600, width: '100%' }}
 			>
 				<AgGridReact
 					onSelectionChanged={onSelectionChanged}
 					onGridReady={onGridReady}
 					rowData={applicants}
+					modules={[RowGroupingModule]}
 					rowSelection="multiple"
+					autoGroupColumnDef={{ minWidth: 250 }}
+					defaultColDef={{ resizable: true }}
 				>
+					<AgGridColumn field="courseName" rowGroup={true} hide={true} />
+					<AgGridColumn field="startDate" rowGroup={true} hide={true} />
+
 					<AgGridColumn
 						width={300}
 						sortable={true}
@@ -90,6 +96,13 @@ function ApplicantsTable() {
 						filter={true}
 						field="lastName"
 						headerName="Last Name"
+					></AgGridColumn>
+					<AgGridColumn
+						width={400}
+						sortable={true}
+						filter={true}
+						field="enrolled"
+						headerName="Enrolled"
 					></AgGridColumn>
 					<AgGridColumn
 						width={400}
