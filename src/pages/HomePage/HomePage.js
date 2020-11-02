@@ -9,7 +9,7 @@ import MyFooter from '../../components/MyFooter/MyFooter';
 function HomePage() {
 	return (
 		<div className="homepage-container">
-			<LazyHero className="hero-image" minHeight="60vh" opacity='0.3' imageSrc="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+			<LazyHero isFixed={true} className="hero-image" minHeight="60vh" opacity='0.3' imageSrc="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
 			</LazyHero>
 			<div className="mb-5" id="info-section-container">
 				<div className="card hero-card-border">
