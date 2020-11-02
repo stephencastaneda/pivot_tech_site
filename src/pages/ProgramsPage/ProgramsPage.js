@@ -1,62 +1,40 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import MyFooter from '../../components/MyFooter/MyFooter';
 import './ProgramsPage.scss';
 import BootcampDropdown from '../../components/BootcampDropdown/BootcampDropdown';
+import requests from '../../helpers/data/pivotRequests';
 
 function ProgramsPage() {
-	const [programs, setPrograms] = useState([]);
-	const [dataAnalytics, setDataAnalytics] = useState({
-		id: 1,
-		course: 'Data Analytics',
-		courses: [
-			{
-				id: 12,
-				name: 'Data Analytics',
-				type: 'Accelerated Part Time',
-				date: 'November 3, 2020 - May 3, 2021',
-			},
-		],
-	});
-	const [webDevelopment, setWebDevelopment] = useState({
-		id: 1,
-		course: 'Web Development',
-		courses: [
-			{
-				id: 12,
-				name: 'Web Development',
-				type: 'Accelerated Part Time',
-				date: 'November 3, 2020 - May 3, 2021',
-			},
-		],
-	});
-	const [cyberSecurity, setCyberSecurity] = useState({
-		id: 1,
-		course: 'Cyber Security',
-		courses: [
-			{
-				id: 12,
-				name: 'Cyber Security',
-				type: 'Accelerated Part Time',
-				date: 'November 3, 2020 - May 3, 2021',
-			},
-		],
-	});
-	const [individualCourse, setIndividualCourse] = useState({
-		id: 1,
-		course: 'Individual Course Offerings',
-		courses: [
-			{
-				id: 12,
-				name: 'Excel for Data Analysis',
-				type: 'Individual Course Offering',
-			},
-			{
-				id: 13,
-				name: 'SQL for Data Analysis',
-				type: 'Individual Course Offering',
-			},
-		],
-	});
+	const [courses, setCourses] = useState([]);
+
+	useEffect(() => {
+		requests.getCourses().then((results) => {
+			setCourses(results);
+		});
+	}, []);
+
+	const dataAnalyticsCourses = courses.filter(
+		(course) => course.courseName === 'Data Analytics'
+	);
+	const webDevCourses = courses.filter(
+		(course) => course.courseName === 'Web Development'
+	);
+	const cyberSecurityCourses = courses.filter(
+		(course) => course.courseName === 'Cyber Security'
+	);
+
+	const individualCourses = [
+		{
+			id: 12,
+			courseName: 'Excel for Data Analysis',
+			courseType: 'Individual Course Offering',
+		},
+		{
+			id: 13,
+			courseName: 'SQL for Data Analysis',
+			courseType: 'Individual Course Offering',
+		},
+	];
 
 	return (
 		<>
@@ -88,9 +66,21 @@ function ProgramsPage() {
 					</div>
 				</div>
 				<div className="outer-card"></div>
-				<BootcampDropdown key={dataAnalytics.id} program={dataAnalytics} />
-				<BootcampDropdown key={webDevelopment.id} program={webDevelopment} />
-				<BootcampDropdown key={cyberSecurity.id} program={cyberSecurity} />
+				<BootcampDropdown
+					key={1}
+					name={'Data Analytics'}
+					courses={dataAnalyticsCourses}
+				/>
+				<BootcampDropdown
+					key={2}
+					name={'Web Development'}
+					courses={webDevCourses}
+				/>
+				<BootcampDropdown
+					key={3}
+					name={'Cyber Security'}
+					courses={cyberSecurityCourses}
+				/>
 
 				<div className="card programs-text-card mt-5 mb-5">
 					<div className="card-body programs-text-card">
@@ -104,8 +94,9 @@ function ProgramsPage() {
 					</div>
 				</div>
 				<BootcampDropdown
-					key={individualCourse.id}
-					program={individualCourse}
+					key={4}
+					name="Individual Courses"
+					courses={individualCourses}
 				/>
 			</div>
 			<MyFooter />

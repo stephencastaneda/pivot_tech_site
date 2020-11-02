@@ -3,11 +3,10 @@ import { Collapse, CardBody, Card } from 'reactstrap';
 import './BootcampDropdown.scss';
 import CourseCard from '../CourseCard/CourseCard';
 
-const BootcampDropdown = (props) => {
+const BootcampDropdown = ({ courses, name }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const toggle = () => setIsOpen(!isOpen);
-	const courses = props.program.courses;
 	const courseList = courses.map((course) => (
 		<CourseCard key={course.id} course={course} />
 	));
@@ -25,13 +24,19 @@ const BootcampDropdown = (props) => {
 					padding: '15px',
 				}}
 			>
-				<h3>{props.program.course}</h3>
+				<h3>{name}</h3>
 			</Card>
 			<Collapse isOpen={isOpen}>
 				<Card className="course-card-container">
-					<div class="body-container">
-						<CardBody className="the-body">{courseList}</CardBody>
-					</div>
+					{courses.length > 0 ? (
+						<div class="body-container">
+							<CardBody className="the-body">{courseList}</CardBody>
+						</div>
+					) : (
+						<CardBody classname="the-body">
+							<h3>Courses coming soon</h3>
+						</CardBody>
+					)}
 				</Card>
 			</Collapse>
 		</>

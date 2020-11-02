@@ -2,11 +2,13 @@ import React from 'react';
 import { Button, Card, CardTitle, CardText } from 'reactstrap';
 import { Link } from 'react-bootstrap/lib/Navbar';
 import './CourseCard.scss';
+import moment from 'moment';
 
-function CourseCard(props) {
-	const name = props.course.name;
-	const type = props.course.type;
-	const date = props.course.date;
+function CourseCard({ course }) {
+	const name = course.courseName;
+	const type = course.courseType;
+	const startDate = moment(course.startDate).format('LL');
+	const endDate = moment(course.endDate).format('LL');
 
 	const courseObject = {
 		'Web Development': 'web-development',
@@ -24,7 +26,11 @@ function CourseCard(props) {
 			<CardText>
 				<div className="card-text">
 					<span>Type: {type}</span>
-					{date ? <span>Date: {date}</span> : null}
+					{type !== 'Individual Course Offering' ? (
+						<span>
+							Date: {startDate} - {endDate}
+						</span>
+					) : null}
 				</div>
 			</CardText>
 			<div className="card-button-div">

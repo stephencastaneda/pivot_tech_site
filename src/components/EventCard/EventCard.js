@@ -1,7 +1,8 @@
 import React from 'react';
 import './EventCard.scss';
+import moment from 'moment';
 
-function EventCard(props) {
+function EventCard({ event }) {
 	return (
 		<div class="event-card-container">
 			<div class="image-container">
@@ -12,12 +13,10 @@ function EventCard(props) {
 				/>
 			</div>
 			<div class="event-card-text">
-				<h3>Trying it out son!!!</h3>
-				<p>testing</p>
-				<p>testing to see if it works</p>
-				{/* <h3>{props.eventTitle}</h3>
-				<span>{props.eventDate}</span>
-				<span>{props.description}</span> */}
+				<h3>{event.eventTitle}</h3>
+				<span>{moment(event.date).format('LL')}</span>
+				<span>{event.time}</span>
+				<span>{event.description}</span>
 			</div>
 		</div>
 	);

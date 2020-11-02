@@ -1,25 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { AgGridColumn, AgGridReact } from 'ag-grid-react';
 import { RowGroupingModule } from '@ag-grid-enterprise/row-grouping';
+import { Button } from 'reactstrap';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import requests from '../../helpers/data/pivotRequests';
-import AddCourseModal from '../AddCourseModal/AddCourseModal';
 import moment from 'moment';
-import './CoursesTable.scss';
+import './ScholarshipTable.scss';
 
-function CoursesTable() {
+function ScholarshipTable() {
 	const [gridApi, setGridApi] = useState(null);
-	const [courses, setCourses] = useState([]);
-	const [selectedCourses, setSelectedCourses] = useState([]);
-	const [modal, setModal] = useState(false);
-
-	const toggle = () => {
-		setModal(!modal);
-	};
+	const [scholarships, setScholarships] = useState([]);
+	const [selectedScholarships, setSelectedScholarships] = useState([]);
 
 	useEffect(() => {
-		getCourses();
+		getScholarships();
 	}, []);
 
 	const onGridReady = (params) => {
@@ -28,50 +23,41 @@ function CoursesTable() {
 
 	const onSelectionChanged = () => {
 		const selectedRows = gridApi.getSelectedRows();
-		setSelectedCourses(selectedRows);
+		setSelectedScholarships(selectedRows);
 	};
 
-	const getCourses = () => {
-		requests.getCourses().then((results) => {
-			results.forEach((course) => {
-				course.startDate = moment(course.startDate).format('LL');
-				course.endDate = moment(course.endDate).format('LL');
+	const getScholarships = () => {
+		requests.getScholarships().then((results) => {
+			results.forEach((scholarship) => {
+				scholarship.date = moment(scholarship.startDate).format('LL');
 			});
-			setCourses(results);
+			setScholarships(results);
 		});
 	};
 
 	const deleteSelected = () => {
-		selectedCourses.forEach((course) => {
-			requests.deleteCourse(course.id);
+		selectedScholarships.forEach((scholarship) => {
+			requests.deleteScholarship(scholarship.id);
 		});
-		requests.getCourses().then((results) => {
-			setCourses(results);
+		requests.getScholarships().then((results) => {
+			setScholarships(results);
 		});
 	};
 
 	return (
 		<div>
 			<div className="card-body admin-card">
-				<h1 className="admin-title text-center text-white">Courses</h1>
+				<h1 className="admin-title text-center text-white">Scholarships</h1>
 			</div>
 			<div className="actions-container">
-				<div onClick={toggle} className="icon-wrapper">
-					<img
-						className="icon"
-						src={require('../../icons/add.png')}
-						alt="transition to student"
-					/>
-					<span>Add Course</span>
-				</div>
-				<div onClick={deleteSelected} className="icon-wrapper">
+				<Button onClick={deleteSelected} className="icon-wrapper">
 					<img
 						className="icon"
 						src={require('../../icons/delete.png')}
 						alt="delete"
 					/>
-					<span>Delete Course</span>
-				</div>
+					<span>Remove Applicant</span>
+				</Button>
 			</div>
 			<div
 				className="table ag-theme-alpine"
@@ -80,39 +66,53 @@ function CoursesTable() {
 				<AgGridReact
 					onSelectionChanged={onSelectionChanged}
 					onGridReady={onGridReady}
-					rowData={courses}
+					rowData={scholarships}
 					modules={[RowGroupingModule]}
 					rowSelection="multiple"
 					autoGroupColumnDef={{ minWidth: 250 }}
 					defaultColDef={{ resizable: true }}
 				>
-					<AgGridColumn field="courseName" rowGroup={true} hide={true} />
-					<AgGridColumn field="courseType" rowGroup={true} hide={true} />
-
 					<AgGridColumn
 						sortable={true}
 						filter={true}
-						field="startDate"
-						headerName="Start Date"
+						field="firstName"
+						headerName="First Name"
 						checkboxSelection={true}
 					></AgGridColumn>
 					<AgGridColumn
 						sortable={true}
 						filter={true}
-						field="endDate"
-						headerName="End Date"
+						field="lastName"
+						headerName="Last Name"
 					></AgGridColumn>
 					<AgGridColumn
 						sortable={true}
 						filter={true}
-						field="students"
-						headerName="Student Count"
+						field="email"
+						headerName="Email"
+					></AgGridColumn>
+					<AgGridColumn
+						sortable={true}
+						filter={true}
+						field="phone"
+						headerName="Phone"
+					></AgGridColumn>
+					<AgGridColumn
+						sortable={true}
+						filter={true}
+						field="program"
+						headerName="Program"
+					></AgGridColumn>
+					<AgGridColumn
+						sortable={true}
+						filter={true}
+						field="dreamCareer"
+						headerName="Dream Career"
 					></AgGridColumn>
 				</AgGridReact>
 			</div>
-			<AddCourseModal modal={modal} toggle={toggle} />
 		</div>
 	);
 }
 
-export default CoursesTable;
+export default ScholarshipTable;
