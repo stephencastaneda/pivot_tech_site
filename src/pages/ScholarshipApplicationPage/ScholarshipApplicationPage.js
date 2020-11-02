@@ -1,9 +1,66 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import MyFooter from '../../components/MyFooter/MyFooter';
 import './ScholarshipApplicationPage.scss';
+import moment from 'moment';
+import pivotRequests from '../../helpers/data/pivotRequests';
+
+const defaultApplicant = {
+	firstName: '',
+	lastName: '',
+	email: '',
+	phone: '',
+	program: '',
+	dreamCareer: '',
+	date: moment(new Date()).format('LL'),
+};
 
 function ScholarshipApplicationPage() {
+	const [applicant, setApplicant] = useState(defaultApplicant);
+
+	const formFieldStringState = (name, e) => {
+		e.preventDefault();
+		e.persist();
+		const tempApplicant = { ...applicant };
+		tempApplicant[name] = e.target.value;
+		setApplicant(tempApplicant);
+	};
+
+	// Form change functions. Updates the applicant state whenever the user types something new.
+	const firstNameChange = (e) => formFieldStringState('firstName', e);
+	const lastNameChange = (e) => formFieldStringState('lastName', e);
+	const emailChange = (e) => formFieldStringState('email', e);
+	const phoneChange = (e) => formFieldStringState('phone', e);
+	const programChange = (e) => formFieldStringState('program', e);
+	const dreamCareerChange = (e) => formFieldStringState('dreamCareer', e);
+
+	// Pushes new applicant to firebase
+	const addApplicant = (newApplicant) => {
+		pivotRequests
+			.postScholarship(newApplicant)
+			.then(() => {
+				setApplicant(defaultApplicant);
+				window.location.assign('/home');
+			})
+			.catch((err) => console.error('error with applicant post', err));
+	};
+
+	// Validates some fields and then submits the application to firebase
+	const submitApplication = (e) => {
+		e.preventDefault();
+		let myApplicant = { ...applicant };
+		const firstName = myApplicant.firstName;
+		const lastName = myApplicant.lastName;
+		const alphabet = /^[A-Za-z ']+$/;
+
+		if (!firstName.match(alphabet) || !lastName.match(alphabet)) {
+			alert(`Invalid symbol(s) in name field.`);
+			return;
+		}
+
+		addApplicant(myApplicant);
+	};
+
 	return (
 		<>
 			<div className="scholarship-page-container">
@@ -71,6 +128,8 @@ function ScholarshipApplicationPage() {
 									name="firstName"
 									id="firstName"
 									placeholder="First Name"
+									onChange={firstNameChange}
+									value={applicant.firstName}
 								/>
 							</FormGroup>
 						</Col>
@@ -82,6 +141,8 @@ function ScholarshipApplicationPage() {
 									name="lastName"
 									id="lastName"
 									placeholder="Last Name"
+									onChange={lastNameChange}
+									value={applicant.lastName}
 								/>
 							</FormGroup>
 						</Col>
@@ -95,6 +156,8 @@ function ScholarshipApplicationPage() {
 									name="email"
 									id="email"
 									placeholder="Email"
+									onChange={emailChange}
+									value={applicant.email}
 								/>
 							</FormGroup>
 						</Col>
@@ -106,6 +169,8 @@ function ScholarshipApplicationPage() {
 									name="phone"
 									id="phone"
 									placeholder="Phone Number"
+									onChange={phoneChange}
+									value={applicant.phone}
 								/>
 							</FormGroup>
 						</Col>
@@ -113,17 +178,17 @@ function ScholarshipApplicationPage() {
 
 					<p className="question">Select a Program</p>
 
-					<FormGroup tag="fieldset" row>
+					<FormGroup onChange={programChange} tag="fieldset" row>
 						<Col sm={10}>
 							<FormGroup check>
 								<Label check>
-									<Input type="radio" name="data-analytics" />
+									<Input type="radio" name="program" value="Data Analytics" />
 									Data Analytics
 								</Label>
 							</FormGroup>
 							<FormGroup check>
 								<Label check>
-									<Input type="radio" name="web-development" />
+									<Input type="radio" name="program" value="Web Development" />
 									Web Development
 								</Label>
 							</FormGroup>
@@ -132,15 +197,21 @@ function ScholarshipApplicationPage() {
 
 					<p className="question">What is your dream career?</p>
 
-					<FormGroup row>
-						<Col sm={10}>
-							<Input type="textarea" name="why-apply" id="why-apply" />
-						</Col>
-					</FormGroup>
+					<Col md={6}>
+						<FormGroup row>
+							<Input
+								type="textarea"
+								name="dreamCareer"
+								id="dream-career"
+								onChange={dreamCareerChange}
+								value={applicant.dreamCareer}
+							/>
+						</FormGroup>
+					</Col>
 
 					<FormGroup check row>
 						<Col className="submit-button-div">
-							<Button>Submit</Button>
+							<Button onClick={submitApplication}>Submit</Button>
 						</Col>
 					</FormGroup>
 				</Form>

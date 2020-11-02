@@ -3,6 +3,7 @@ import './PivotApplicationPage.scss';
 import { Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import MyFooter from '../../components/MyFooter/MyFooter';
 import pivotRequests from '../../helpers/data/pivotRequests';
+import moment from 'moment';
 
 const defaultApplicant = {
 	firstName: '',
@@ -17,12 +18,15 @@ const defaultApplicant = {
 	workExperience: null,
 	highestEducation: null,
 	canPayDeposit: null,
+	courseId: '',
+	enrolled: false,
 	uid: '',
-	date: new Date(),
+	date: moment(new Date()).format('LL'),
 };
 
 function PivotApplicationPage() {
 	const [applicant, setApplicant] = useState(defaultApplicant);
+	const [courses, setCourses] = useState([]);
 
 	const formFieldStringState = (name, e) => {
 		e.preventDefault();
@@ -39,28 +43,57 @@ function PivotApplicationPage() {
 	const phoneChange = (e) => formFieldStringState('phone', e);
 	const birthdayChange = (e) => formFieldStringState('birthday', e);
 	const techKnowledgeChange = (e) => formFieldStringState('techKnowledge', e);
-	const techTrackChange = (e) => formFieldStringState('techTrack', e);
+	const techTrackChange = (e) => {
+		getCourses(e.target.value);
+		return formFieldStringState('techTrack', e);
+	};
 	const whyApplyChange = (e) => formFieldStringState('whyApply', e);
+	const courseChange = (e) => formFieldStringState('courseId', e);
 	const employedChange = (e) => formFieldStringState('employed', e);
 	const workExperienceChange = (e) => formFieldStringState('workExperience', e);
 	const highestEducationChange = (e) =>
 		formFieldStringState('highestEducation', e);
 	const canPayDepositChange = (e) => formFieldStringState('canPayDeposit', e);
 
-	// pushes new applicant to firebase
+	// Pushes new applicant to firebase
 	const addApplicant = (newApplicant) => {
 		pivotRequests
 			.postApplicant(newApplicant)
 			.then(() => {
+				setApplicant(defaultApplicant);
 				window.location.assign('/home');
 			})
 			.catch((err) => console.error('error with applicant post', err));
 	};
 
+	// Gets all available courses
+	const getCourses = (courseName) => {
+		pivotRequests
+			.getCourses()
+			.then((results) => {
+				const filteredResults = results.filter(
+					(course) => course.courseName === courseName
+				);
+				console.log(filteredResults);
+				setCourses(filteredResults);
+			})
+			.catch((err) => console.error('error getting courses', err));
+	};
+
+	const formatPhoneNumber = (phoneNumberString) => {
+		const cleaned = ('' + phoneNumberString).replace(/\D/g, '');
+		const match = cleaned.match(/^(1|)?(\d{3})(\d{3})(\d{4})$/);
+		if (match) {
+			const intlCode = match[1] ? '+1 ' : '';
+			return [intlCode, '(', match[2], ') ', match[3], '-', match[4]].join('');
+		}
+		return null;
+	};
+
 	// Validates some fields and then submits the application to firebase
 	const submitApplication = (e) => {
 		e.preventDefault();
-		const myApplicant = { ...applicant };
+		let myApplicant = { ...applicant };
 		const firstName = myApplicant.firstName;
 		const lastName = myApplicant.lastName;
 		const alphabet = /^[A-Za-z ']+$/;
@@ -70,8 +103,25 @@ function PivotApplicationPage() {
 			return;
 		}
 
-		addApplicant(myApplicant);
-		setApplicant(defaultApplicant);
+		pivotRequests.getCourseById(applicant.courseId).then((course) => {
+			const courseName = course.courseName;
+			const courseType = course.courseType;
+			const startDate = moment(course.startDate).format('LL');
+			const endDate = moment(course.endDate).format('LL');
+
+			myApplicant.birthday = moment(applicant.birthday).format('LL');
+			myApplicant.phone = formatPhoneNumber(applicant.phone);
+
+			myApplicant = {
+				...applicant,
+				courseName,
+				courseType,
+				startDate,
+				endDate,
+			};
+
+			addApplicant(myApplicant);
+		});
 	};
 
 	return (
@@ -244,6 +294,34 @@ function PivotApplicationPage() {
 										All Women's Data Analytics
 									</Label>
 								</FormGroup>
+							</Col>
+						</FormGroup>
+
+						<p className="question">
+							Which course would you like to enroll in?
+						</p>
+						<FormGroup row>
+							<Col sm={10}>
+								<Input
+									type="select"
+									name="course"
+									id="course"
+									onChange={courseChange}
+									value={applicant.courseId}
+								>
+									<option selected={false}>Select a Course</option>
+									{courses.map((course) => (
+										<>
+											course ? (
+											<option value={course.id} key={course.id}>
+												{course.courseName}:{' '}
+												{moment(course.startDate).format('LL')} -{' '}
+												{moment(course.endDate).format('LL')}
+											</option>
+											) : null );
+										</>
+									))}
+								</Input>
 							</Col>
 						</FormGroup>
 

@@ -1,12 +1,43 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import HomeCarousel from '../../components/HomeCarousel/HomeCarousel';
 import { Button, Card, CardTitle, CardText } from 'reactstrap';
 import LazyHero from 'react-lazy-hero'
+import { Button } from 'reactstrap';
 import './HomePage.scss';
 import EventCard from '../../components/EventCard/EventCard';
 import MyFooter from '../../components/MyFooter/MyFooter';
+import CourseCard from '../../components/CourseCard/CourseCard';
+import requests from '../../helpers/data/pivotRequests';
 
-function HomePage() {
+function HomePage(props) {
+	const [events, setEvents] = useState([]);
+	const [courses, setCourses] = useState([]);
+
+	const webDevCourses = courses
+		.filter((course) => course.courseName === 'Web Development')
+		.map((course) => {
+			return <CourseCard key={course.id} course={course} />;
+		});
+	const dataAnalyticsCourses = courses
+		.filter((course) => course.courseName === 'Data Analytics')
+		.map((course) => {
+			return <CourseCard key={course.id} course={course} />;
+		});
+	const cyberSecurityCourses = courses
+		.filter((course) => course.courseName === 'Cyber Security')
+		.map((course) => {
+			return <CourseCard key={course.id} course={course} />;
+		});
+
+	useEffect(() => {
+		requests.getEvents().then((results) => {
+			setEvents(results);
+		});
+		requests.getCourses().then((results) => {
+			setCourses(results);
+		});
+	}, []);
+
 	return (
 		<div className="homepage-container">
 			<LazyHero isFixed={true} className="hero-image" minHeight="60vh" opacity='0.3' imageSrc="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
@@ -153,84 +184,21 @@ function HomePage() {
 					<hr style={{ borderColor: 'white' }}></hr>
 				</div>
 
-				<div className="program-card-container">
-					<Card className="program-card" body>
-						<CardTitle>
-							<h4>Web Development</h4>
-						</CardTitle>
-						<CardText>
-							<div className="card-text">
-								<span>Type: Accelerated Part Time (20 weeks)</span>
-								<span>Date: November 3, 2020 - May 3, 2012</span>
-							</div>
-						</CardText>
-						<div class="card-button-div">
-							<Button>Learn More</Button>
-							<Button>Apply Now</Button>
-						</div>
-					</Card>
-					<Card className="program-card" body>
-						<CardTitle>
-							<h4>Web Development</h4>
-						</CardTitle>
-						<CardText>
-							<div className="card-text">
-								<span>Type: Accelerated Part Time (20 weeks)</span>
-								<span>Date: November 3, 2020 - May 3, 2012</span>
-							</div>
-						</CardText>
-						<div class="card-button-div">
-							<Button>Learn More</Button>
-							<Button>Apply Now</Button>
-						</div>
-					</Card>
-				</div>
+				<div className="program-card-container">{webDevCourses}</div>
 
 				<div class="program-header">
 					<h4>Data Analytics</h4>
 					<hr style={{ borderColor: 'white' }}></hr>
 				</div>
-				<div className="program-card-container">
-					<Card className="program-card" body>
-						<CardTitle>
-							<h4>Data Analytics</h4>
-						</CardTitle>
-						<CardText>
-							<div className="card-text">
-								<span>Type: Accelerated Part Time (20 weeks)</span>
-								<span>Date: November 3, 2020 - May 3, 2012</span>
-							</div>
-						</CardText>
-						<div class="card-button-div">
-							<Button>Learn More</Button>
-							<Button>Apply Now</Button>
-						</div>
-					</Card>
-					<Card className="program-card" body>
-						<CardTitle>
-							<h4>Data Analytics</h4>
-						</CardTitle>
-						<CardText>
-							<div className="card-text">
-								<span>Type: Accelerated Part Time (20 weeks)</span>
-								<span>Date: November 3, 2020 - May 3, 2012</span>
-							</div>
-						</CardText>
-						<div class="card-button-div">
-							<Button>Learn More</Button>
-							<Button>Apply Now</Button>
-						</div>
-					</Card>
-				</div>
+				<div className="program-card-container">{dataAnalyticsCourses}</div>
 			</div>
 			<div className="events-section">
 				<h2 style={{ textAlign: 'center' }}>UPCOMING EVENTS</h2>
 				<div class="events-container">
 					<div className="event-cards-container">
-						<EventCard />
-						<EventCard />
-						<EventCard />
-						<EventCard />
+						{events.map((event) => {
+							return <EventCard event={event} />;
+						})}
 					</div>
 				</div>
 			</div>
