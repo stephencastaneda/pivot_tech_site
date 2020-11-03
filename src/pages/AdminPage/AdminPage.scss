@@ -12,6 +12,18 @@
 		padding: 50px;
 		width: 100%;
 
+		.add-user-container {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 20px;
+
+			Button {
+				background-color: #ef8c35;
+				border: none;
+			}
+		}
+
 		.admin-card {
 			background-color: #ef8c35;
 		}
