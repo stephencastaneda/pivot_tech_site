@@ -50,14 +50,14 @@ function ScholarshipTable() {
 				<h1 className="admin-title text-center text-white">Scholarships</h1>
 			</div>
 			<div className="actions-container">
-				<Button onClick={deleteSelected} className="icon-wrapper">
+				<div onClick={deleteSelected} className="icon-wrapper">
 					<img
 						className="icon"
 						src={require('../../icons/delete.png')}
 						alt="delete"
 					/>
 					<span>Remove Applicant</span>
-				</Button>
+				</div>
 			</div>
 			<div
 				className="table ag-theme-alpine"
