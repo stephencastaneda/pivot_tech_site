@@ -4,7 +4,7 @@ import firebase from 'firebase/app';
 
 const baseUrl = apiKeys.firebaseKeys.databaseURL;
 
-// Firebase login
+// Admin requests
 const loginUser = (e, email, password) => {
 	e.preventDefault();
 	firebase
@@ -25,7 +25,11 @@ const loginUser = (e, email, password) => {
 		});
 };
 
-// Returns array of user objects
+const logoutUser = () => firebase.auth().signOut();
+
+const createAdminUser = (newAdminUser) =>
+	axios.post(`${baseUrl}/users.json`, newAdminUser);
+
 const getAllUsers = () =>
 	new Promise((resolve, reject) => {
 		axios
@@ -46,8 +50,7 @@ const getAllUsers = () =>
 			});
 	});
 
-// Creates new user in firebase
-const createUser = (user) => axios.post(`${baseUrl}/users.json`, user);
+const getCurrentUid = () => firebase.auth().currentUser.uid;
 
 const getUserByUid = (uid) =>
 	new Promise((resolve, reject) => {
@@ -68,9 +71,6 @@ const getUserByUid = (uid) =>
 				reject(error);
 			});
 	});
-
-// Logs user out
-const logoutUser = () => firebase.auth().signOut();
 
 // Gets all Pivot staff and graduates
 const getAllPivotTeam = () =>
@@ -306,11 +306,12 @@ export default {
 	pinIdToCourse,
 	loginUser,
 	getAllUsers,
-	createUser,
+	createAdminUser,
 	getUserByUid,
 	logoutUser,
 	getCourseById,
 	markAsEnrolled,
 	editPartner,
 	deletePartner,
+	getCurrentUid,
 };

@@ -3,7 +3,7 @@ import './App.scss';
 import firebase from 'firebase/app';
 import MyNavbar from '../components/MyNavbar/MyNavbar';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
-import { IntercomProvider, useIntercom } from 'react-use-intercom';
+import { IntercomProvider } from 'react-use-intercom';
 import HomePage from '../pages/HomePage/HomePage';
 import ProgramsPage from '../pages/ProgramsPage/ProgramsPage';
 import PivotTeamPage from '../pages/PivotTeamPage/PivotTeamPage';
@@ -20,6 +20,7 @@ import AdminPage from '../pages/AdminPage/AdminPage';
 import pivotRequests from '../helpers/data/pivotRequests';
 import connection from '../helpers/data/connection';
 import apiKeys from '../helpers/apiKeys.json';
+import AddAdminModal from '../components/AddAdminModal/AddAdminModal';
 
 const INTERCOM_APP_ID = apiKeys.intercomApiKey.intercomApiId;
 
@@ -27,6 +28,11 @@ function App() {
 	const [userObject, setUserObject] = useState({});
 	const [authed, setAuthed] = useState(false);
 	const [pending, setPending] = useState(false);
+	const [modal, setModal] = useState(false);
+
+	const toggle = () => {
+		setModal(!modal);
+	};
 
 	useEffect(() => {
 		connection();
@@ -40,14 +46,7 @@ function App() {
 					const filteredUsers = allUsers.filter(
 						(userObj) => userObj.uid === user.uid
 					).length;
-					if (filteredUsers === 0) {
-						const userInfo = {
-							fullName: user.displayName,
-							email: user.email,
-							uid: user.uid,
-						};
-						pivotRequests.createUser(userInfo);
-					}
+					if (filteredUsers === 0) return;
 				});
 				const currentUid = user.uid;
 				pivotRequests.getUserByUid(currentUid).then((user) => {
@@ -65,13 +64,15 @@ function App() {
 	}, []);
 
 	const logoutClickEvent = () => {
-		pivotRequests.logoutUser();
-		setAuthed(false);
-		window.location.assign('./home');
+		pivotRequests.logoutUser().then(() => {
+			setAuthed(false);
+			window.location.assign('./home');
+		});
 	};
 
 	return (
 		<div className="App">
+			<AddAdminModal modal={modal} toggle={toggle} />
 			<BrowserRouter>
 				<MyNavbar
 					userObject={userObject}
@@ -97,6 +98,7 @@ function App() {
 								isPending={pending}
 								isAuthed={authed}
 								userObject={userObject}
+								toggle={toggle}
 							/>
 						)}
 					/>

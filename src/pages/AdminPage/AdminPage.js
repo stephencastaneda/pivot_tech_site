@@ -10,9 +10,9 @@ import EventsTable from '../../components/EventsTable/EventsTable';
 import PartnersTable from '../../components/PartnersTable/PartnersTable';
 import ScholarshipTable from '../../components/ScholarshipTable/ScholarshipTable';
 import AccessModal from '../../components/AccessModal/AccessModal';
-import { Spinner } from 'reactstrap';
+import { Spinner, Button } from 'reactstrap';
 
-function AdminPage({ isAuthed, isPending }) {
+function AdminPage({ isAuthed, isPending, userObject, toggle }) {
 	const [applicantsView, setApplicantsView] = useState(true);
 	const [coursesView, setCoursesView] = useState(false);
 	const [eventsView, setEventsView] = useState(false);
@@ -41,6 +41,10 @@ function AdminPage({ isAuthed, isPending }) {
 									setScholarshipsView={setScholarshipsView}
 								/>
 								<div className="main-container">
+									{/* <div class="add-user-container">
+										<span>Hello, {userObject.firstName}!</span>
+										<Button onClick={toggle}>Create New Admin User</Button>
+									</div> */}
 									{applicantsView ? <ApplicantsTable /> : null}
 									{coursesView ? <CoursesTable /> : null}
 									{eventsView ? <EventsTable /> : null}
