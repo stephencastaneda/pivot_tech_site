@@ -74,7 +74,6 @@ function PivotApplicationPage() {
 				const filteredResults = results.filter(
 					(course) => course.courseName === courseName
 				);
-				console.log(filteredResults);
 				setCourses(filteredResults);
 			})
 			.catch((err) => console.error('error getting courses', err));
