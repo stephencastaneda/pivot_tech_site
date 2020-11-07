@@ -11,6 +11,7 @@ import {
 	ModalFooter,
 } from 'reactstrap';
 import pivotRequests from '../../helpers/data/pivotRequests';
+import moment from 'moment';
 import './AddEventModal.scss';
 
 const defaultEvent = {
@@ -23,6 +24,7 @@ const defaultEvent = {
 
 const AddEventModal = ({ toggle, modal }) => {
 	const [event, setEvent] = useState(defaultEvent);
+	const [eventImage, setEventImage] = useState('');
 
 	const formFieldStringState = (name, e) => {
 		e.preventDefault();
@@ -48,34 +50,36 @@ const AddEventModal = ({ toggle, modal }) => {
 			.catch((err) => console.error('error with applicant post', err));
 	};
 
-	const [eventImage, setEventImage] = useState('')
-
 	// Submits the course to firebase
 	const submitEvent = (e) => {
 		e.preventDefault();
 		const myEvent = { ...event };
+		const timeArray = event.time.split(':');
+		const time = timeArray[0] + timeArray[1];
+		const formattedTime = moment(time, 'hmm').format('h:mm a');
 		myEvent.eventImage = eventImage;
+		myEvent.time = formattedTime;
+
 		addEvent(myEvent);
 		setEvent(defaultEvent);
 	};
 
-	// cloudinary image upload 
-
-	const uploadImage = async event => {
-		const files = event.target.files
-		const data = new FormData()
-		data.append('file', files[0])
-		data.append('upload_preset', 'productImage')
-		const res = await fetch('https://api.cloudinary.com/v1_1/dbjxqdddk/image/upload',
-		{
-			'method': 'POST',
-			'body': data
-		}
-	)
-		const file = await res.json()
-		setEventImage(file.secure_url)
-		console.log('event-image', file)
-	}
+	// cloudinary image upload
+	const uploadImage = async (event) => {
+		const files = event.target.files;
+		const data = new FormData();
+		data.append('file', files[0]);
+		data.append('upload_preset', 'productImage');
+		const res = await fetch(
+			'https://api.cloudinary.com/v1_1/dbjxqdddk/image/upload',
+			{
+				method: 'POST',
+				body: data,
+			}
+		);
+		const file = await res.json();
+		setEventImage(file.secure_url);
+	};
 
 	return (
 		<div>
