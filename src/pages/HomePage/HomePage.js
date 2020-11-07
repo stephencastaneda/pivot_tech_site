@@ -38,7 +38,13 @@ function HomePage(props) {
 
 	return (
 		<div className="homepage-container">
-			<HomeCarousel />
+			<div class="hero-image">
+  <div class="hero-text">
+    <h2>Pivot Tech School</h2>
+    <h1>PIVOT to a tech career in 20 weeks!</h1>
+    <button className="btn hero-btn" style={{ 'background-color': 'navy', 'color': 'white' }}>Learn More</button>
+  </div>
+</div>
 			<div className="mb-5" id="info-section-container">
 				<div className="card hero-card-border">
 					<div class="icon-and-info">
