@@ -54,18 +54,10 @@ const getCurrentUid = () => firebase.auth().currentUser.uid;
 
 const getUserByUid = (uid) =>
 	new Promise((resolve, reject) => {
-		axios
-			.get(`${baseUrl}/users.json?orderBy="uid"&equalTo="${uid}"`)
-			.then((result) => {
-				const userObject = result.data;
-				let userKeys = '';
-				if (userObject != null) {
-					Object.keys(userObject).forEach((userId) => {
-						userObject[userId].id = userId;
-						userKeys = userObject[userId];
-					});
-				}
-				resolve(userKeys);
+		getAllUsers()
+			.then((userArray) => {
+				const matchingUser = userArray.filter((user) => user.uid === uid)[0];
+				resolve(matchingUser);
 			})
 			.catch((error) => {
 				reject(error);

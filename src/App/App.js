@@ -39,19 +39,11 @@ function App() {
 		setPending(true);
 		const removeListener = firebase.auth().onAuthStateChanged((user) => {
 			if (user) {
-				setUserObject(user);
-				setAuthed(true);
-				setPending(false);
-				pivotRequests.getAllUsers().then((allUsers) => {
-					const filteredUsers = allUsers.filter(
-						(userObj) => userObj.uid === user.uid
-					).length;
-					if (filteredUsers === 0) return;
-				});
 				const currentUid = user.uid;
 				pivotRequests.getUserByUid(currentUid).then((user) => {
 					setUserObject(user);
 					setAuthed(true);
+					setPending(false);
 				});
 			} else {
 				setAuthed(false);
@@ -72,7 +64,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<AddAdminModal modal={modal} toggle={toggle} />
+			<AddAdminModal modal={modal} toggle={toggle} user={userObject} />
 			<BrowserRouter>
 				<MyNavbar
 					userObject={userObject}

@@ -14,9 +14,15 @@ function CourseCard({ course }) {
 		'Web Development': 'web-development',
 		'Data Analytics': 'data-analytics',
 		'Cyber Security': 'cyber-security',
+		'Excel for Data Analysis':
+			'https://courses.pivottechschool.com/p/excel-for-data-analysis',
+		'SQL for Data Analysis':
+			'https://courses.pivottechschool.com/p/sql-for-data-analysis',
 	};
 
 	let pageString = courseObject[name];
+	const excel = 'https://courses.pivottechschool.com/p/excel-for-data-analysis';
+	const sql = 'https://courses.pivottechschool.com/p/sql-for-data-analysis';
 
 	return (
 		<Card className="program-card" body>
@@ -34,12 +40,27 @@ function CourseCard({ course }) {
 				</div>
 			</CardText>
 			<div className="card-button-div">
-				<Button className="course-button" tag={Link} href={pageString}>
-					Learn More
-				</Button>
-				<Button className="course-button" tag={Link} href="pivot-application">
-					Apply Now
-				</Button>
+				{courseObject[name] !== excel || sql ? (
+					<>
+						<Button className="course-button" tag={Link} href={pageString}>
+							Learn More
+						</Button>
+						<Button
+							className="course-button"
+							tag={Link}
+							href="pivot-application"
+						>
+							Apply Now
+						</Button>
+					</>
+				) : (
+					<Button
+						className="course-button"
+						onClick={() => (window.location.href = pageString)}
+					>
+						Go to Course
+					</Button>
+				)}
 			</div>
 		</Card>
 	);

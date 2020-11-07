@@ -22,7 +22,6 @@ function EventsTable() {
 	const onSelectionChanged = () => {
 		const selectedRows = gridApi.getSelectedRows();
 		setSelectedEvents(selectedRows);
-		console.log(selectedRows);
 	};
 
 	const deleteSelected = () => {
