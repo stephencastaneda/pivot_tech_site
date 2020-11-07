@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './ApplicantsTable.scss';
 import { AgGridColumn, AgGridReact } from 'ag-grid-react';
-import { RowGroupingModule } from '@ag-grid-enterprise/row-grouping';
+// import { RowGroupingModule } from '@ag-grid-enterprise/row-grouping';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import requests from '../../helpers/data/pivotRequests';
@@ -74,7 +74,7 @@ function ApplicantsTable() {
 					onSelectionChanged={onSelectionChanged}
 					onGridReady={onGridReady}
 					rowData={applicants}
-					modules={[RowGroupingModule]}
+					// modules={[RowGroupingModule]}
 					rowSelection="multiple"
 					autoGroupColumnDef={{ minWidth: 250 }}
 					defaultColDef={{ resizable: true }}

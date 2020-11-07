@@ -48,14 +48,34 @@ const AddEventModal = ({ toggle, modal }) => {
 			.catch((err) => console.error('error with applicant post', err));
 	};
 
+	const [eventImage, setEventImage] = useState('')
+
 	// Submits the course to firebase
 	const submitEvent = (e) => {
 		e.preventDefault();
 		const myEvent = { ...event };
-
+		myEvent.eventImage = eventImage;
 		addEvent(myEvent);
 		setEvent(defaultEvent);
 	};
+
+	// cloudinary image upload 
+
+	const uploadImage = async event => {
+		const files = event.target.files
+		const data = new FormData()
+		data.append('file', files[0])
+		data.append('upload_preset', 'productImage')
+		const res = await fetch('https://api.cloudinary.com/v1_1/dbjxqdddk/image/upload',
+		{
+			'method': 'POST',
+			'body': data
+		}
+	)
+		const file = await res.json()
+		setEventImage(file.secure_url)
+		console.log('event-image', file)
+	}
 
 	return (
 		<div>
@@ -108,6 +128,16 @@ const AddEventModal = ({ toggle, modal }) => {
 								placeholder="Description"
 								onChange={descriptionChange}
 								value={event.description}
+							/>
+						</FormGroup>
+						<FormGroup>
+							<Label htmlFor="file">Image</Label>
+							<Input
+								type="file"
+								name="file"
+								id="file"
+								className="form-control"
+								onChange={uploadImage}
 							/>
 						</FormGroup>
 					</Form>

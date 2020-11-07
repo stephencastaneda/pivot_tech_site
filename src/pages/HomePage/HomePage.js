@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import HomeCarousel from '../../components/HomeCarousel/HomeCarousel';
 import { Button, Card, CardTitle, CardText } from 'reactstrap';
 import LazyHero from 'react-lazy-hero'
-import { Button } from 'reactstrap';
 import './HomePage.scss';
 import EventCard from '../../components/EventCard/EventCard';
 import MyFooter from '../../components/MyFooter/MyFooter';
