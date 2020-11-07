@@ -14,9 +14,9 @@ function EventCard({ event }) {
 			</div>
 			<div class="event-card-text">
 				<h3>{event.eventTitle}</h3>
-				<span>{moment(event.date).format('LL')}</span>
-				<span>{event.time}</span>
-				<span>{event.description}</span>
+				<span>Date: {moment(event.date).format('LL')}</span>
+				<span>Time: {event.time}</span>
+				<span>Description: {event.description}</span>
 			</div>
 		</div>
 	);
