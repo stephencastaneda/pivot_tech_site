@@ -7,8 +7,8 @@ function EventCard({ event }) {
 		<div class="event-card-container">
 			<div class="image-container">
 				<img
-					src= {event.eventImage}
-					alt=""
+					src={event.eventImage}
+					alt={event.eventTitle}
 					className="event-image"
 				/>
 			</div>
