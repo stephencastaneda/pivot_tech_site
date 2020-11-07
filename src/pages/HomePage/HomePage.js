@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-bootstrap/lib/Navbar';
 import HomeCarousel from '../../components/HomeCarousel/HomeCarousel';
 import { Button } from 'reactstrap';
 import './HomePage.scss';
+import Application from '../PivotApplicationPage/PivotApplicationPage'
 import EventCard from '../../components/EventCard/EventCard';
 import MyFooter from '../../components/MyFooter/MyFooter';
 import CourseCard from '../../components/CourseCard/CourseCard';
@@ -36,9 +38,21 @@ function HomePage() {
 		});
 	}, []);
 
+
 	return (
 		<div className="homepage-container">
-			<HomeCarousel />
+			<div class="hero-image">
+  <div class="hero-text">
+    <h2>Pivot Tech School</h2>
+    <h1>PIVOT to a tech career in 20 weeks!</h1>
+		<Button
+			tag={Link} 
+			href="pivot-application" 
+			className="btn hero-btn" 
+			style={{ 'background-color': 'navy', 'color': 'white' }}
+			>Apply Today</Button>
+  </div>
+</div>
 			<div className="mb-5" id="info-section-container">
 				<div className="hero-card-border">
 					<div class="icon-and-info">
