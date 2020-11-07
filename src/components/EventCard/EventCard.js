@@ -7,16 +7,16 @@ function EventCard({ event }) {
 		<div class="event-card-container">
 			<div class="image-container">
 				<img
-					src= {event.eventImage}
-					alt=""
+					src={event.eventImage}
+					alt={event.eventTitle}
 					className="event-image"
 				/>
 			</div>
 			<div class="event-card-text">
 				<h3>{event.eventTitle}</h3>
-				<span>{moment(event.date).format('LL')}</span>
-				<span>{event.time}</span>
-				<span>{event.description}</span>
+				<span>Date: {moment(event.date).format('LL')}</span>
+				<span>Time: {event.time}</span>
+				<span>Description: {event.description}</span>
 			</div>
 		</div>
 	);
