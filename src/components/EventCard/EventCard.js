@@ -7,7 +7,7 @@ function EventCard({ event }) {
 		<div class="event-card-container">
 			<div class="image-container">
 				<img
-					src="https://hips.hearstapps.com/countryliving.cdnds.net/17/47/1511194376-cavachon-puppy-christmas.jpg"
+					src= {event.eventImage}
 					alt=""
 					className="event-image"
 				/>
