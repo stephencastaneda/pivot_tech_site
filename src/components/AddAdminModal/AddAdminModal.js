@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import firebase from 'firebase/app';
 import {
 	Button,
@@ -13,6 +13,7 @@ import {
 } from 'reactstrap';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
+import requests from '../../helpers/data/pivotRequests';
 
 import './AddAdminModal.scss';
 
@@ -21,16 +22,15 @@ const defaultAdminUsesr = {
 	firstName: '',
 	lastName: '',
 	email: '',
-	password: '',
 };
 
-function AddAdminModal({ modal, toggle }) {
+function AddAdminModal({ modal, toggle, user }) {
 	const [adminUser, setAdminUser] = useState(defaultAdminUsesr);
 	const [passwordVisible, setPasswordVisible] = useState(false);
-	const [email, setEmail] = useState(false);
-	const [password, setPassword] = useState(false);
-	const [firstName, setFirstName] = useState(false);
-	const [lastName, setLastName] = useState(false);
+	const [firstName, setFirstName] = useState('');
+	const [lastName, setLastName] = useState('');
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
 
 	const togglePasswordVisibility = () => {
 		setPasswordVisible(!passwordVisible);
@@ -56,12 +56,21 @@ function AddAdminModal({ modal, toggle }) {
 		firebase
 			.auth()
 			.createUserWithEmailAndPassword(email, password)
-			.then((authUser) => {
+			.then((newUser) => {
 				const myAdminUser = { ...adminUser };
+				const uid = newUser.user.uid;
+
 				myAdminUser.firstName = firstName;
 				myAdminUser.lastName = lastName;
-				setAdminUser(defaultAdminUsesr);
-				toggle(modal);
+				myAdminUser.email = email;
+				myAdminUser.uid = uid;
+				requests.createAdminUser(myAdminUser).then(() => {
+					setAdminUser(defaultAdminUsesr);
+					toggle(modal);
+				});
+			})
+			.catch((err) => {
+				alert(err.message);
 			});
 	};
 
@@ -71,9 +80,7 @@ function AddAdminModal({ modal, toggle }) {
 				<ModalHeader toggle={toggle}>Create New Admin User</ModalHeader>
 				<ModalBody>
 					<Form>
-						{/* Keeping this out until I can get the names to properly save
-            and display. */}
-						{/* <FormGroup>
+						<FormGroup>
 							<Label for="firstName">First Name</Label>
 							<Input
 								type="text"
@@ -95,7 +102,7 @@ function AddAdminModal({ modal, toggle }) {
 								onChange={(e) => setLastName(e.target.value)}
 								value={lastName}
 							/>
-						</FormGroup> */}
+						</FormGroup>
 
 						<FormGroup>
 							<Label for="email">Email</Label>

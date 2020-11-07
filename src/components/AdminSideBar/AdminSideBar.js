@@ -61,7 +61,6 @@ function AdminSideBar({
 
 	const setActiveTab = (e) => {
 		let id = e.target.getAttribute('id');
-		console.log(id);
 
 		if (id === 'applicants') {
 			resetTabs();
@@ -92,41 +91,41 @@ function AdminSideBar({
 
 	return (
 		<div className="sidebar-container">
-			<div className="tab-container">
+			<div className="tab-container" id="applicants">
 				<div
 					className={applicantsActive ? 'active-sidebar-tab' : 'sidebar-tab'}
 					id="applicants"
 					onClick={setActiveTab}
 				>
-					<h2>Applicants</h2>
+					<h2 id="applicants">Applicants</h2>
 				</div>
 				<div
 					className={coursesActive ? 'active-sidebar-tab' : 'sidebar-tab'}
 					id="courses"
 					onClick={setActiveTab}
 				>
-					<h2>Courses</h2>
+					<h2 id="courses">Courses</h2>
 				</div>
 				<div
 					className={eventsActive ? 'active-sidebar-tab' : 'sidebar-tab'}
 					id="events"
 					onClick={setActiveTab}
 				>
-					<h2>Events</h2>
+					<h2 id="events">Events</h2>
 				</div>
 				<div
 					className={partnersActive ? 'active-sidebar-tab' : 'sidebar-tab'}
 					id="partners"
 					onClick={setActiveTab}
 				>
-					<h2>Partners</h2>
+					<h2 id="partners">Partners</h2>
 				</div>
 				<div
 					className={scholarshipsActive ? 'active-sidebar-tab' : 'sidebar-tab'}
 					id="scholarships"
 					onClick={setActiveTab}
 				>
-					<h2>Scholarships</h2>
+					<h2 id="scholarships">Scholarships</h2>
 				</div>
 			</div>
 		</div>
