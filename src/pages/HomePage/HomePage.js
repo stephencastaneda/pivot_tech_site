@@ -7,7 +7,7 @@ import MyFooter from '../../components/MyFooter/MyFooter';
 import CourseCard from '../../components/CourseCard/CourseCard';
 import requests from '../../helpers/data/pivotRequests';
 
-function HomePage(props) {
+function HomePage() {
 	const [events, setEvents] = useState([]);
 	const [courses, setCourses] = useState([]);
 
@@ -40,7 +40,7 @@ function HomePage(props) {
 		<div className="homepage-container">
 			<HomeCarousel />
 			<div className="mb-5" id="info-section-container">
-				<div className="card hero-card-border">
+				<div className="hero-card-border">
 					<div class="icon-and-info">
 						<img
 							className="medium-icon"
@@ -68,11 +68,12 @@ function HomePage(props) {
 						</div>
 					</div>
 				</div>
-				<div className="card hero-card-border">
+
+				<div className="hero-card-border">
 					<div className="icon-and-info">
 						<img
 							className="medium-icon"
-							src={require('../../icons/development.png')}
+							src={require('../../icons/online-learning.png')}
 							alt="bootcamp"
 						/>
 						<div className="info-section">
@@ -94,11 +95,12 @@ function HomePage(props) {
 						</div>
 					</div>
 				</div>
-				<div className="card hero-card-border">
+
+				<div className="hero-card-border">
 					<div className="icon-and-info">
 						<img
 							className="medium-icon"
-							src={require('../../icons/development.png')}
+							src={require('../../icons/certificate.png')}
 							alt="bootcamp"
 						/>
 						<div className="info-section">
@@ -120,13 +122,15 @@ function HomePage(props) {
 					</div>
 				</div>
 			</div>
+
 			<div className="information-container">
 				<div className="video-block">
 					<iframe
+						title="Why Pivot Tech?"
 						src="https://player.vimeo.com/video/476555021?byline=0&portrait=0&title=0"
 						width="680"
 						height="400"
-						frameborder="0"
+						frameBorder="0"
 						allow="autoplay; fullscreen"
 						allowfullscreen
 					></iframe>
@@ -186,6 +190,7 @@ function HomePage(props) {
 					</div>
 				</div>
 			</div>
+
 			<div className="programs-section">
 				<h2 style={{ textAlign: 'center' }}>UPCOMING PROGRAMS</h2>
 				<div class="program-header">
@@ -201,19 +206,23 @@ function HomePage(props) {
 				</div>
 				<div className="program-card-container">{dataAnalyticsCourses}</div>
 			</div>
-			<div className="events-section">
-				<h2 style={{ textAlign: 'center' }}>UPCOMING EVENTS</h2>
-				<div class="events-container">
-					<div className="event-cards-container">
-						{events.map((event) => {
-							return <EventCard event={event} />;
-						})}
+
+			{events.length ? (
+				<div className="events-section">
+					<h2 style={{ textAlign: 'center' }}>UPCOMING EVENTS</h2>
+					<div class="events-container">
+						<div className="event-cards-container">
+							{events.map((event) => {
+								return <EventCard event={event} />;
+							})}
+						</div>
 					</div>
 				</div>
-			</div>
-			<div className="instagram-section">
+			) : null}
+
+			{/* <div className="instagram-section">
 				<h2 style={{ textAlign: 'center' }}>PIVOT TECH SCHOOL'S INSTAGRAM</h2>
-			</div>
+			</div> */}
 			<MyFooter />
 		</div>
 	);
