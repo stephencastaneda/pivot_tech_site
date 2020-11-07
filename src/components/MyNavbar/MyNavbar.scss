@@ -3,5 +3,14 @@
 
 	.nav-link {
 		color: white !important;
+		display: inline;
 	}
+}
+
+.nav-link:hover {
+	border-bottom: 4px solid #fd8918;
+}
+
+.nav-link.active {
+	border-bottom: 4px solid #fd8918;
 }
