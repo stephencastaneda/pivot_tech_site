@@ -122,11 +122,12 @@ function HomePage(props) {
 			</div>
 			</div>
 		</div>
-		<div className="video-container">
+		<div className="information-container">
 			<div className="video-block">
-			<iframe src="https://player.vimeo.com/video/476555021?byline=0&portrait=0&title=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+			<iframe src="https://player.vimeo.com/video/476555021?byline=0&portrait=0&title=0" width="680" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 			</div>
 		</div>
+	
 		<div className="mission-section">
 			<h2>Pivot's Mission</h2>
 			<span style={{ fontWeight: 'bold' }}>

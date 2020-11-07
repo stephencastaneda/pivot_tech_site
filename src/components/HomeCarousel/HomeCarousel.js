@@ -24,11 +24,10 @@ const items = [
 	},
 	{
 		src:
-			"https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
-				caption: 'Completely remote learning utilizing teaching the latest developments in coding',
+			"https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
 
 			// altText: 'Why Pivot Tech',
-		// caption: 'Slide 3',
+		caption: 'Become a Pivot Tech Partner Today!',
 	},
 ];
 
