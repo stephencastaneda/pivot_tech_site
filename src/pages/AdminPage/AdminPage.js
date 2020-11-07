@@ -41,10 +41,12 @@ function AdminPage({ isAuthed, isPending, userObject, toggle }) {
 									setScholarshipsView={setScholarshipsView}
 								/>
 								<div className="main-container">
-									{/* <div class="add-user-container">
-										<span>Hello, {userObject.firstName}!</span>
+									<div class="add-user-container">
+										{userObject && userObject.firstName ? (
+											<span>Hello, {userObject.firstName}!</span>
+										) : null}
 										<Button onClick={toggle}>Create New Admin User</Button>
-									</div> */}
+									</div>
 									{applicantsView ? <ApplicantsTable /> : null}
 									{coursesView ? <CoursesTable /> : null}
 									{eventsView ? <EventsTable /> : null}
