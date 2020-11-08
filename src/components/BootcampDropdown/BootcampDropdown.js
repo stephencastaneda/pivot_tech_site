@@ -34,7 +34,7 @@ const BootcampDropdown = ({ courses, name }) => {
 						</div>
 					) : (
 						<CardBody classname="the-body">
-							<h3>Courses coming soon</h3>
+							<h3 style={{ color: 'white' }}>Courses coming soon</h3>
 						</CardBody>
 					)}
 				</Card>

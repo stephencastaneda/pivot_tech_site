@@ -11,35 +11,32 @@ function MyFooter() {
 			<div class="program-and-involved">
 				<div class="programs">
 					<p class="footer-header">Programs</p>
-					<a href="">
+					<a href="web-development">
 						<p>Web Development</p>
 					</a>
-					<a href="">
+					<a href="data-analytics">
 						<p>Data Analytics</p>
 					</a>
-					<a href="">
+					<a href="cyber-security">
 						<p>Cyber Security</p>
 					</a>
 				</div>
 				<div class="get-involved">
 					<p class="footer-header">Get Involved</p>
-					<a href="">
-						<p>Web Development</p>
+					<a href="pivot-partners">
+						<p>Pivot Partners</p>
 					</a>
-					<a href="">
-						<p>Data Analytics</p>
-					</a>
-					<a href="">
-						<p>Cyber Security</p>
+					<a href="mentor-program">
+						<p>Mentor Program</p>
 					</a>
 				</div>
 			</div>
 			<div class="community">
 				<p class="footer-header">Community</p>
-				<a href="">
+				<a href="pivot-team">
 					<p>Our Team</p>
 				</a>
-				<a href="">
+				<a href="pivot-graduates">
 					<p>Alumni</p>
 				</a>
 			</div>

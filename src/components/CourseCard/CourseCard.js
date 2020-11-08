@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card, CardTitle, CardText } from 'reactstrap';
+import { Button } from 'reactstrap';
 import { Link } from 'react-bootstrap/lib/Navbar';
 import './CourseCard.scss';
 import moment from 'moment';
@@ -25,20 +25,16 @@ function CourseCard({ course }) {
 	const sql = 'https://courses.pivottechschool.com/p/sql-for-data-analysis';
 
 	return (
-		<Card className="program-card" body>
-			<CardTitle>
-				<h4>{name}</h4>
-			</CardTitle>
-			<CardText>
-				<div className="card-text">
-					<span>Type: {type}</span>
-					{type !== 'Individual Course Offering' ? (
-						<span>
-							Date: {startDate} - {endDate}
-						</span>
-					) : null}
-				</div>
-			</CardText>
+		<div className="program-card" body>
+			<h4>{name}</h4>
+			<div className="card-text">
+				<span>{type}</span>
+				{type !== 'Individual Course Offering' ? (
+					<span>
+						{startDate} - {endDate}
+					</span>
+				) : null}
+			</div>
 			<div className="card-button-div">
 				{courseObject[name] !== excel || sql ? (
 					<>
@@ -62,7 +58,7 @@ function CourseCard({ course }) {
 					</Button>
 				)}
 			</div>
-		</Card>
+		</div>
 	);
 }
 

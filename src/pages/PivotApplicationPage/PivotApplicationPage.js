@@ -148,6 +148,7 @@ function PivotApplicationPage() {
 										placeholder="First Name"
 										onChange={firstNameChange}
 										value={applicant.firstName}
+										required={true}
 									/>
 								</FormGroup>
 							</Col>
@@ -161,6 +162,7 @@ function PivotApplicationPage() {
 										placeholder="Last Name"
 										onChange={lastNameChange}
 										value={applicant.lastName}
+										required={true}
 									/>
 								</FormGroup>
 							</Col>
@@ -177,6 +179,7 @@ function PivotApplicationPage() {
 										placeholder="Email"
 										onChange={emailChange}
 										value={applicant.email}
+										required={true}
 									/>
 								</FormGroup>
 							</Col>
@@ -190,6 +193,7 @@ function PivotApplicationPage() {
 										placeholder="Phone Number"
 										onChange={phoneChange}
 										value={applicant.phone}
+										required={true}
 									/>
 								</FormGroup>
 							</Col>
@@ -206,6 +210,7 @@ function PivotApplicationPage() {
 										placeholder="Date of Birth"
 										onChange={birthdayChange}
 										value={applicant.birthday}
+										required={true}
 									/>
 								</FormGroup>
 							</Col>
@@ -307,8 +312,10 @@ function PivotApplicationPage() {
 									id="course"
 									onChange={courseChange}
 									value={applicant.courseId}
+									required={true}
 								>
 									<option selected={false}>Select a Course</option>
+
 									{courses.map((course) => (
 										<>
 											course ? (
@@ -317,7 +324,7 @@ function PivotApplicationPage() {
 												{moment(course.startDate).format('LL')} -{' '}
 												{moment(course.endDate).format('LL')}
 											</option>
-											) : null );
+											) : null;
 										</>
 									))}
 								</Input>
@@ -387,6 +394,7 @@ function PivotApplicationPage() {
 									id="highest-education"
 									onChange={highestEducationChange}
 									value={applicant.highestEducation}
+									required={true}
 								>
 									<option>High School Diploma</option>
 									<option>Bachelor's Degree</option>

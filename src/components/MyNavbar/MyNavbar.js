@@ -17,7 +17,7 @@ import {
 import './MyNavbar.scss';
 import AdminLoginModal from '../AdminLoginModal/AdminLoginModal';
 
-const Example = ({ userObject, isAuthed, logoutClickEvent }) => {
+const Example = ({ isAuthed, logoutClickEvent }) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [adminModal, setAdminModal] = useState(false);
 
@@ -53,14 +53,14 @@ const Example = ({ userObject, isAuthed, logoutClickEvent }) => {
 								More
 							</DropdownToggle>
 							<DropdownMenu right>
-								<DropdownItem tag={Link} href="/assessment">
+								{/* <DropdownItem tag={Link} href="/assessment">
 									Assessment
-								</DropdownItem>
+								</DropdownItem> */}
+								{/* <DropdownItem tag={Link} href="/mentor-program">
+									Mentor Program
+								</DropdownItem> */}
 								<DropdownItem tag={Link} href="/pivot-graduates">
 									Pivot Graduates
-								</DropdownItem>
-								<DropdownItem tag={Link} href="/mentor-program">
-									Mentor Program
 								</DropdownItem>
 								<DropdownItem tag={Link} href="/pivot-partners">
 									Pivot Partners
