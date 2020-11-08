@@ -18,11 +18,7 @@
 			.info-section-button {
 				display: flex;
 				justify-content: center;
-				Button {
-					background-color: #ef8c35;
-					color: #fff;
-					border: none;
-				}
+				max-width: 200px;
 			}
 		}
 
@@ -174,7 +170,6 @@
 		width: 100%;
 
 		.card-button-div {
-			width: 100%;
 			display: flex;
 			justify-content: space-between;
 			Button {
@@ -192,20 +187,7 @@
 			display: flex;
 			justify-content: space-between;
 			flex-wrap: wrap;
-
-			.program-card {
-				max-width: 450px;
-				min-width: 400px;
-				height: 200px;
-				color: #245482;
-				text-align: center;
-				margin: 20px;
-
-				.card-text {
-					display: flex;
-					flex-direction: column;
-				}
-			}
+			margin-bottom: 30px;
 		}
 	}
 
@@ -214,12 +196,14 @@
 		justify-content: center;
 		flex-direction: column;
 		margin-top: 60px;
+		margin-bottom: 60px;
 
 		.events-container {
 			display: flex;
 			justify-content: center;
 			height: 100%;
 			width: auto;
+			margin-top: 50px;
 		}
 
 		.event-cards-container {
@@ -290,10 +274,10 @@
 }
 
 .hero-card-border {
-	box-shadow: 0 10px 20px 0 rgba(57, 58, 61, .15);
+	box-shadow: 0 10px 20px 0 rgba(57, 58, 61, 0.15);
 	padding: 40px;
 	border-top: 5px solid #063767;
 	border-top-left-radius: 4px;
 	border-top-right-radius: 4px;
+	margin-bottom: 30px;
 }
-
