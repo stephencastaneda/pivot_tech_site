@@ -55,60 +55,45 @@ function HomePage() {
 </div>
 			<div className="mb-5" id="info-section-container">
 				<div className="hero-card-border">
+					<div className="top-border">
 					<div class="icon-and-info">
 						<img
 							className="medium-icon"
 							src={require('../../icons/development.png')}
 							alt="bootcamp"
 						/>
+						</div>
 						<div className="info-section">
-							<h4 className="info-section-header">CODING BOOT CAMPS</h4>
-							<p>
-								20 week program designed with the working professional in mind.
+							<h4 className="info-section-header text-center">CODING BOOT CAMPS</h4>
+							<p className="text-center info-description">
+								20 week program designed with the working professional in mind with live virtual classrooms, and mentoring program.
 							</p>
-							<p style={{ margin: 0 }}>Students will receive:</p>
-							<div className="bullet-list">
-								<span>- Pivot Certificate of Completion</span>
-								<span>- Access to Google Classroom</span>
-								<span>- Live virtual classrooms</span>
-								<span>- Weekend virtual labs</span>
-								<span>- Mentoring Program</span>
-								<span>- Direct Placement Assistance</span>
-								<span>- Interaction with other students in class</span>
-							</div>
+						
 							<div className="info-section-button">
-								<Button>Learn More</Button>
+								<Button className="info-btn">Learn More</Button>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
 
 				<div className="hero-card-border">
-					<div className="icon-and-info">
+				<div className="icon-and-info">
 						<img
 							className="medium-icon"
 							src={require('../../icons/online-learning.png')}
 							alt="bootcamp"
 						/>
+				</div>		
 						<div className="info-section">
-							<h4 className="info-section-header">INDIVIDUAL COURSES</h4>
-							<p>
-								Classes can be taken individually or packaged at discounted rate
+							<h4 className="info-section-header text-center">INDIVIDUAL COURSES</h4>
+							<p className="text-center info-description">
+								Self guided courses that can be taken individually or at a discounted group rate. Includes access to all instructional videos.
 							</p>
-							<p style={{ margin: 0 }}>Students will receive:</p>
-							<div className="bullet-list">
-								<span>- Access to Google Classroom</span>
-								<span>- Live virtual classrooms</span>
-								<span>- Weekend virtual labs</span>
-								<span>- Access to instructors who can answer question</span>
-								<span>- Interaction with other students in class</span>
-							</div>
 							<div class="info-section-button">
-								<Button>Learn More</Button>
+								<Button className="info-btn">Learn More</Button>
 							</div>
 						</div>
 					</div>
-				</div>
 
 				<div className="hero-card-border">
 					<div className="icon-and-info">
@@ -117,25 +102,17 @@ function HomePage() {
 							src={require('../../icons/certificate.png')}
 							alt="bootcamp"
 						/>
+						</div>
 						<div className="info-section">
-							<h4 className="info-section-header">WEEKEND CERTIFICATION</h4>
-							<p style={{ textAlign: 'center' }}>**Coming Soon**</p>
-							<p style={{ margin: 0 }}>Students will receive:</p>
-							<div className="bullet-list" id="weekend-cert">
-								<span>
-									- Industry leading training for the most in-demand
-									certifications
-								</span>
-								<span>- Discounts for certification tests</span>
-								<span>- Access to Pivot Mentors</span>
-							</div>
+							<h4 className="info-section-header text-center">WEEKEND CERTIFICATION</h4>
+							<p className="text-center info-description">Industry leading traning for the most in-demand certifications. Weekend instruction that works with your schedule.</p>
+			
 							<div className="info-section-button">
-								<Button>Coming Soon!</Button>
+								<Button className="info-btn">Coming Soon!</Button>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 
 			<div className="information-container">
 				<div className="video-block">
