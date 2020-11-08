@@ -4,6 +4,7 @@ import PivotOperationsTeamCard from '../../components/PivotOpsTeamCard/PivotOpsT
 import PivotDataTeamCard from '../../components/PivotDataTeamCard/PivotDataTeamCard';
 import PivotWebTeamCard from '../../components/PivotWebTeamCard/PivotWebTeamCard';
 import pivotTeamData from '../../helpers/data/pivotRequests';
+import MyFooter from '../../components/MyFooter/MyFooter';
 import './PivotTeamPage.scss';
 
 function PivotTeamPage() {
@@ -46,18 +47,16 @@ function PivotTeamPage() {
 				<h2 className="pivot-team-title pt-4 header">
 					Teamwork makes the dream work
 				</h2>
-				<p className="header-sub">
-					Meet the team that makes it all happen
-				</p>
+				<p className="header-sub">Meet the team that makes it all happen</p>
 			</div>
-				<section className="mt-5 mb-5">
-					<img
-						className="team-collage"
-						src={require('../../images/pivot_collage1.jpg')}
-						alt="Cute cat"
-					/>
-				</section>
-				<div className="pivot-team-cards">
+			<section className="mt-5 mb-5">
+				<img
+					className="team-collage"
+					src={require('../../images/pivot_collage1.jpg')}
+					alt="Cute cat"
+				/>
+			</section>
+			<div className="pivot-team-cards">
 				<h2 className="executive-title title mb-5">
 					<span>Executive Team</span>
 				</h2>
@@ -102,6 +101,7 @@ function PivotTeamPage() {
 						/>
 					))}
 				</div>
+				<MyFooter />
 			</div>
 		</>
 	);
