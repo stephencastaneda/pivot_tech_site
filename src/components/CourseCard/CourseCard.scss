@@ -1,15 +1,90 @@
-.program-card {
-	min-width: 400px !important;
+@media (min-width: 500px) {
+	.program-card {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		align-items: center;
+		text-align: center;
+		justify-content: space-around;
+		width: 100%;
+		background-color: white;
+		border-radius: 0.5rem;
+		color: #245482;
+		margin-bottom: 10px;
+		box-shadow: 2px 3px 8px gray;
+		border-left: 5px solid #063767;
+		padding: 15px;
+	}
+
+	.card-button-div {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center !important;
+		max-height: 100px;
+		align-items: center;
+	}
+
+	.card-text {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		margin-bottom: 15px;
+	}
+
+	.course-button {
+		background-color: #ef8c35 !important;
+		border: none !important;
+		border-radius: 2rem !important;
+		width: 150px;
+		height: 40px;
+		margin: 5px 15px;
+		box-shadow: 5px 3px 10px gray;
+	}
 }
-.card-button-div {
-	display: flex;
-}
-.course-button {
-	background-color: #ef8c35 !important;
-	border: none !important;
-	border-radius: 2rem !important;
-	width: 150px !important;
-	height: 50px !important;
-	margin: 0 15px !important;
-	box-shadow: 5px 3px 10px gray !important;
+
+@media (min-width: 1520px) {
+	.program-card {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-around;
+		width: 100%;
+		background-color: white;
+		min-height: 80px;
+		border-radius: 0.5rem;
+		color: #245482;
+		margin-bottom: 10px;
+		box-shadow: 2px 3px 8px gray;
+		border-left: 5px solid #063767;
+		padding: 15px;
+
+		.card-title {
+			margin: 0;
+
+			h4 {
+				margin: 0;
+			}
+		}
+
+		.card-text {
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			margin: 0;
+		}
+
+		.card-button-div {
+			display: flex;
+			max-height: 80;
+		}
+
+		.course-button {
+			background-color: #ef8c35;
+			border: none;
+			border-radius: 2rem;
+			width: 150px;
+			height: 40px;
+			margin: 5px 15px;
+		}
+	}
 }

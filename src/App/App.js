@@ -67,7 +67,7 @@ function App() {
 			<AddAdminModal modal={modal} toggle={toggle} user={userObject} />
 			<BrowserRouter>
 				<MyNavbar
-					userObject={userObject}
+					className="my-navbar"
 					isAuthed={authed}
 					logoutClickEvent={logoutClickEvent}
 				/>

@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-bootstrap/lib/Navbar';
-import HomeCarousel from '../../components/HomeCarousel/HomeCarousel';
 import { Button } from 'reactstrap';
 import './HomePage.scss';
-import Application from '../PivotApplicationPage/PivotApplicationPage'
 import EventCard from '../../components/EventCard/EventCard';
 import MyFooter from '../../components/MyFooter/MyFooter';
 import CourseCard from '../../components/CourseCard/CourseCard';
@@ -38,62 +36,74 @@ function HomePage() {
 		});
 	}, []);
 
-
 	return (
 		<div className="homepage-container">
 			<div class="hero-image">
-  <div class="hero-text">
-    <h2>Pivot Tech School</h2>
-    <h1>PIVOT to a tech career in 20 weeks!</h1>
-		<Button
-			tag={Link} 
-			href="pivot-application" 
-			className="btn hero-btn" 
-			style={{ 'background-color': 'navy', 'color': 'white' }}
-			>Apply Today</Button>
-  </div>
-</div>
+				<div class="hero-text">
+					<h2>Pivot Tech School</h2>
+					<h1>PIVOT to a tech career in 20 weeks!</h1>
+					<Button
+						tag={Link}
+						href="pivot-application"
+						className="btn hero-btn"
+						style={{ 'background-color': 'navy', color: 'white' }}
+					>
+						Apply Today
+					</Button>
+				</div>
+			</div>
 			<div className="mb-5" id="info-section-container">
 				<div className="hero-card-border">
 					<div className="top-border">
-					<div class="icon-and-info">
-						<img
-							className="medium-icon"
-							src={require('../../icons/development.png')}
-							alt="bootcamp"
-						/>
+						<div class="icon-and-info">
+							<img
+								className="medium-icon"
+								src={require('../../icons/development.png')}
+								alt="bootcamp"
+							/>
 						</div>
 						<div className="info-section">
-							<h4 className="info-section-header text-center">CODING BOOT CAMPS</h4>
+							<h4 className="info-section-header text-center">
+								CODING BOOT CAMPS
+							</h4>
 							<p className="text-center info-description">
-								20 week program designed with the working professional in mind with live virtual classrooms, and mentoring program.
+								20 week program designed with the working professional in mind
+								with live virtual classrooms, and mentoring program.
 							</p>
-						
+
 							<div className="info-section-button">
-								<Button className="info-btn">Learn More</Button>
-								</div>
+								<Button tag={Link} href="programs" className="info-btn">
+									Learn More
+								</Button>
 							</div>
 						</div>
 					</div>
+				</div>
 
 				<div className="hero-card-border">
-				<div className="icon-and-info">
+					<div className="icon-and-info">
 						<img
 							className="medium-icon"
 							src={require('../../icons/online-learning.png')}
 							alt="bootcamp"
 						/>
-				</div>		
-						<div className="info-section">
-							<h4 className="info-section-header text-center">INDIVIDUAL COURSES</h4>
-							<p className="text-center info-description">
-								Self guided courses that can be taken individually or at a discounted group rate. Includes access to all instructional videos.
-							</p>
-							<div class="info-section-button">
-								<Button className="info-btn">Learn More</Button>
-							</div>
+					</div>
+					<div className="info-section">
+						<h4 className="info-section-header text-center">
+							INDIVIDUAL COURSES
+						</h4>
+						<p className="text-center info-description">
+							Self guided courses that can be taken individually or at a
+							discounted group rate. Includes access to all instructional
+							videos.
+						</p>
+						<div class="info-section-button">
+							<Button tag={Link} href="programs" className="info-btn">
+								Learn More
+							</Button>
 						</div>
 					</div>
+				</div>
 
 				<div className="hero-card-border">
 					<div className="icon-and-info">
@@ -102,17 +112,22 @@ function HomePage() {
 							src={require('../../icons/certificate.png')}
 							alt="bootcamp"
 						/>
-						</div>
-						<div className="info-section">
-							<h4 className="info-section-header text-center">WEEKEND CERTIFICATION</h4>
-							<p className="text-center info-description">Industry leading traning for the most in-demand certifications. Weekend instruction that works with your schedule.</p>
-			
-							<div className="info-section-button">
-								<Button className="info-btn">Coming Soon!</Button>
-							</div>
+					</div>
+					<div className="info-section">
+						<h4 className="info-section-header text-center">
+							WEEKEND CERTIFICATION
+						</h4>
+						<p className="text-center info-description">
+							Industry leading traning for the most in-demand certifications.
+							Weekend instruction that works with your schedule.
+						</p>
+
+						<div className="info-section-button">
+							<Button className="info-btn">Coming Soon!</Button>
 						</div>
 					</div>
 				</div>
+			</div>
 
 			<div className="information-container">
 				<div className="video-block">
@@ -153,7 +168,7 @@ function HomePage() {
 							<p className="bold-text">
 								People creating new tech should be representative of the
 								population that’ll be using the new tech! Unfortunately, that’s
-								not the case right now.
+								not the case today.
 							</p>
 							<p className="card-text">
 								The percentage of Black and Latino software developers is not at
@@ -167,14 +182,14 @@ function HomePage() {
 							<p className="bold-text">
 								Pivot Tech is here to provide a foundational and working
 								knowledge of Software Development and Data Analytics to the
-								underrepresented minorities in the tech field.
+								under-represented minorities in the tech field.
 							</p>
 							<p className="card-text">
 								Our goal is to help as many people from this group as possible
 								land their first tech jobs, which will help contribute to
 								closing the wealth gap between races in America and
-								simultaneously making companies more diverse and proportionate
-								to the population they serve.
+								simultaneously make companies more diverse and proportionate to
+								the population they serve.
 							</p>
 						</div>
 						<div className="third-card-dots"></div>
@@ -186,14 +201,14 @@ function HomePage() {
 				<h2 style={{ textAlign: 'center' }}>UPCOMING PROGRAMS</h2>
 				<div class="program-header">
 					<h4>Web Development</h4>
-					<hr style={{ borderColor: 'white' }}></hr>
+					<hr style={{ borderColor: '#063767' }}></hr>
 				</div>
 
 				<div className="program-card-container">{webDevCourses}</div>
 
 				<div class="program-header">
 					<h4>Data Analytics</h4>
-					<hr style={{ borderColor: 'white' }}></hr>
+					<hr style={{ borderColor: '#063767' }}></hr>
 				</div>
 				<div className="program-card-container">{dataAnalyticsCourses}</div>
 			</div>
