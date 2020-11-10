@@ -1,35 +1,78 @@
-.application-page-container {
-	margin-left: 60px;
-	margin-right: 60px;
-	color: #063767;
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-
-	.application-card {
-		border-radius: 1rem;
-		border: none;
-		background-color: #ef8c35 !important;
-		height: 90px;
-		padding: 18px;
-		margin-bottom: 60px;
-	}
-
-	.application-header {
-		text-decoration: underline;
-	}
-
-	.submit-button-div {
+@media (max-width: 575.98px) {
+	.application-page-container {
+		color: #063767;
 		display: flex;
 		justify-content: center;
-		margin-top: 150px;
+		flex-direction: column;
 
-		Button {
-			width: 200px;
-			border-radius: 1rem;
-			background-color: #ef8c35;
+		.form-container {
+			padding: 0 20px;
+		}
+
+		.application-card {
 			border: none;
-			margin-bottom: 100px;
+			border-radius: 0 !important;
+			margin-top: 0 !important;
+			background-color: #ef8c35 !important;
+			height: auto;
+			padding: 18px;
+			margin-bottom: 60px;
+		}
+
+		.application-header {
+			text-decoration: underline;
+		}
+
+		.submit-button-div {
+			display: flex;
+			justify-content: center;
+			margin-top: 150px;
+
+			Button {
+				width: 200px;
+				border-radius: 1rem;
+				background-color: #ef8c35;
+				border: none;
+				margin-bottom: 100px;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.application-page-container {
+		margin-left: 60px;
+		margin-right: 60px;
+		color: #063767;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+
+		.application-card {
+			border-radius: 1rem;
+			border: none;
+			background-color: #ef8c35 !important;
+			height: 90px;
+			padding: 18px;
+			margin-bottom: 60px;
+		}
+
+		.application-header {
+			text-decoration: underline;
+		}
+
+		.submit-button-div {
+			display: flex;
+			justify-content: center;
+			margin-top: 150px;
+
+			Button {
+				width: 200px;
+				border-radius: 1rem;
+				background-color: #ef8c35;
+				border: none;
+				margin-bottom: 100px;
+			}
 		}
 	}
 }

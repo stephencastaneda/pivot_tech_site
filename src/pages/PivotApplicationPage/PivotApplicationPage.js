@@ -131,7 +131,7 @@ function PivotApplicationPage() {
 						Pivot Tech Application
 					</h1>
 				</div>
-				<Form>
+				<Form className="form-container">
 					<div className="contact-section">
 						<div className="application-header">
 							<h3>Contact</h3>

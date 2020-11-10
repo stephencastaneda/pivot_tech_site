@@ -1,50 +1,119 @@
-.scholarship-page-container {
-	margin-left: 60px;
-	margin-right: 60px;
-	color: #063767;
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-
-	.scholarship-card {
-		border-radius: 1rem;
-		border: none;
-		background-color: #ef8c35 !important;
-		height: 90px;
-		padding: 18px;
-		margin-bottom: 20px;
-	}
-
-	.bold-text {
-		text-decoration: none;
-	}
-
-	h3 {
-		margin-top: 30px;
-	}
-
-	.info-bullet {
-		margin-bottom: 10px;
-		margin-left: 30px;
-	}
-
-	.application-header {
+@media (max-width: 575.98px) {
+	.scholarship-page-container {
+		color: #4d6a87;
 		display: flex;
 		justify-content: center;
-		margin-bottom: 60px;
-	}
+		flex-direction: column;
 
-	.submit-button-div {
-		display: flex;
-		justify-content: center;
-		margin-top: 150px;
-
-		Button {
-			width: 200px;
-			border-radius: 1rem;
-			background-color: #ef8c35;
+		.scholarship-card {
+			border-radius: 0;
 			border: none;
-			margin-bottom: 100px;
+			background-color: #ef8c35 !important;
+			height: auto;
+			padding: 18px;
+			margin-bottom: 20px;
+			margin-top: 0 !important;
+		}
+
+		.bold-text {
+			text-decoration: none;
+		}
+
+		hr {
+			border: 1px solid #4d6a87;
+		}
+
+		.info-bullet {
+			margin-bottom: 10px;
+		}
+
+		.application-header {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 30px;
+		}
+
+		.form-container {
+			padding: 0 20px;
+		}
+
+		.submit-button-div {
+			display: flex;
+			justify-content: center;
+			margin-top: 150px;
+
+			Button {
+				width: 200px;
+				border-radius: 1rem;
+				background-color: #ef8c35;
+				border: none;
+				margin-bottom: 100px;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.scholarship-page-container {
+		margin-left: 60px;
+		margin-right: 60px;
+		color: #4d6a87;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+
+		.scholarship-card {
+			border-radius: 1rem;
+			border: none;
+			background-color: #ef8c35 !important;
+			height: 90px;
+			padding: 18px;
+			margin-bottom: 20px;
+		}
+
+		.programs-text-card {
+			padding: 10px 50px;
+		}
+
+		.bold-text {
+			text-decoration: none;
+		}
+
+		.text-block {
+			max-width: 1200px;
+		}
+
+		h3 {
+			margin-top: 30px;
+		}
+
+		hr {
+			border: 1px solid #4d6a87;
+		}
+
+		.info-bullet {
+			margin-bottom: 10px;
+			margin-left: 30px;
+		}
+
+		.application-header {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 60px;
+		}
+
+		.submit-button-div {
+			display: flex;
+			justify-content: center;
+			margin-top: 150px;
+
+			Button {
+				width: 200px;
+				border-radius: 1rem;
+				background-color: #ef8c35;
+				border: none;
+				margin-bottom: 100px;
+			}
 		}
 	}
 }
