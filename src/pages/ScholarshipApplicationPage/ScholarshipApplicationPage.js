@@ -69,8 +69,10 @@ function ScholarshipApplicationPage() {
 						"The Future of Tech" Scholarship Application
 					</h1>
 				</div>
-				<div className="card programs-text-card mt-5 mb-5">
+				<div>
 					<div className="card-body programs-text-card">
+						<h3 className="bold-text">What is it?</h3>
+						<hr></hr>
 						<p className="text-block">
 							The Future of Tech scholarship is a $2,500 credit toward the
 							recipient’s choice of Pivot Tech School’s Web Development or Data
@@ -79,7 +81,8 @@ function ScholarshipApplicationPage() {
 							walks of life, as we believe diversity is at the core of
 							creativity and innovation. ​
 						</p>
-						<h3 className="bold-text">Scholarship Details:</h3>
+						<h3 className="bold-text">Scholarship Details</h3>
+						<hr></hr>
 						<p className="info-bullet">
 							• Scholarship amount: $2,500 for one 20-week bootcamp in the
 							recipient’s choice of Web Development or Data Analytics.
@@ -104,7 +107,8 @@ function ScholarshipApplicationPage() {
 							• Scholarship applicants will be notified via email no later than
 							October 12, 2020.
 						</p>
-						<h3 className="bold-text">Eligibility:</h3>
+						<h3 className="bold-text">Eligibility</h3>
+						<hr></hr>
 						<p>
 							Complete the Partner with Pivot form for a more personalized
 							partnership.{' '}
@@ -118,7 +122,7 @@ function ScholarshipApplicationPage() {
 				<div className="application-header">
 					<h3>Apply Now!</h3>
 				</div>
-				<Form>
+				<Form className="form-container">
 					<Row form>
 						<Col md={6}>
 							<FormGroup>

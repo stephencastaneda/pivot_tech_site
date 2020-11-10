@@ -1,105 +1,218 @@
-.partner-page-container {
-	margin-left: 60px;
-	margin-right: 60px;
-	color: #063767;
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-
-	.partner-card {
-		border-radius: 1rem;
-		border: none;
-		background-color: #ef8c35 !important;
-		height: 90px;
-		padding: 18px;
-		margin-bottom: 20px;
-	}
-
-	.quote-div {
+@media (max-width: 575.98px) {
+	.partner-page-container {
+		color: #063767;
 		display: flex;
-		justify-content: space-around;
-		flex-wrap: wrap;
-		align-items: flex-start;
+		justify-content: center;
+		flex-direction: column;
 
-		.mundy-pic {
-			border-radius: 2rem;
-			height: 400px;
-			width: 400px;
-			margin: 10px;
-			object-fit: contain;
+		.partner-card {
+			border-radius: 0;
+			border: none;
+			background-color: #ef8c35 !important;
+			height: auto;
+			padding: 18px;
+			margin-bottom: 20px;
+			margin-top: 0 !important;
 		}
-		.text-block {
-			font-size: 40px;
-			font-weight: bold;
-			max-width: 800px;
-			border-top: 3px solid #fff;
-			border-bottom: 3px solid #fff;
-			padding: 10px 0;
 
-			.quote-person {
-				font-size: 16px;
-				display: flex;
-				flex-direction: column;
+		.quote-div {
+			display: flex;
+			justify-content: space-around;
+			flex-wrap: wrap;
+			align-items: flex-start;
+
+			.mundy-pic {
+				border-radius: 2rem;
+				height: 400px;
+				width: 400px;
+				margin: 10px;
+				object-fit: contain;
+			}
+			.text-block {
+				font-size: 32px;
+				font-weight: bold;
+				max-width: 800px;
+				border-top: 3px solid #063767;
+				border-bottom: 3px solid #063767;
+				padding: 10px 0;
+
+				.quote-person {
+					font-size: 16px;
+					display: flex;
+					flex-direction: column;
+				}
+			}
+		}
+
+		.form-container {
+			padding: 0 20px;
+		}
+
+		.bold-sentence {
+			font-weight: bold;
+		}
+
+		.programs-text-card {
+			padding: 20px;
+			margin-top: 0 !important;
+		}
+
+		.bold-text {
+			text-decoration: none;
+		}
+
+		h3 {
+			margin-top: 30px;
+		}
+
+		.sponsor-student-div {
+			display: flex;
+			align-items: center;
+			margin-top: 30px;
+			margin-bottom: 30px;
+			Button {
+				background-color: #ef8c35;
+				border: none;
+				margin-right: 20px;
+			}
+		}
+
+		.info-bullet {
+			margin-bottom: 10px;
+		}
+
+		.application-header {
+			margin-bottom: 0px;
+		}
+
+		#why-partner {
+			margin: 0;
+		}
+
+		#all-that-apply {
+			margin-top: 20px;
+		}
+
+		.submit-button-div {
+			display: flex;
+			justify-content: center;
+			margin-top: 150px;
+
+			Button {
+				width: 200px;
+				border-radius: 1rem;
+				background-color: #ef8c35;
+				border: none;
+				margin-bottom: 100px;
 			}
 		}
 	}
+}
 
-	.bold-sentence {
-		font-weight: bold;
-	}
-
-	.programs-text-card {
-		padding: 20px;
-	}
-
-	.bold-text {
-		text-decoration: none;
-	}
-
-	h3 {
-		margin-top: 30px;
-	}
-
-	.sponsor-student-div {
-		display: flex;
-		align-items: center;
-		margin-top: 30px;
-		margin-bottom: 30px;
-		Button {
-			background-color: #ef8c35;
-			border: none;
-			margin-right: 20px;
-		}
-	}
-
-	.info-bullet {
-		margin-bottom: 10px;
-		margin-left: 30px;
-	}
-
-	.application-header {
-		margin-bottom: 0px;
-	}
-
-	#why-partner {
-		margin: 0;
-	}
-
-	#all-that-apply {
-		margin-top: 20px;
-	}
-
-	.submit-button-div {
+@media (min-width: 992px) {
+	.partner-page-container {
+		margin-left: 60px;
+		margin-right: 60px;
+		color: #063767;
 		display: flex;
 		justify-content: center;
-		margin-top: 150px;
+		flex-direction: column;
 
-		Button {
-			width: 200px;
+		.partner-card {
 			border-radius: 1rem;
-			background-color: #ef8c35;
 			border: none;
-			margin-bottom: 100px;
+			background-color: #ef8c35 !important;
+			height: 90px;
+			padding: 18px;
+			margin-bottom: 20px;
+		}
+
+		.quote-div {
+			display: flex;
+			justify-content: space-around;
+			flex-wrap: wrap;
+			align-items: flex-start;
+
+			.mundy-pic {
+				border-radius: 2rem;
+				height: 400px;
+				width: 400px;
+				margin: 10px;
+				object-fit: contain;
+			}
+			.text-block {
+				font-size: 40px;
+				font-weight: bold;
+				max-width: 700px;
+				border-top: 3px solid #fff;
+				border-bottom: 3px solid #fff;
+				padding: 10px 0;
+
+				.quote-person {
+					font-size: 16px;
+					display: flex;
+					flex-direction: column;
+				}
+			}
+		}
+
+		.bold-sentence {
+			font-weight: bold;
+		}
+
+		.programs-text-card {
+			padding: 20px;
+		}
+
+		.bold-text {
+			text-decoration: none;
+		}
+
+		h3 {
+			margin-top: 30px;
+		}
+
+		.sponsor-student-div {
+			display: flex;
+			align-items: center;
+			margin-top: 30px;
+			margin-bottom: 30px;
+			Button {
+				background-color: #ef8c35;
+				border: none;
+				margin-right: 20px;
+			}
+		}
+
+		.info-bullet {
+			margin-bottom: 10px;
+			margin-left: 30px;
+		}
+
+		.application-header {
+			margin-bottom: 0px;
+		}
+
+		#why-partner {
+			margin: 0;
+		}
+
+		#all-that-apply {
+			margin-top: 20px;
+		}
+
+		.submit-button-div {
+			display: flex;
+			justify-content: center;
+			margin-top: 150px;
+
+			Button {
+				width: 200px;
+				border-radius: 1rem;
+				background-color: #ef8c35;
+				border: none;
+				margin-bottom: 100px;
+			}
 		}
 	}
 }

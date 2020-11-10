@@ -129,14 +129,15 @@ function HomePage() {
 				</div>
 			</div>
 
-			<div className="information-container">
-				<div className="video-block">
+			<div className="video-container">
+				<div className="video-div">
 					<iframe
 						title="Why Pivot Tech?"
 						src="https://player.vimeo.com/video/476555021?byline=0&portrait=0&title=0"
 						width="680"
 						height="400"
 						frameBorder="0"
+						className="responsive-iframe"
 						allow="autoplay; fullscreen"
 						allowfullscreen
 					></iframe>

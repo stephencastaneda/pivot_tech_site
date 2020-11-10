@@ -2,28 +2,26 @@ import React from 'react';
 import './StayInformedForm.scss';
 import { Button, Form, FormGroup, Input } from 'reactstrap';
 
-const StayInformedForm = (props) => {
+const StayInformedForm = () => {
 	return (
 		<Form>
 			<h4 className="footer-header">Stay Informed with Pivot</h4>
-			<div className="names-container">
-				<FormGroup className="name">
-					<Input
-						type="text"
-						name="First Name"
-						id="firstName"
-						placeholder="First Name"
-					/>
-				</FormGroup>
-				<FormGroup className="name">
-					<Input
-						type="text"
-						name="Last Name"
-						id="lastName"
-						placeholder="Last Name"
-					/>
-				</FormGroup>
-			</div>
+			<FormGroup className="name">
+				<Input
+					type="text"
+					name="First Name"
+					id="firstName"
+					placeholder="First Name"
+				/>
+			</FormGroup>
+			<FormGroup className="name">
+				<Input
+					type="text"
+					name="Last Name"
+					id="lastName"
+					placeholder="Last Name"
+				/>
+			</FormGroup>
 			<FormGroup>
 				<Input type="text" name="phone" id="phone" placeholder="Phone" />
 			</FormGroup>
