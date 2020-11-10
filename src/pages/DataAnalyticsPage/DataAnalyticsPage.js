@@ -16,6 +16,8 @@ function DataPage() {
 
 				<div class="card data-page-text-card mt-5">
 					<div class="card-body data-text-card">
+						<h3>Details</h3>
+						<hr></hr>
 						<p>
 							The technology boom of the last 20 years has generated more
 							information than organizations know what to do with, and they need
@@ -37,10 +39,8 @@ function DataPage() {
 						<p>Scholarships are offered if financial assitance is needed</p>
 					</div>
 				</div>
-				<div class="card data-course-title-card mt-5">
-					<div class="card-body course-text">
-						<h2 className="text-center text-white">20 Week Course Breakdown</h2>
-					</div>
+				<div class="course-breakdown-header">
+					<h2 className="text-center">20 Week Course Breakdown</h2>
 				</div>
 
 				<div className="courses-flex d-flex justify-content-around flex-wrap mt-5">
