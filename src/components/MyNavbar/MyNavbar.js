@@ -48,6 +48,9 @@ const Example = ({ isAuthed, logoutClickEvent }) => {
 						<NavItem>
 							<NavLink href="/pivot-team">Pivot Team</NavLink>
 						</NavItem>
+						<NavItem>
+							<NavLink href="/make-the-pivot">Make The Pivot</NavLink>
+						</NavItem>
 						<UncontrolledDropdown nav inNavbar>
 							<DropdownToggle nav caret>
 								More
