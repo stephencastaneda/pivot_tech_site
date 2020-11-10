@@ -26,22 +26,13 @@ function MakeThePivotPage() {
 	<div className="pull-left author-photo photo-b animated bounceInLeft">
 	</div>
 	<div className="pull-right quote-content">
-		<p className="quote-text animated rotateInDownRight">Don't YouThink ThatIf I WereWrong,I'd Know It?</p>
-		<div className="quote-author animated lightSpeedIn">Aimee Sadler</div>
+		<p className="quote-text animated rotateInDownRight">I decided after covid hit the economy, that I should get certified in something and learn a new skill. I have started taking web development classes through Udemy, but if I am chosen for the scholarship, I would love to learn from minority eduacators about web development.</p>
+		<div className="quote-author animated lightSpeedIn">Cierra Fleming</div>
 	</div>
 </div>
 </div>
 
-<div className="author-quote-wrap">
-<div className="author-quote">
-	<div className="pull-left author-photo photo-c animated bounceInLeft">
-	</div>
-	<div className="pull-right quote-content">
-		<p className="quote-text animated rotateInDownRight">Don't YouThink ThatIf I WereWrong,I'd Know It?</p>
-		<div className="quote-author animated lightSpeedIn">Sheldon Cooper</div>
-	</div>
-</div>
-</div>
+
 </div>
 	</>
 	);
