@@ -1,4 +1,4 @@
-@media (min-width: 500px) {
+@media (max-width: 575.98px) {
 	.program-card {
 		display: flex;
 		flex-direction: column;
@@ -42,7 +42,7 @@
 	}
 }
 
-@media (min-width: 1520px) {
+@media (min-width: 992px) {
 	.program-card {
 		display: flex;
 		flex-direction: row;

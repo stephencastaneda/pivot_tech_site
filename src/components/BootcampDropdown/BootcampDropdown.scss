@@ -1,30 +1,99 @@
-.selector {
-	background-color: #ef8c35;
-	border-radius: 0.5rem !important;
-	margin: 0 !important;
-	cursor: pointer;
-}
+@media (max-width: 575.98px) {
+	.selector {
+		background-color: #ef8c35;
+		border-radius: 0 !important;
+		border-top: 1px solid;
+		margin: 0 !important;
+		cursor: pointer;
 
-.the-body {
-	display: flex;
-	flex-direction: column;
-	padding: 20px !important;
-	height: 400px;
-	width: 100%;
-	overflow: auto;
-}
+		.name-and-arrow {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
 
-.course-card-container {
-	display: flex;
-	justify-content: center !important;
+		.arrow-down {
+			transform: rotate(90deg);
+			color: white;
+		}
 
-	.body-container {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
+		.arrow-up {
+			transform: rotate(-90deg);
+			color: white;
+		}
 	}
 
-	.card-body {
-		background-color: #edc39b;
+	.the-body {
+		display: flex;
+		flex-direction: column;
+		padding: 20px !important;
+		height: 400px;
+		width: 100%;
+		overflow: auto;
+	}
+
+	.course-card-container {
+		display: flex;
+		justify-content: center !important;
+
+		.body-container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		.card-body {
+			background-color: #edc39b;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.selector {
+		background-color: #ef8c35;
+		border-radius: 0.5rem !important;
+		border: 1px solid;
+		margin: 0 !important;
+		cursor: pointer;
+	}
+
+	.name-and-arrow {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.arrow-down {
+		transform: rotate(90deg);
+		color: white;
+	}
+
+	.arrow-up {
+		transform: rotate(-90deg);
+		color: white;
+	}
+
+	.the-body {
+		display: flex;
+		flex-direction: column;
+		padding: 20px !important;
+		height: 400px;
+		width: 100%;
+		overflow: auto;
+	}
+
+	.course-card-container {
+		display: flex;
+		justify-content: center !important;
+
+		.body-container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		.card-body {
+			background-color: #edc39b;
+		}
 	}
 }
