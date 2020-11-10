@@ -15,7 +15,7 @@ import ScholarshipApplicationPage from '../pages/ScholarshipApplicationPage/Scho
 import PivotApplicationPage from '../pages/PivotApplicationPage/PivotApplicationPage';
 import WebDevelopmentPage from '../pages/WebDevelopmentPage/WebDevelopmentPage';
 import DataAnalyticsPage from '../pages/DataAnalyticsPage/DataAnalyticsPage';
-import CyberSecurityPage from '../pages/CyberSecurityPage/CyberSecurityPage';
+import makeThePivotPage from '../pages/MakeThePivotPage/MakeThePivotPage';
 import AdminPage from '../pages/AdminPage/AdminPage';
 import pivotRequests from '../helpers/data/pivotRequests';
 import connection from '../helpers/data/connection';
@@ -82,7 +82,7 @@ function App() {
 					<Route path="/pivot-graduates" component={PivotGraduatesPage} />
 					<Route path="/web-development" component={WebDevelopmentPage} />
 					<Route path="/data-analytics" component={DataAnalyticsPage} />
-					<Route path="/cyber-security" component={CyberSecurityPage} />
+					<Route path="/make-the-pivot" component={makeThePivotPage} />
 					<Route
 						path="/admin"
 						component={() => (
