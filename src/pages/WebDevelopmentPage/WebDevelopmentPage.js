@@ -16,6 +16,8 @@ function WebDevelopmentPage() {
 
 				<div class="card web-development-text-card mt-5">
 					<div class="card-body programs-text-card">
+						<h3>Details</h3>
+						<hr></hr>
 						<p>
 							Employment of web developers is projected to grow 13 percent from
 							2018 to 2028, much faster than the average for all occupations. In
@@ -28,10 +30,9 @@ function WebDevelopmentPage() {
 						<p>Scholarships are offered if financial assitance is needed</p>
 					</div>
 				</div>
-				<div class="card web-development-course-card mt-5">
-					<div class="card-body course-text">
-						<h2 className="text-center text-white">20 Week Course Breakdown</h2>
-					</div>
+
+				<div class="course-breakdown-header">
+					<h2 className="text-center">20 Week Course Breakdown</h2>
 				</div>
 
 				<div className="courses-flex d-flex justify-content-around flex-wrap mt-5">

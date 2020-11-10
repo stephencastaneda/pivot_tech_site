@@ -28,7 +28,7 @@ const Example = ({ isAuthed, logoutClickEvent }) => {
 	return (
 		<div>
 			<AdminLoginModal toggle={modalToggle} modal={adminModal} />
-			<Navbar color="blue" light expand="md">
+			<Navbar color="blue" dark expand="md">
 				<NavbarBrand href="/">
 					<img
 						src="https://static.wixstatic.com/media/8a0dcf_3a417a1d21f2488b837b15729c409d96~mv2.png/v1/fill/w_98,h_79,al_c,q_85,usm_0.66_1.00_0.01/PivotTech%20Portrait.webp"

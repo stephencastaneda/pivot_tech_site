@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Collapse, CardBody, Card } from 'reactstrap';
 import './BootcampDropdown.scss';
 import CourseCard from '../CourseCard/CourseCard';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 const BootcampDropdown = ({ courses, name }) => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -10,6 +11,8 @@ const BootcampDropdown = ({ courses, name }) => {
 	const courseList = courses.map((course) => (
 		<CourseCard key={course.id} course={course} />
 	));
+
+	const arrow = isOpen ? 'arrow-up' : 'arrow-down';
 
 	return (
 		<>
@@ -24,7 +27,10 @@ const BootcampDropdown = ({ courses, name }) => {
 					padding: '15px',
 				}}
 			>
-				<h3>{name}</h3>
+				<div className="name-and-arrow">
+					<h3>{name}</h3>
+					<ArrowForwardIosIcon className={arrow} />
+				</div>
 			</Card>
 			<Collapse isOpen={isOpen}>
 				<Card className="course-card-container">
