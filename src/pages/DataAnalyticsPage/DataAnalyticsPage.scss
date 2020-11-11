@@ -1,4 +1,4 @@
-@media (max-width: 575.98px) {
+@media (max-width: 991px) {
 	.data-page-container {
 		margin-bottom: 50px;
 
@@ -49,6 +49,9 @@
 		border: none !important;
 		background-color: #fff !important;
 		color: #4d6a87;
+		hr {
+			border: 1px solid #4d6a87 !important;
+		}
 	}
 
 	.data-page-card {
@@ -107,9 +110,11 @@
 	}
 
 	.data-page-container {
+		align-self: center;
+		max-width: 1440px;
+		margin-bottom: 50px;
 		margin-left: 60px;
 		margin-right: 60px;
-		margin-bottom: 50px;
 	}
 
 	.data-page-card {

@@ -8,7 +8,6 @@ import MyFooter from '../../components/MyFooter/MyFooter';
 import './PivotTeamPage.scss';
 
 function PivotTeamPage() {
-	const [pivotTeam, setPivotTeam] = useState([]);
 	const [executiveTeamMember, setExecutiveTeamMember] = useState([]);
 	const [operationsTeamMember, setOperationsTeamMember] = useState([]);
 	const [dataTeamMembers, setDataTeamMember] = useState([]);
@@ -101,8 +100,8 @@ function PivotTeamPage() {
 						/>
 					))}
 				</div>
-				<MyFooter />
 			</div>
+			<MyFooter />
 		</>
 	);
 }

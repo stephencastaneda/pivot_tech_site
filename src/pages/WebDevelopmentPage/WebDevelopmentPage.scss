@@ -1,4 +1,4 @@
-@media (max-width: 575.98px) {
+@media (max-width: 991px) {
 	.web-page-container {
 		margin-bottom: 50px;
 
@@ -45,6 +45,9 @@
 		border: none !important;
 		background-color: #fff !important;
 		color: #4d6a87;
+		hr {
+			border: 1px solid #4d6a87 !important;
+		}
 	}
 
 	.web-text-card {
@@ -110,9 +113,11 @@
 	}
 
 	.web-page-container {
+		max-width: 1440px;
+		align-self: center;
+		margin-bottom: 50px;
 		margin-left: 60px;
 		margin-right: 60px;
-		margin-bottom: 50px;
 	}
 
 	.web-text-card {

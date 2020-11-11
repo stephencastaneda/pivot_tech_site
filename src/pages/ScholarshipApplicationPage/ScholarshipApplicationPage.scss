@@ -1,9 +1,10 @@
-@media (max-width: 575.98px) {
+@media (max-width: 991px) {
 	.scholarship-page-container {
 		color: #4d6a87;
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
+		align-self: center;
 
 		.scholarship-card {
 			border-radius: 0;
@@ -61,6 +62,8 @@
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
+		max-width: 1440px;
+		align-self: center;
 
 		.scholarship-card {
 			border-radius: 1rem;

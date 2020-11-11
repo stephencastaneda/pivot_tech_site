@@ -1,20 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { AgGridColumn, AgGridReact } from 'ag-grid-react';
-import { RowGroupingModule } from '@ag-grid-enterprise/row-grouping';
 import { RangeSelectionModule } from '@ag-grid-enterprise/range-selection';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import requests from '../../helpers/data/pivotRequests';
-import moment from 'moment';
-import './PartnersTable.scss';
+import './SubscribersTable.scss';
 
-function PartnerTable() {
+function SubscribersTable() {
 	const [gridApi, setGridApi] = useState(null);
-	const [partners, setPartners] = useState([]);
-	const [selectedPartners, setSelectedPartners] = useState([]);
+	const [subscribers, setSubscribers] = useState([]);
+	const [selectedSubscribers, setSelectedSubscribers] = useState([]);
 
 	useEffect(() => {
-		getPartners();
+		getSubscribers();
 	}, []);
 
 	const onGridReady = (params) => {
@@ -23,28 +21,25 @@ function PartnerTable() {
 
 	const onSelectionChanged = () => {
 		const selectedRows = gridApi.getSelectedRows();
-		setSelectedPartners(selectedRows);
+		setSelectedSubscribers(selectedRows);
 	};
 
-	const getPartners = () => {
-		requests.getPartners().then((results) => {
-			results.forEach((partner) => {
-				partner.date = moment(partner.startDate).format('LL');
-			});
-			setPartners(results);
+	const getSubscribers = () => {
+		requests.getSubscribers().then((results) => {
+			setSubscribers(results);
 		});
 	};
 
 	const deleteSelected = () => {
-		selectedPartners.forEach((partner) => {
-			requests.deletePartner(partner.id);
+		selectedSubscribers.forEach((subscriber) => {
+			requests.deleteSubscriber(subscriber.id);
 		});
 	};
 
 	return (
 		<div>
 			<div className="card-body admin-card">
-				<h1 className="admin-title text-center text-white">Partners</h1>
+				<h1 className="admin-title text-center text-white">Scholarships</h1>
 			</div>
 			<div className="actions-container">
 				<div onClick={deleteSelected} className="icon-wrapper">
@@ -53,7 +48,7 @@ function PartnerTable() {
 						src={require('../../icons/delete.png')}
 						alt="delete"
 					/>
-					<span>Remove Partner</span>
+					<span>Delete Subscriber</span>
 				</div>
 			</div>
 			<div
@@ -63,19 +58,13 @@ function PartnerTable() {
 				<AgGridReact
 					onSelectionChanged={onSelectionChanged}
 					onGridReady={onGridReady}
-					rowData={partners}
-					modules={[RowGroupingModule, RangeSelectionModule]}
+					rowData={subscribers}
+					modules={[RangeSelectionModule]}
+					enableRangeSelection={true}
 					rowSelection="multiple"
 					autoGroupColumnDef={{ minWidth: 250 }}
 					defaultColDef={{ resizable: true }}
 				>
-					<AgGridColumn
-						field="company"
-						headerName="Company"
-						rowGroup={true}
-						hide={true}
-					/>
-
 					<AgGridColumn
 						sortable={true}
 						filter={true}
@@ -104,8 +93,8 @@ function PartnerTable() {
 					<AgGridColumn
 						sortable={true}
 						filter={true}
-						field="whyPartner"
-						headerName="Reason"
+						field="course"
+						headerName="Program"
 					></AgGridColumn>
 				</AgGridReact>
 			</div>
@@ -113,4 +102,4 @@ function PartnerTable() {
 	);
 }
 
-export default PartnerTable;
+export default SubscribersTable;
