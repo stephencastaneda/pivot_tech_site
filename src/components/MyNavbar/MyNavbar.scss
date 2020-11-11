@@ -7,10 +7,16 @@
 	}
 }
 
+.dropdown {
+	margin-right: 10px;
+	margin-bottom: 5px;
+}
+
 .nav-link:hover {
-	border-bottom: 4px solid #fd8918;
+	border-bottom: 2px solid #fd8918;
+	padding-bottom: 3px;
 }
 
 .nav-link.active {
-	border-bottom: 4px solid #fd8918;
+	border-bottom: 2px solid #fd8918;
 }
