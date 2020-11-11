@@ -7,12 +7,14 @@ function AdminSideBar({
 	setEventsView,
 	setPartnersView,
 	setScholarshipsView,
+	setSubscribersView,
 }) {
 	const [applicantsActive, setApplicantsActive] = useState(true);
 	const [coursesActive, setCoursesActive] = useState(false);
 	const [eventsActive, setEventsActive] = useState(false);
 	const [partnersActive, setPartnersActive] = useState(false);
 	const [scholarshipsActive, setScholarshipsActive] = useState(false);
+	const [subscribersActive, setSubscribersActive] = useState(false);
 
 	const resetTabs = () => {
 		setApplicantsActive(false);
@@ -20,6 +22,8 @@ function AdminSideBar({
 		setEventsActive(false);
 		setPartnersActive(false);
 		setScholarshipsActive(false);
+		setSubscribersActive(false);
+		setSubscribersView(false);
 	};
 
 	const navToApplicants = () => {
@@ -28,6 +32,7 @@ function AdminSideBar({
 		setEventsView(false);
 		setPartnersView(false);
 		setScholarshipsView(false);
+		setSubscribersView(false);
 	};
 	const navToCourses = () => {
 		setCoursesView(true);
@@ -35,6 +40,7 @@ function AdminSideBar({
 		setEventsView(false);
 		setPartnersView(false);
 		setScholarshipsView(false);
+		setSubscribersView(false);
 	};
 	const navToEvents = () => {
 		setEventsView(true);
@@ -42,6 +48,7 @@ function AdminSideBar({
 		setCoursesView(false);
 		setPartnersView(false);
 		setScholarshipsView(false);
+		setSubscribersView(false);
 	};
 	const navToPartners = () => {
 		setPartnersView(true);
@@ -49,10 +56,21 @@ function AdminSideBar({
 		setCoursesView(false);
 		setEventsView(false);
 		setScholarshipsView(false);
+		setSubscribersView(false);
 	};
 
 	const navToScholarships = () => {
 		setScholarshipsView(true);
+		setApplicantsView(false);
+		setCoursesView(false);
+		setEventsView(false);
+		setPartnersView(false);
+		setSubscribersView(false);
+	};
+
+	const navToSubscribers = () => {
+		setSubscribersView(true);
+		setScholarshipsView(false);
 		setApplicantsView(false);
 		setCoursesView(false);
 		setEventsView(false);
@@ -67,25 +85,35 @@ function AdminSideBar({
 			setApplicantsActive(true);
 			navToApplicants();
 		}
+
 		if (id === 'courses') {
 			resetTabs();
 			setCoursesActive(true);
 			navToCourses();
 		}
+
 		if (id === 'events') {
 			resetTabs();
 			setEventsActive(true);
 			navToEvents();
 		}
+
 		if (id === 'partners') {
 			resetTabs();
 			setPartnersActive(true);
 			navToPartners();
 		}
+
 		if (id === 'scholarships') {
 			resetTabs();
 			setScholarshipsActive(true);
 			navToScholarships();
+		}
+
+		if (id === 'subscribers') {
+			resetTabs();
+			setSubscribersActive(true);
+			navToSubscribers();
 		}
 	};
 
@@ -99,6 +127,7 @@ function AdminSideBar({
 				>
 					<h2 id="applicants">Applicants</h2>
 				</div>
+
 				<div
 					className={coursesActive ? 'active-sidebar-tab' : 'sidebar-tab'}
 					id="courses"
@@ -106,6 +135,7 @@ function AdminSideBar({
 				>
 					<h2 id="courses">Courses</h2>
 				</div>
+
 				<div
 					className={eventsActive ? 'active-sidebar-tab' : 'sidebar-tab'}
 					id="events"
@@ -113,6 +143,7 @@ function AdminSideBar({
 				>
 					<h2 id="events">Events</h2>
 				</div>
+
 				<div
 					className={partnersActive ? 'active-sidebar-tab' : 'sidebar-tab'}
 					id="partners"
@@ -120,12 +151,21 @@ function AdminSideBar({
 				>
 					<h2 id="partners">Partners</h2>
 				</div>
+
 				<div
 					className={scholarshipsActive ? 'active-sidebar-tab' : 'sidebar-tab'}
 					id="scholarships"
 					onClick={setActiveTab}
 				>
 					<h2 id="scholarships">Scholarships</h2>
+				</div>
+
+				<div
+					className={subscribersActive ? 'active-sidebar-tab' : 'sidebar-tab'}
+					id="subscribers"
+					onClick={setActiveTab}
+				>
+					<h2 id="subscribers">Subscribers</h2>
 				</div>
 			</div>
 		</div>

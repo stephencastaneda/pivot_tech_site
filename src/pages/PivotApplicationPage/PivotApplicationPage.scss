@@ -1,4 +1,4 @@
-@media (max-width: 575.98px) {
+@media (max-width: 991px) {
 	.application-page-container {
 		color: #063767;
 		display: flex;
@@ -41,8 +41,10 @@
 
 @media (min-width: 992px) {
 	.application-page-container {
-		margin-left: 60px;
-		margin-right: 60px;
+		padding: 0 60px;
+		max-width: 1440px;
+		align-self: center;
+		width: 100%;
 		color: #063767;
 		display: flex;
 		justify-content: center;

@@ -3,14 +3,21 @@ import { Collapse, CardBody, Card } from 'reactstrap';
 import './BootcampDropdown.scss';
 import CourseCard from '../CourseCard/CourseCard';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import IndividualCourseCard from '../IndividualCourseCard/IndividualCourseCard';
 
 const BootcampDropdown = ({ courses, name }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const toggle = () => setIsOpen(!isOpen);
-	const courseList = courses.map((course) => (
-		<CourseCard key={course.id} course={course} />
-	));
+	const excel = 'Excel for Data Analysis';
+	const sql = 'SQL for Data Analysis';
+	const courseList = courses.map((course) => {
+		if (course.courseName === excel || course.courseName === sql) {
+			return <IndividualCourseCard key={course.id} course={course} />;
+		} else {
+			return <CourseCard key={course.id} course={course} />;
+		}
+	});
 
 	const arrow = isOpen ? 'arrow-up' : 'arrow-down';
 
@@ -35,11 +42,11 @@ const BootcampDropdown = ({ courses, name }) => {
 			<Collapse isOpen={isOpen}>
 				<Card className="course-card-container">
 					{courses.length > 0 ? (
-						<div class="body-container">
+						<div className="body-container">
 							<CardBody className="the-body">{courseList}</CardBody>
 						</div>
 					) : (
-						<CardBody classname="the-body">
+						<CardBody className="the-body" style={{ height: '80px' }}>
 							<h3 style={{ color: 'white' }}>Courses coming soon</h3>
 						</CardBody>
 					)}
