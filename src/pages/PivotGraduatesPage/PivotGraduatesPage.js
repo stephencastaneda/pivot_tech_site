@@ -19,6 +19,11 @@ function PivotGraduatesPage() {
 
 	return (
 		<>
+		<div className="hero-grad">
+				<div className="hero-text">
+					<h1>Meet the Pivot Tech Alumni!</h1>
+				</div>
+			</div>
 			<div className="blockquote-wrapper">
 				<div className="blockquote">
 					<h1>
@@ -31,6 +36,7 @@ function PivotGraduatesPage() {
 						<em>Pivot Tech Alumni</em>
 					</h4>
 				</div>
+				</div>
 				<h2 className="quote-school text-center mt-5">
 					<strong>Pivot Tech Alumni</strong>
 				</h2>
@@ -42,7 +48,6 @@ function PivotGraduatesPage() {
 				<div className="footer-div">
 					<MyFooter />
 				</div>
-			</div>
 		</>
 	);
 }
