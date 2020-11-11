@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AgGridColumn, AgGridReact } from 'ag-grid-react';
+import { RangeSelectionModule } from '@ag-grid-enterprise/range-selection';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import requests from '../../helpers/data/pivotRequests';
@@ -71,6 +72,7 @@ function EventsTable() {
 					onSelectionChanged={onSelectionChanged}
 					onGridReady={onGridReady}
 					rowData={events}
+					modules={[RangeSelectionModule]}
 				>
 					<AgGridColumn
 						width={300}

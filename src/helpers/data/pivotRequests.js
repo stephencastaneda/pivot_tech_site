@@ -64,6 +64,31 @@ const getUserByUid = (uid) =>
 			});
 	});
 
+// Subscriber Requests
+const getSubscribers = () =>
+	new Promise((resolve, reject) => {
+		axios
+			.get(`${baseUrl}/subscribers.json`)
+			.then((response) => {
+				const subscriberObj = response.data;
+				const subscribers = [];
+				if (subscriberObj !== null) {
+					Object.keys(subscriberObj).forEach((subscriberId) => {
+						subscriberObj[subscriberId].uid = subscriberId;
+						subscribers.push(subscriberObj[subscriberId]);
+					});
+				}
+				resolve(subscribers);
+			})
+			.catch((err) => reject(err));
+	});
+
+const postSubscriber = (newSubscriber) =>
+	axios.post(`${baseUrl}/subscribers.json`, newSubscriber);
+
+const deleteSubscriber = (subscriberId) =>
+	axios.delete(`${baseUrl}/subscribers/${subscriberId}.json`);
+
 // Gets all Pivot staff and graduates
 const getAllPivotTeam = () =>
 	new Promise((resolve, reject) => {
@@ -98,6 +123,16 @@ const getApplicants = () =>
 					});
 				}
 				resolve(applicants);
+			})
+			.catch((err) => reject(err));
+	});
+
+const getApplicantByUid = (uid) =>
+	new Promise((resolve, reject) => {
+		getApplicants()
+			.then((results) => {
+				let match = results.filter((applicant) => applicant.uid === uid)[0];
+				resolve(match);
 			})
 			.catch((err) => reject(err));
 	});
@@ -283,12 +318,16 @@ export default {
 	getEvents,
 	getPartners,
 	getScholarships,
+	getSubscribers,
+	getApplicantByUid,
 	postStudent,
 	postCourse,
 	postEvent,
 	postPartner,
 	postScholarship,
+	postSubscriber,
 	deleteApplicant,
+	deleteSubscriber,
 	deleteStudent,
 	deleteCourse,
 	deleteEvent,

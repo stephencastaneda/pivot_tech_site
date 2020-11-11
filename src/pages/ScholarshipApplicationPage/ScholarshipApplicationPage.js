@@ -51,10 +51,41 @@ function ScholarshipApplicationPage() {
 		let myApplicant = { ...applicant };
 		const firstName = myApplicant.firstName;
 		const lastName = myApplicant.lastName;
+		const email = myApplicant.email;
+		const phone = myApplicant.phone;
+		const program = myApplicant.program;
+		const dreamCareer = myApplicant.dreamCareer;
 		const alphabet = /^[A-Za-z ']+$/;
+		const emailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+		const phoneFormat = /^\d{10}$/;
 
 		if (!firstName.match(alphabet) || !lastName.match(alphabet)) {
 			alert(`Invalid symbol(s) in name field.`);
+			return;
+		}
+
+		if (!email.match(emailFormat)) {
+			alert(`${email} is not a valid email address.`);
+			return;
+		}
+
+		if (phone === '') {
+			alert(`Missing value for phone field.`);
+			return;
+		}
+
+		if (!phone.match(phoneFormat)) {
+			alert(`Phone number must 10 digits.`);
+			return;
+		}
+
+		if (program === '') {
+			alert(`Missing value for program field.`);
+			return;
+		}
+
+		if (dreamCareer === '') {
+			alert(`Missing value for dream career field.`);
 			return;
 		}
 
@@ -88,35 +119,29 @@ function ScholarshipApplicationPage() {
 							recipient’s choice of Web Development or Data Analytics.
 						</p>
 						<p className="info-bullet">
-							• Deposit required: Recipient must deposit $1,000 in full no later
-							than October 27, 2020.
+							• Deposit required: Recipient must pay a deposit of $1,000.
 						</p>
 						<p className="info-bullet">
 							• The remainder of the recipient’s tuition ($3,000) must be raised
 							via their circle of influence and is due one month prior to
 							graduation.
 						</p>
-						<p className="info-bullet">
+						{/* <p className="info-bullet">
 							• Deadline to submit scholarship application is October 9, 2020.
-						</p>
+						</p> */}
 						<p className="info-bullet">
 							• Job placement assistance upon recipient’s graduation from Pivot
 							Tech School.
 						</p>
 						<p className="info-bullet">
-							• Scholarship applicants will be notified via email no later than
-							October 12, 2020.
+							• Scholarship applicants will be notified via email.
 						</p>
-						<h3 className="bold-text">Eligibility</h3>
+						{/* <h3 className="bold-text">Eligibility</h3>
 						<hr></hr>
-						<p>
-							Complete the Partner with Pivot form for a more personalized
-							partnership.{' '}
-						</p>
 						<p className="info-bullet">
 							• Complete the Partner with Pivot form for a more personalized
 							partnership.
-						</p>
+						</p> */}
 					</div>
 				</div>
 				<div className="application-header">
