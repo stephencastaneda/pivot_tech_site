@@ -7,23 +7,15 @@ import './PivotGraduatesPage.scss';
 function PivotGraduatesPage() {
 	const [alumni, setAlumni] = useState([]);
 
+	useEffect(() => {
+		getAlumni();
+	}, []);
 
-// const getAlumni = () => {
-// 	alumniData.getAllAlumni()
-// 	.then(setAlumni)
-// }
-
-useEffect(getAlumni, [])
 	const getAlumni = () => {
 		alumniData.getAllAlumni().then((alumni) => {
 			setAlumni(alumni);
 		});
 	};
-
-	useEffect(getAlumni, []);
-
-	// useEffect(() => {
-	// 	getAlumni()}, []);
 
 	return (
 		<>
