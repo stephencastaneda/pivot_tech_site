@@ -11,26 +11,20 @@ import './HomeCarousel.scss';
 
 const items = [
 	{
-		src:
-			'https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
-		altText: 'Sponsor a Pivot Tech Student Today!',
-		caption: 'Click Make The Pivot!',
-		header: 'We in here'
+		class: 'pivot-to-tech',
+		caption: 'Sponsor a pivot tech student today!',
+		href: 'make-the-pivot',
+		buttonText: 'Sponsor a Student',
 	},
 	{
-		src:
-			'https://images.unsplash.com/photo-1596496357040-d98c165dfcc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
-
-
-		altText: 'Pivot is proud to partner with RePublic High School',
-
+		class: 'remote-learning',
+		caption: 'Pivot is proud to partner with Republic High School!',
+		href: 'pivot-partner',
+		buttonText: 'Become a Partner',
 	},
 	{
-		src:
-			'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
-
-		altText: 'Pivot is proud to partner with RePublic High School',
-		caption: 'Become a Pivot Tech Partner Today!',
+		class: 'become-partner',
+		caption: 'Pivot Design House Coming Soon!',
 	},
 	{
 		src:
@@ -69,22 +63,40 @@ const HomeCarousel = (props) => {
 				onExited={() => setAnimating(false)}
 				key={item.src}
 			>
-				<img className="carousel-image" src={item.src} alt={item.altText} />
-				<CarouselCaption
+				<div className={item.class}>
+					<div className="hero-text">
+						{item.buttonText ? (
+							<Button
+								href={item.href}
+								className="carousel-button btn hero-btn"
+								style={{ backgroundColor: 'navy', color: 'white' }}
+							>
+								{item.buttonText}
+							</Button>
+						) : null}
+					</div>
+				</div>
+				<div className="carousel-caption">
+					<p>{item.caption}</p>
+				</div>
+				{/* <CarouselCaption
 					className="carousel-caption"
 					captionHeader={item.altText}
 					captionText={item.caption}
-				/>
-
+				/> */}
 			</CarouselItem>
 		);
 	});
 
 	return (
-		
-		<Carousel activeIndex={activeIndex} next={next} previous={previous}>
-			<CarouselIndicators 
-				className="carousel-indicators"
+		<Carousel
+			autoPlay={false}
+			activeIndex={activeIndex}
+			next={next}
+			previous={previous}
+			pause={true}
+		>
+			<CarouselIndicators
 				items={items}
 				activeIndex={activeIndex}
 				onClickHandler={goToIndex}
