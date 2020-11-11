@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-bootstrap/lib/Navbar';
+import { Button } from 'reactstrap';
 import PivotExecTeamCard from '../../components/PivotExecTeamCard/PivotExecTeamCard';
 import PivotOperationsTeamCard from '../../components/PivotOpsTeamCard/PivotOpsTeamCard';
 import PivotDataTeamCard from '../../components/PivotDataTeamCard/PivotDataTeamCard';
@@ -42,19 +44,12 @@ function PivotTeamPage() {
 
 	return (
 		<>
-			<div className="card text-center mt-5">
-				<h2 className="pivot-team-title pt-4 header">
-					Teamwork makes the dream work
-				</h2>
-				<p className="header-sub">Meet the team that makes it all happen</p>
+			<div className="hero-team">
+				<div className="hero-text">
+					<h1>Teamwork makes the dreamwork!</h1>
+					<p>Meet the team that makes it all happen</p>
+				</div>
 			</div>
-			<section className="mt-5 mb-5">
-				<img
-					className="team-collage"
-					src={require('../../images/pivot_collage1.jpg')}
-					alt="Cute cat"
-				/>
-			</section>
 			<div className="pivot-team-cards">
 				<h2 className="executive-title title mb-5">
 					<span>Executive Team</span>
