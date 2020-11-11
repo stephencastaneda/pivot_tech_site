@@ -4,6 +4,11 @@
   max-width: 400px;
 }
 
+.alumni-card img {
+  min-width: 100px;
+  min-height: 100px;
+}
+
 .overlay {
   position: absolute;
   top: 0;
@@ -29,6 +34,7 @@
 .linked-in-icon {
   color: white;
 }
+
 .alumni-grid {
   display: grid; 
   grid-column-gap: 10px;

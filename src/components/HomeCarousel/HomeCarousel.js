@@ -26,6 +26,13 @@ const items = [
 		class: 'become-partner',
 		caption: 'Pivot Design House Coming Soon!',
 	},
+	{
+		src:
+			'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
+
+		altText: 'Why Pivot Tech',
+		caption: 'Become a Pivot Tech Partner Today!',
+	}
 ];
 
 const HomeCarousel = (props) => {
@@ -106,6 +113,7 @@ const HomeCarousel = (props) => {
 				onClickHandler={next}
 			/>
 		</Carousel>
+		
 	);
 };
 
