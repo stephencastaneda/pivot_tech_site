@@ -27,8 +27,7 @@ function MakeThePivotPage() {
 	<a href="https://www.fundly.com/help-aimee-sadler-make-the-pivot#donate" target="_blank" role="button" className="btn donate-btn btn-danger mt-3">
 					HELP AIMEE PIVOT!
 				</a>	
-	
-
+		
 <div className="d-flex flex-wrap">
 <div className="author-quote-wrap">
 <div className="author-quote">

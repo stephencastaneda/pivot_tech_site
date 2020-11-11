@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-bootstrap/lib/Navbar';
 import { Button } from 'reactstrap';
+import HomeCarousel from '../../components/HomeCarousel/HomeCarousel';
 import './HomePage.scss';
 import EventCard from '../../components/EventCard/EventCard';
 import MyFooter from '../../components/MyFooter/MyFooter';
@@ -228,12 +229,23 @@ function HomePage() {
 						</div>
 					</div>
 				) : null}
+			<h2 className="partners-title">Our Partners</h2>
 
-				{/* <div className="instagram-section">
-				<h2 style={{ textAlign: 'center' }}>PIVOT TECH SCHOOL'S INSTAGRAM</h2>
-			</div> */}
+			<div className="partner-container d-flex flex-wrap column space-around">
+					<img src="https://static.wixstatic.com/media/8a0dcf_9715d754085a483eb05a1211b6fa7c0d~mv2.png/v1/crop/x_130,y_10,w_1920,h_1990/fill/w_192,h_199,al_c,q_85,usm_0.66_1.00_0.01/RePublic-Logo.webp" alt="republic logo"/>
+					<img style={{ height: "90px" }} src="https://static.wixstatic.com/media/8a0dcf_c014ebc2abe44f18a85eccbe40f892e8~mv2.png/v1/crop/x_1,y_83,w_433,h_91/fill/w_374,h_79,al_c,q_85,usm_0.66_1.00_0.01/healthstream-logo.webp" alt="republic logo"/>
+					<img style={{ height: "104px", width:"350px" }}src="https://static.wixstatic.com/media/8a0dcf_9886a3bc93f14325adbeedfb8fc662ff~mv2.png/v1/crop/x_0,y_830,w_2400,h_713/fill/w_350,h_104,al_c,q_85,usm_0.66_1.00_0.01/dollar-general-1-logo-png-transparent_pn.webp" alt="republic logo"/>
+					<img style={{ height: "100px", width: "341px" }} src="https://static.wixstatic.com/media/8a0dcf_8c271b5f611c4c71a7dd4a5c2d531003~mv2.png/v1/fill/w_316,h_52,al_c,q_85,usm_0.66_1.00_0.01/wordmark_B_2C%404x%20(1).webp" alt="republic logo"/>
+					<img src="https://static.wixstatic.com/media/8a0dcf_40008dbc1c9245688eac9beb44774203~mv2.png/v1/crop/x_318,y_525,w_1384,h_521/fill/w_348,h_131,al_c,q_85,usm_0.66_1.00_0.01/amazon_PNG13.webp" alt="republic logo"/>
+					<img src="https://static.wixstatic.com/media/8a0dcf_053aece8c8e04f73b45d52766ae39457~mv2.png/v1/fill/w_187,h_104,al_c,q_85,usm_0.66_1.00_0.01/mxd.webp" alt="republic logo"/>
+					<img src="https://static.wixstatic.com/media/8a0dcf_13a48cb0f68c4187a74a90bd44fe20ca~mv2.jpg/v1/crop/x_156,y_125,w_1099,h_467/fill/w_274,h_115,al_c,q_80,usm_0.66_1.00_0.01/geodis.webp" alt="republic logo"/>
+					<img src="https://static.wixstatic.com/media/8a0dcf_be42b39626524f549a7275ccd7d8905e~mv2.jpg/v1/fill/w_305,h_109,al_c,q_80,usm_0.66_1.00_0.01/usstc.webp" alt="republic logo"/>
+					<img src="https://static.wixstatic.com/media/8a0dcf_f6aa2cfef23845d7ac7a2540bc50d7d1~mv2.png/v1/crop/x_0,y_85,w_400,h_122/fill/w_341,h_104,al_c,q_85,usm_0.66_1.00_0.01/Stratasan.webp" alt="republic logo"/>
 			</div>
+			</div>
+
 			<MyFooter />
+
 		</>
 	);
 }
