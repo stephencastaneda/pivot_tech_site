@@ -5,12 +5,12 @@ import './MyFooter.scss';
 function MyFooter() {
 	return (
 		<div className="footer-container">
-			<div class="form-container">
+			<div className="form-container">
 				<StayInformedForm />
 			</div>
-			<div class="program-and-involved">
-				<div class="programs">
-					<p class="footer-header">Programs</p>
+			<div className="program-and-involved">
+				<div className="programs">
+					<p className="footer-header">Programs</p>
 					<a href="web-development">
 						<p>Web Development</p>
 					</a>
@@ -21,8 +21,8 @@ function MyFooter() {
 						<p>Cyber Security</p>
 					</a>
 				</div>
-				<div class="get-involved">
-					<p class="footer-header">Get Involved</p>
+				<div className="get-involved">
+					<p className="footer-header">Get Involved</p>
 					<a href="pivot-partners">
 						<p>Pivot Partners</p>
 					</a>
@@ -31,8 +31,8 @@ function MyFooter() {
 					</a>
 				</div>
 			</div>
-			<div class="community">
-				<p class="footer-header">Community</p>
+			<div className="community">
+				<p className="footer-header">Community</p>
 				<a href="pivot-team">
 					<p>Our Team</p>
 				</a>
@@ -40,14 +40,14 @@ function MyFooter() {
 					<p>Alumni</p>
 				</a>
 			</div>
-			<div class="social-media">
+			<div className="social-media">
 				<a
 					target="_blank"
 					rel="noopener noreferrer"
 					href="https://www.facebook.com/pivottechschool/"
 				>
 					<img
-						classname="social-icon"
+						className="social-icon"
 						src={require('../../icons/facebook.png')}
 						alt="facebook"
 					/>
@@ -58,7 +58,7 @@ function MyFooter() {
 					href="https://www.instagram.com/pivottechschool/"
 				>
 					<img
-						classname="social-icon"
+						className="social-icon"
 						src={require('../../icons/instagram.png')}
 						alt="instagram"
 					/>
@@ -69,7 +69,7 @@ function MyFooter() {
 					href="https://www.twitter.com/pivottechschool/"
 				>
 					<img
-						classname="social-icon"
+						className="social-icon"
 						src={require('../../icons/twitter.png')}
 						alt="twitter"
 					/>
@@ -80,7 +80,7 @@ function MyFooter() {
 					href="https://www.linkedin.com/company/pivot-technology-school/"
 				>
 					<img
-						classname="social-icon"
+						className="social-icon"
 						src={require('../../icons/linkedin.png')}
 						alt="linkedin"
 					/>

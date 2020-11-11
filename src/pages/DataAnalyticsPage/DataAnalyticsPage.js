@@ -6,16 +6,16 @@ function DataPage() {
 	return (
 		<>
 			<div className="data-page-container">
-				<div class="card data-page-card-container mt-5">
-					<div class="card-body data-page-card">
+				<div className="card data-page-card-container mt-5">
+					<div className="card-body data-page-card">
 						<h1 className="data-page-title text-center text-white">
 							Data Analytics
 						</h1>
 					</div>
 				</div>
 
-				<div class="card data-page-text-card mt-5">
-					<div class="card-body data-text-card">
+				<div className="card data-page-text-card mt-5">
+					<div className="card-body data-text-card">
 						<h3>Details</h3>
 						<hr></hr>
 						<p>
@@ -39,17 +39,17 @@ function DataPage() {
 						<p>Scholarships are offered if financial assitance is needed</p>
 					</div>
 				</div>
-				<div class="course-breakdown-header">
+				<div className="course-breakdown-header">
 					<h2 className="text-center">20 Week Course Breakdown</h2>
 				</div>
 
 				<div className="courses-flex d-flex justify-content-around flex-wrap mt-5">
-					<div class="card data-page-course-card mb-5">
-						<h5 class="card-header data-page-card-header">
+					<div className="card data-page-course-card mb-5">
+						<h5 className="card-header data-page-card-header">
 							Module 1: Microsoft Excel &amp; Data Analysis Workflow
 						</h5>
-						<div class="card-body data-page-course-card-text">
-							<h5 class="card-title">Weeks 1-4</h5>
+						<div className="card-body data-page-course-card-text">
+							<h5 className="card-title">Weeks 1-4</h5>
 							<ul>
 								<li>Advanced Excel Concepts</li>
 								<li>VBA</li>
@@ -59,12 +59,12 @@ function DataPage() {
 						</div>
 					</div>
 
-					<div class="card data-page-course-card mb-5">
-						<h5 class="card-header data-page-card-header">
+					<div className="card data-page-course-card mb-5">
+						<h5 className="card-header data-page-card-header">
 							Module 2: Database Concepts &amp; SQL
 						</h5>
-						<div class="card-body data-page-course-card-text">
-							<h5 class="card-title">Weeks 5-8</h5>
+						<div className="card-body data-page-course-card-text">
+							<h5 className="card-title">Weeks 5-8</h5>
 							<ul>
 								<li>Database Concepts</li>
 								<li>Microsoft SQL Server</li>
@@ -74,12 +74,12 @@ function DataPage() {
 						</div>
 					</div>
 
-					<div class="card data-page-course-card mb-5">
-						<h5 class="card-header data-page-card-header">
+					<div className="card data-page-course-card mb-5">
+						<h5 className="card-header data-page-card-header">
 							Module 3: Python &amp; Statistics
 						</h5>
-						<div class="card-body data-page-course-card-text">
-							<h5 class="card-title">Weeks 9-12</h5>
+						<div className="card-body data-page-course-card-text">
+							<h5 className="card-title">Weeks 9-12</h5>
 							<ul>
 								<li>Python, APIs</li>
 								<li>JSON, NumPy</li>
@@ -89,12 +89,12 @@ function DataPage() {
 						</div>
 					</div>
 
-					<div class="card data-page-course-card mb-5">
-						<h5 class="card-header data-page-card-header">
+					<div className="card data-page-course-card mb-5">
+						<h5 className="card-header data-page-card-header">
 							Module 4: Data Visualization
 						</h5>
-						<div class="card-body data-page-course-card-text">
-							<h5 class="card-title">Weeks 13-16</h5>
+						<div className="card-body data-page-course-card-text">
+							<h5 className="card-title">Weeks 13-16</h5>
 							<ul>
 								<li>Tableau</li>
 								<li>Microsoft Power BI</li>
@@ -104,12 +104,12 @@ function DataPage() {
 						</div>
 					</div>
 
-					<div class="card data-page-course-card mb-5">
-						<h5 class="card-header data-page-card-header">
+					<div className="card data-page-course-card mb-5">
+						<h5 className="card-header data-page-card-header">
 							Module 5: Advanced Topics
 						</h5>
-						<div class="card-body data-page-course-card-text">
-							<h5 class="card-title">Weeks 17-18</h5>
+						<div className="card-body data-page-course-card-text">
+							<h5 className="card-title">Weeks 17-18</h5>
 							<ul>
 								<li>ETL</li>
 								<li>Intro to AI</li>

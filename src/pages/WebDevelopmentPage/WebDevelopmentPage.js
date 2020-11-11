@@ -6,16 +6,16 @@ function WebDevelopmentPage() {
 	return (
 		<>
 			<div className="web-page-container">
-				<div class="card web-development-card-container mt-5">
-					<div class="card-body web-development-card">
+				<div className="card web-development-card-container mt-5">
+					<div className="card-body web-development-card">
 						<h1 className="web-development-title text-center text-white">
 							Web Development
 						</h1>
 					</div>
 				</div>
 
-				<div class="card web-development-text-card mt-5">
-					<div class="card-body programs-text-card">
+				<div className="card web-development-text-card mt-5">
+					<div className="card-body programs-text-card">
 						<h3>Details</h3>
 						<hr></hr>
 						<p>
@@ -31,17 +31,17 @@ function WebDevelopmentPage() {
 					</div>
 				</div>
 
-				<div class="course-breakdown-header">
+				<div className="course-breakdown-header">
 					<h2 className="text-center">20 Week Course Breakdown</h2>
 				</div>
 
 				<div className="courses-flex d-flex justify-content-around flex-wrap mt-5">
-					<div class="card web-course-card mb-5">
-						<h5 class="card-header web-dev-card-header">
+					<div className="card web-course-card mb-5">
+						<h5 className="card-header web-dev-card-header">
 							Module 1: Introduction to Web Dev
 						</h5>
-						<div class="card-body web-dev-course-card-text">
-							<h5 class="card-title">Weeks 1-4</h5>
+						<div className="card-body web-dev-course-card-text">
+							<h5 className="card-title">Weeks 1-4</h5>
 							<ul>
 								<li>HTML</li>
 								<li>Semantic Mark Up</li>
@@ -51,12 +51,12 @@ function WebDevelopmentPage() {
 						</div>
 					</div>
 
-					<div class="card web-course-card mb-5">
-						<h5 class="card-header web-dev-card-header">
+					<div className="card web-course-card mb-5">
+						<h5 className="card-header web-dev-card-header">
 							Module 2: Design Fundamentals
 						</h5>
-						<div class="card-body web-dev-course-card-text">
-							<h5 class="card-title">Weeks 5-8</h5>
+						<div className="card-body web-dev-course-card-text">
+							<h5 className="card-title">Weeks 5-8</h5>
 							<ul>
 								<li>Web Design Fundamentals</li>
 								<li>CSS Concepts, CSS Grid</li>
@@ -67,12 +67,12 @@ function WebDevelopmentPage() {
 						</div>
 					</div>
 
-					<div class="card web-course-card mb-5">
-						<h5 class="card-header web-dev-card-header">
+					<div className="card web-course-card mb-5">
+						<h5 className="card-header web-dev-card-header">
 							Module 3: Javascript
 						</h5>
-						<div class="card-body web-dev-course-card-text">
-							<h5 class="card-title">Weeks 9-14</h5>
+						<div className="card-body web-dev-course-card-text">
+							<h5 className="card-title">Weeks 9-14</h5>
 							<ul>
 								<li>JavaScript Introdution</li>
 								<li>Deep Dive</li>
@@ -82,12 +82,12 @@ function WebDevelopmentPage() {
 						</div>
 					</div>
 
-					<div class="card web-course-card mb-5">
-						<h5 class="card-header web-dev-card-header">
+					<div className="card web-course-card mb-5">
+						<h5 className="card-header web-dev-card-header">
 							Module 4: Advanced Web Dev Concepts
 						</h5>
-						<div class="card-body web-dev-course-card-text">
-							<h5 class="card-title">Weeks 15-18</h5>
+						<div className="card-body web-dev-course-card-text">
+							<h5 className="card-title">Weeks 15-18</h5>
 							<ul>
 								<li>Google Firebase</li>
 								<li>In-Demand JavaScript Requirements</li>
@@ -98,12 +98,12 @@ function WebDevelopmentPage() {
 						</div>
 					</div>
 
-					<div class="card web-course-card mb-5">
-						<h5 class="card-header web-dev-card-header">
+					<div className="card web-course-card mb-5">
+						<h5 className="card-header web-dev-card-header">
 							Module 5: Capstone Project
 						</h5>
-						<div class="card-body web-dev-course-card-text">
-							<h5 class="card-title">Weeks 19-20</h5>
+						<div className="card-body web-dev-course-card-text">
+							<h5 className="card-title">Weeks 19-20</h5>
 							<ul>
 								<li>
 									Students will create their own project using all of the skills
