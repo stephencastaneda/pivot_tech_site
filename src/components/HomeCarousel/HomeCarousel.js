@@ -5,6 +5,7 @@ import {
 	CarouselControl,
 	CarouselIndicators,
 	CarouselCaption,
+	Button,
 } from 'reactstrap';
 import './HomeCarousel.scss';
 
@@ -12,24 +13,32 @@ const items = [
 	{
 		src:
 			'https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
-		// altText: 'Start Your Web Developer Career in 20 Weeks!',
-		caption: 'PIVOT to your tech career in 20 weeks!',
+		altText: 'Sponsor a Pivot Tech Student Today!',
+		caption: 'Click Make The Pivot!',
+		header: 'We in here'
 	},
 	{
 		src:
-			'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
-		caption:
-			'100% remote learning - Teaching the latest developments in coding',
+			'https://images.unsplash.com/photo-1596496357040-d98c165dfcc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
 
-		// altText: 'Meet Pivot Tech\'s first graduating className!',
+
+		altText: 'Pivot is proud to partner with RePublic High School',
+
 	},
 	{
 		src:
 			'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
 
-		// altText: 'Why Pivot Tech',
+		altText: 'Pivot is proud to partner with RePublic High School',
 		caption: 'Become a Pivot Tech Partner Today!',
 	},
+	{
+		src:
+			'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
+
+		altText: 'Why Pivot Tech',
+		caption: 'Become a Pivot Tech Partner Today!',
+	}
 ];
 
 const HomeCarousel = (props) => {
@@ -66,13 +75,16 @@ const HomeCarousel = (props) => {
 					captionHeader={item.altText}
 					captionText={item.caption}
 				/>
+
 			</CarouselItem>
 		);
 	});
 
 	return (
+		
 		<Carousel activeIndex={activeIndex} next={next} previous={previous}>
-			<CarouselIndicators
+			<CarouselIndicators 
+				className="carousel-indicators"
 				items={items}
 				activeIndex={activeIndex}
 				onClickHandler={goToIndex}
@@ -89,6 +101,7 @@ const HomeCarousel = (props) => {
 				onClickHandler={next}
 			/>
 		</Carousel>
+		
 	);
 };
 
