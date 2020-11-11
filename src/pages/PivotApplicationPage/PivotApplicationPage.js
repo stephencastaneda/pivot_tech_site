@@ -95,10 +95,77 @@ function PivotApplicationPage() {
 		let myApplicant = { ...applicant };
 		const firstName = myApplicant.firstName;
 		const lastName = myApplicant.lastName;
+		const email = myApplicant.email;
+		const phone = myApplicant.phone;
+		const birthday = myApplicant.birthday;
+		const techKnowledge = myApplicant.techKnowledge;
+		const techTrack = myApplicant.techTrack;
+		const whyApply = myApplicant.whyApply;
+		const employed = myApplicant.employed;
+		const workExperience = myApplicant.workExperience;
+		const canPayDeposit = myApplicant.canPayDeposit;
+		const course = myApplicant.courseId;
 		const alphabet = /^[A-Za-z ']+$/;
+		const phoneFormat = /^\d{10}$/;
+		const emailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 		if (!firstName.match(alphabet) || !lastName.match(alphabet)) {
 			alert(`Invalid symbol(s) in name field.`);
+			return;
+		}
+
+		if (!email.match(emailFormat)) {
+			alert(`${email} is not a valid email address.`);
+			return;
+		}
+
+		if (phone === '') {
+			alert(`Missing value for phone field.`);
+			return;
+		}
+
+		if (!phone.match(phoneFormat)) {
+			alert(`Phone number must 10 digits.`);
+			return;
+		}
+
+		if (birthday === '') {
+			alert(`Missing value for birthday field.`);
+			return;
+		}
+
+		if (techKnowledge === '') {
+			alert(`Missing value for tech knowledge field.`);
+			return;
+		}
+
+		if (techTrack === '') {
+			alert(`Missing value for tech track field.`);
+			return;
+		}
+
+		if (!course) {
+			alert(`Must select a course you'd like to enroll in.`);
+			return;
+		}
+
+		if (whyApply === '') {
+			alert(`Missing a value for why you're applying to Pivot Tech School.`);
+			return;
+		}
+
+		if (!employed) {
+			alert(`Missing a value for employed field.`);
+			return;
+		}
+
+		if (!workExperience) {
+			alert(`Missing a value for work experience.`);
+			return;
+		}
+
+		if (!canPayDeposit) {
+			alert(`Missing a value for if you can pay deposit.`);
 			return;
 		}
 

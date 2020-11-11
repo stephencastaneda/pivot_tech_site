@@ -1,4 +1,4 @@
-@media (max-width: 575.98px) {
+@media (max-width: 991px) {
 	.partner-page-container {
 		color: #063767;
 		display: flex;
@@ -32,8 +32,8 @@
 				font-size: 32px;
 				font-weight: bold;
 				max-width: 800px;
-				border-top: 3px solid #063767;
-				border-bottom: 3px solid #063767;
+				border-top: 3px solid#4d6a87;
+				border-bottom: 3px solid #4d6a87;
 				padding: 10px 0;
 
 				.quote-person {
@@ -113,7 +113,9 @@
 	.partner-page-container {
 		margin-left: 60px;
 		margin-right: 60px;
-		color: #063767;
+		max-width: 1440px;
+		align-self: center;
+		color: #4d6a87;
 		display: flex;
 		justify-content: center;
 		flex-direction: column;

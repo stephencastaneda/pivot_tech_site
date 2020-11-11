@@ -1,10 +1,9 @@
 import React from 'react';
 import { Button } from 'reactstrap';
-import { Link } from 'react-bootstrap/lib/Navbar';
-import './CourseCard.scss';
+import './IndividualCourseCard.scss';
 import moment from 'moment';
 
-function CourseCard({ course }) {
+function IndividualCourseCard({ course }) {
 	const name = course.courseName;
 	const type = course.courseType;
 	const startDate = moment(course.startDate).format('LL');
@@ -34,15 +33,15 @@ function CourseCard({ course }) {
 				) : null}
 			</div>
 			<div className="card-button-div">
-				<Button className="course-button" tag={Link} href={pageString}>
-					Learn More
-				</Button>
-				<Button className="course-button" tag={Link} href="pivot-application">
-					Apply Now
+				<Button
+					className="course-button"
+					onClick={() => (window.location.href = pageString)}
+				>
+					Go to Course
 				</Button>
 			</div>
 		</div>
 	);
 }
 
-export default CourseCard;
+export default IndividualCourseCard;

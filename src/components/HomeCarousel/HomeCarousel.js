@@ -18,15 +18,16 @@ const items = [
 	{
 		src:
 			'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
-			caption: '100% remote learning - Teaching the latest developments in coding',
+		caption:
+			'100% remote learning - Teaching the latest developments in coding',
 
-			// altText: 'Meet Pivot Tech\'s first graduating class!',
+		// altText: 'Meet Pivot Tech\'s first graduating className!',
 	},
 	{
 		src:
-			"https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+			'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
 
-			// altText: 'Why Pivot Tech',
+		// altText: 'Why Pivot Tech',
 		caption: 'Become a Pivot Tech Partner Today!',
 	},
 ];
@@ -61,7 +62,7 @@ const HomeCarousel = (props) => {
 			>
 				<img className="carousel-image" src={item.src} alt={item.altText} />
 				<CarouselCaption
-					className = "carousel-caption"
+					className="carousel-caption"
 					captionHeader={item.altText}
 					captionText={item.caption}
 				/>

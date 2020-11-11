@@ -71,7 +71,7 @@ function PivotPartnersPage() {
 				</div>
 				<div className="card programs-text-card mt-5 mb-5">
 					<div className="card-body programs-text-card">
-						<div class="quote-div">
+						<div className="quote-div">
 							<img
 								className="mundy-pic"
 								src="https://static.wixstatic.com/media/8a0dcf_a18daa7a30b14717bec63e5235cbc53d~mv2.jpg/v1/fill/w_216,h_217,al_c,q_80,usm_0.66_1.00_0.01/joshua%20mundy_jfif.webp"
@@ -83,7 +83,7 @@ function PivotPartnersPage() {
 								trained talent to these organizations,” Mundy explained. “We
 								want to expose as many adults as possible to coding and data
 								analytics.”
-								<div class="quote-person">
+								<div className="quote-person">
 									<p>- Joshua Mundy</p>
 									<i>Pivot Tech CEO</i>
 								</div>
@@ -129,7 +129,7 @@ function PivotPartnersPage() {
 							partnership.
 						</p>
 
-						<div class="sponsor-student-div">
+						<div className="sponsor-student-div">
 							<Button>SPONSOR A STUDENT</Button>
 							<p className="bold-sentence">
 								Select Contribute today and your donation will be applied
