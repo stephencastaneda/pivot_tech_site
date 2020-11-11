@@ -6,6 +6,7 @@ import './HomePage.scss';
 import EventCard from '../../components/EventCard/EventCard';
 import MyFooter from '../../components/MyFooter/MyFooter';
 import CourseCard from '../../components/CourseCard/CourseCard';
+import HomeCarousel from '../../components/HomeCarousel/HomeCarousel';
 import requests from '../../helpers/data/pivotRequests';
 
 function HomePage() {
@@ -216,7 +217,11 @@ function HomePage() {
 					</div>
 					<div className="program-card-container">{dataAnalyticsCourses}</div>
 				</div>
+			</div>
 
+			<HomeCarousel />
+
+			<div className="homepage-container">
 				{events.length ? (
 					<div className="events-section">
 						<h2 style={{ textAlign: 'center' }}>UPCOMING EVENTS</h2>
