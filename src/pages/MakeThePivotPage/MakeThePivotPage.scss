@@ -24,14 +24,22 @@ body{
 	width:100%;
 	overflow:hidden;
 	max-width:560px;
-	min-height:390px;
+	min-height:420px;
 	margin:50px auto 0;
 	background:#17a0ff;
 	position:relative;
 	box-shadow:0 16px 28px 0 rgba(0,0,0,.22),0 25px 55px 0 rgba(0,0,0,.21);
 }
 
+.donate-btn {
+  // position: absolute;
+  right:    0;
+  bottom:   0;
+  display: block !important;
+		margin-left: auto;
+		margin-right: auto;
 
+}
 
 .author-quote-wrap .author-quote a{
 	color:inherit;
@@ -49,11 +57,15 @@ body{
 	background-repeat:no-repeat;
 	quotes:'\201C''\201D''\2018''\2019';
 }
+
+.photo-b {
+  background-repeat: repeat;
+}
 .author-quote-wrap .author-photo.photo-a{
-	background-image:url(https://raw.githubusercontent.com/khadkamhn/day-007-author-quote/master/img/author-1.jpg);
+	background-image:url(https://i.imgur.com/t1rRxCU.jpg);
 }
 .author-quote-wrap .author-photo.photo-b{
-	background-image:url(https://raw.githubusercontent.com/khadkamhn/day-007-author-quote/master/img/author-2.jpg);
+	background-image:url(https://i.imgur.com/Zyn6ArK.png);
 }
 .author-quote-wrap .author-photo.photo-c{
 	background-image:url(https://raw.githubusercontent.com/khadkamhn/day-007-author-quote/master/img/author-3.jpg);
@@ -179,17 +191,14 @@ body{
 	transform-origin :100% 100%;
 }
 
-.quote-content .quote-text,
-.quote-content .quote-author{
-	// text-transform:uppercase;
-}
+
 .quote-content .quote-text{
 	font-size:25px;
 	font-weight:400;
 }
 .quote-content .quote-author{
 	bottom:15px;
-	font-size:14px;
+	font-size:20px;
 	font-weight:500;
 	position:absolute;
 }
