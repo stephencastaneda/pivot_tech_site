@@ -5,7 +5,7 @@ import './AlumCard.scss'
 function AlumCard(props) {
 	return (
 		<>
-			<div className="card alumni-card border-0" style={{ width: "18rem" }}>
+			<div className="card alumni-card border-0" >
   <img className="card-img-top" src={ props.alum.image } alt="Card image cap" />
 		<div className="overlay">
       <div className="overlay-text">

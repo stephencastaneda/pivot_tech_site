@@ -6,7 +6,6 @@ import './HomePage.scss';
 import EventCard from '../../components/EventCard/EventCard';
 import MyFooter from '../../components/MyFooter/MyFooter';
 import CourseCard from '../../components/CourseCard/CourseCard';
-import HomeCarousel from '../../components/HomeCarousel/HomeCarousel';
 import requests from '../../helpers/data/pivotRequests';
 
 function HomePage() {
@@ -42,8 +41,8 @@ function HomePage() {
 		<>
 			<div className="hero-image">
 				<div className="hero-text">
-					<h2>Pivot Tech School</h2>
-					<h1>PIVOT to a tech career in 20 weeks!</h1>
+					<h1>Pivot Tech School</h1>
+					<h3>PIVOT to a tech career in 20 weeks!</h3>
 					<Button
 						tag={Link}
 						href="pivot-application"
@@ -234,7 +233,7 @@ function HomePage() {
 						</div>
 					</div>
 				) : null}
-			<h2 className="partners-title">Our Partners</h2>
+			<h2 className="partners-title">OUR PARTNERS</h2>
 
 			<div className="partner-container d-flex flex-wrap column space-around">
 					<img src="https://static.wixstatic.com/media/8a0dcf_9715d754085a483eb05a1211b6fa7c0d~mv2.png/v1/crop/x_130,y_10,w_1920,h_1990/fill/w_192,h_199,al_c,q_85,usm_0.66_1.00_0.01/RePublic-Logo.webp" alt="republic logo"/>
