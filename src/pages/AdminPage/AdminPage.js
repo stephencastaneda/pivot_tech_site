@@ -11,6 +11,7 @@ import PartnersTable from '../../components/PartnersTable/PartnersTable';
 import ScholarshipTable from '../../components/ScholarshipTable/ScholarshipTable';
 import AccessModal from '../../components/AccessModal/AccessModal';
 import { Spinner, Button } from 'reactstrap';
+import SubscribersTable from '../../components/SubscribersTable/SubscribersTable';
 
 function AdminPage({ isAuthed, isPending, userObject, toggle }) {
 	const [applicantsView, setApplicantsView] = useState(true);
@@ -18,6 +19,7 @@ function AdminPage({ isAuthed, isPending, userObject, toggle }) {
 	const [eventsView, setEventsView] = useState(false);
 	const [partnersView, setPartnersView] = useState(false);
 	const [scholarshipsView, setScholarshipsView] = useState(false);
+	const [subscribersView, setSubscribersView] = useState(false);
 
 	return (
 		<>
@@ -39,9 +41,10 @@ function AdminPage({ isAuthed, isPending, userObject, toggle }) {
 									setEventsView={setEventsView}
 									setPartnersView={setPartnersView}
 									setScholarshipsView={setScholarshipsView}
+									setSubscribersView={setSubscribersView}
 								/>
 								<div className="main-container">
-									<div class="add-user-container">
+									<div className="add-user-container">
 										{userObject && userObject.firstName ? (
 											<span>Hello, {userObject.firstName}!</span>
 										) : null}
@@ -52,6 +55,7 @@ function AdminPage({ isAuthed, isPending, userObject, toggle }) {
 									{eventsView ? <EventsTable /> : null}
 									{partnersView ? <PartnersTable /> : null}
 									{scholarshipsView ? <ScholarshipTable /> : null}
+									{subscribersView ? <SubscribersTable /> : null}
 								</div>
 							</div>
 							<MyFooter />{' '}

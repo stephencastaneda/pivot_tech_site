@@ -1,4 +1,23 @@
-@media (max-width: 575.98px) {
+@media (max-width: 768px) {
+	.program-and-involved {
+		margin-left: 0 !important;
+	}
+	.community {
+		margin-bottom: 30px !important;
+	}
+	.social-media {
+		justify-content: flex-start !important;
+
+		img {
+			width: 30px !important;
+			height: 30px !important;
+			margin: 7px !important;
+			cursor: pointer;
+		}
+	}
+}
+
+@media (max-width: 991px) {
 	.footer-container {
 		width: auto;
 		background-color: #edc39b;
@@ -18,6 +37,7 @@
 		.program-and-involved {
 			margin-top: 35px;
 			margin-right: 50px;
+			margin-left: 50px;
 
 			.programs {
 				margin-bottom: 30px;
@@ -70,12 +90,12 @@
 
 		.form-container {
 			width: 450px;
-			margin-right: 60px;
 		}
 
 		.program-and-involved {
 			margin-top: 35px;
 			margin-right: 50px;
+			margin-left: 50px;
 
 			.programs {
 				margin-bottom: 30px;

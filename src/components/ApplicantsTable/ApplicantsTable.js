@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './ApplicantsTable.scss';
 import { AgGridColumn, AgGridReact } from 'ag-grid-react';
-// import { RowGroupingModule } from '@ag-grid-enterprise/row-grouping';
+import { RangeSelectionModule } from '@ag-grid-enterprise/range-selection';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import requests from '../../helpers/data/pivotRequests';
@@ -31,16 +31,25 @@ function ApplicantsTable() {
 	};
 
 	const deleteSelected = () => {
+		// TODO get data in table to update without having to reload the page or switch tabs
 		selectedApplicants.forEach((applicant) => {
 			requests.deleteApplicant(applicant.uid);
-		});
-		requests.getApplicants().then((results) => {
-			setApplicants(results);
 		});
 	};
 
 	const transitionToStudent = () => {
+		// TODO get data in table to update without having to reload the page or switch tabs
 		requests.markAsEnrolled(selectedApplicants);
+
+		// selectedApplicants.forEach((applicant) => {
+		// 	let rowNode = gridApi.getRowNode(applicant.uid);
+		// 	requests
+		// 		.getApplicantByUid(applicant.uid)
+		// 		.then((result) => {
+		// 			rowNode.setDataValue('enrolled', result.enrolled);
+		// 		})
+		// 		.catch((err) => err);
+		// });
 	};
 
 	return (
@@ -73,15 +82,11 @@ function ApplicantsTable() {
 				<AgGridReact
 					onSelectionChanged={onSelectionChanged}
 					onGridReady={onGridReady}
+					modules={[RangeSelectionModule]}
 					rowData={applicants}
-					// modules={[RowGroupingModule]}
-					rowSelection="multiple"
-					autoGroupColumnDef={{ minWidth: 250 }}
 					defaultColDef={{ resizable: true }}
+					rowSelection={'multiple'}
 				>
-					<AgGridColumn field="courseName" rowGroup={true} hide={true} />
-					<AgGridColumn field="startDate" rowGroup={true} hide={true} />
-
 					<AgGridColumn
 						width={300}
 						sortable={true}

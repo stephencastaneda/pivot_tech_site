@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AgGridColumn, AgGridReact } from 'ag-grid-react';
 import { RowGroupingModule } from '@ag-grid-enterprise/row-grouping';
-import { Button } from 'reactstrap';
+import { RangeSelectionModule } from '@ag-grid-enterprise/range-selection';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import requests from '../../helpers/data/pivotRequests';
@@ -39,9 +39,6 @@ function ScholarshipTable() {
 		selectedScholarships.forEach((scholarship) => {
 			requests.deleteScholarship(scholarship.id);
 		});
-		requests.getScholarships().then((results) => {
-			setScholarships(results);
-		});
 	};
 
 	return (
@@ -67,7 +64,7 @@ function ScholarshipTable() {
 					onSelectionChanged={onSelectionChanged}
 					onGridReady={onGridReady}
 					rowData={scholarships}
-					modules={[RowGroupingModule]}
+					modules={[RowGroupingModule, RangeSelectionModule]}
 					rowSelection="multiple"
 					autoGroupColumnDef={{ minWidth: 250 }}
 					defaultColDef={{ resizable: true }}
