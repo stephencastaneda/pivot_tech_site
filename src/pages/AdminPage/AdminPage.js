@@ -48,7 +48,7 @@ function AdminPage({ isAuthed, isPending, userObject, toggle }) {
 										{userObject && userObject.firstName ? (
 											<span>Hello, {userObject.firstName}!</span>
 										) : null}
-										<Button onClick={toggle}>Create New Admin User</Button>
+										{/* <Button onClick={toggle}>Create New Admin User</Button> */}
 									</div>
 									{applicantsView ? <ApplicantsTable /> : null}
 									{coursesView ? <CoursesTable /> : null}
