@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-bootstrap/lib/Navbar';
-import { Button } from 'reactstrap';
 import PivotExecTeamCard from '../../components/PivotExecTeamCard/PivotExecTeamCard';
 import PivotOperationsTeamCard from '../../components/PivotOpsTeamCard/PivotOpsTeamCard';
 import PivotDataTeamCard from '../../components/PivotDataTeamCard/PivotDataTeamCard';
