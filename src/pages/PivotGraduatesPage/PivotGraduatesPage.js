@@ -19,7 +19,7 @@ function PivotGraduatesPage() {
 
 	return (
 		<>
-		<div className="hero-grad">
+			<div className="hero-grad">
 				<div className="hero-text">
 					<h1>Meet the Pivot Tech Alumni!</h1>
 				</div>
@@ -36,18 +36,18 @@ function PivotGraduatesPage() {
 						<em>Pivot Tech Alumni</em>
 					</h4>
 				</div>
-				</div>
-				<h2 className="quote-school text-center mt-5">
-					<strong>Pivot Tech Alumni</strong>
-				</h2>
-				<div className="alumni-grid">
-					{alumni.map((alum) => (
-						<AlumCard key={alum.id} alumId={alum.id} alum={alum} />
-					))}
-				</div>
-				<div className="footer-div">
-					<MyFooter />
-				</div>
+			</div>
+			<h2 className="quote-school text-center mt-5">
+				<strong>Pivot Tech Alumni</strong>
+			</h2>
+			<div className="alumni-grid">
+				{alumni.map((alum) => (
+					<AlumCard key={alum.id} alumId={alum.id} alum={alum} />
+				))}
+			</div>
+			<div className="footer-div">
+				<MyFooter />
+			</div>
 		</>
 	);
 }
