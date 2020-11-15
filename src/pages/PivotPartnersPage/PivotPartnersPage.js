@@ -143,7 +143,9 @@ function PivotPartnersPage() {
 					</div>
 				</div>
 				<div className="application-header">
-					<h3 className="text-center">Partner with Pivot Tech</h3>
+					<h3 className="partner-header text-center">
+						Partner with Pivot Tech
+					</h3>
 				</div>
 				<Form className="form-container">
 					<Row form>

@@ -27,12 +27,12 @@ function PivotDataTeamCard(props) {
 							/>
 						</div>
 					</div>
-					<figCaption className="text-center team-name">
+					<h3 className="text-center team-name">
 						{props.dataTeamMember.firstName} {props.dataTeamMember.lastName}
-					</figCaption>
-					<figCaption className="text-center team-position">
+					</h3>
+					<h4 className="text-center team-position">
 						{props.dataTeamMember.position}
-					</figCaption>
+					</h4>
 				</figure>
 			</div>
 		</>

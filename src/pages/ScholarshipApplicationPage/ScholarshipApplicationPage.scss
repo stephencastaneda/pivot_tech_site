@@ -64,9 +64,10 @@
 		flex-direction: column;
 		max-width: 1440px;
 		align-self: center;
+		padding: 0 200px;
 
 		.scholarship-card {
-			border-radius: 1rem;
+			border-radius: 0.3rem;
 			border: none;
 			background-color: #ef8c35 !important;
 			height: 90px;
@@ -91,7 +92,7 @@
 		}
 
 		hr {
-			border: 1px solid #4d6a87;
+			border: 1px solid #4d6a87 !important;
 		}
 
 		.info-bullet {
