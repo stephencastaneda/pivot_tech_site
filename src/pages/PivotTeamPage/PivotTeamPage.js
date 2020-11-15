@@ -53,7 +53,7 @@ function PivotTeamPage() {
 					<span>Executive Team</span>
 				</h2>
 				<hr></hr>
-				<div className="d-flex flex-wrap home-flex justify-content-around">
+				<div className="team-category">
 					{executiveTeamMember.map((execTeamMember) => (
 						<PivotExecTeamCard
 							key={execTeamMember.id}
@@ -64,7 +64,7 @@ function PivotTeamPage() {
 				</div>
 				<h2 className="operation-title title mt-3 mb-2">Operations</h2>
 				<hr></hr>
-				<div className="d-flex flex-wrap home-flex justify-content-around">
+				<div className="team-category">
 					{operationsTeamMember.map((opsTeamMember) => (
 						<PivotOperationsTeamCard
 							key={opsTeamMember.id}
@@ -77,7 +77,7 @@ function PivotTeamPage() {
 					Data Science and Analytics
 				</h2>
 				<hr></hr>
-				<div className="d-flex flex-wrap home-flex justify-content-around">
+				<div className="team-category">
 					{dataTeamMembers.map((dataTeamMember) => (
 						<PivotDataTeamCard
 							key={dataTeamMember.id}
@@ -88,7 +88,7 @@ function PivotTeamPage() {
 				</div>
 				<h2 className="web-title title mt-3 mb-2">Web Development</h2>
 				<hr></hr>
-				<div className="d-flex flex-wrap home-flex justify-content-around">
+				<div className="team-category">
 					{webTeamMembers.map((webTeamMember) => (
 						<PivotWebTeamCard
 							key={webTeamMember.id}

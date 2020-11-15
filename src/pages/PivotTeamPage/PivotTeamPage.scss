@@ -1,3 +1,10 @@
+.team-category {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	padding: 0 20px;
+}
+
 .header {
 	color: navy;
 }
@@ -8,6 +15,7 @@ hr {
 
 .title {
 	text-align: center;
+	padding: 0 20px;
 }
 
 .header-sub {
@@ -23,7 +31,6 @@ hr {
 
 .pivot-card {
 	color: navy;
-	perspective: 1000px;
 }
 
 .pivot-team-cards {
