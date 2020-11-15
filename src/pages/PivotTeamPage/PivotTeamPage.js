@@ -49,9 +49,10 @@ function PivotTeamPage() {
 				</div>
 			</div>
 			<div className="pivot-team-cards">
-				<h2 className="executive-title title mb-5">
+				<h2 className="executive-title title mb-2">
 					<span>Executive Team</span>
 				</h2>
+				<hr></hr>
 				<div className="d-flex flex-wrap home-flex justify-content-around">
 					{executiveTeamMember.map((execTeamMember) => (
 						<PivotExecTeamCard
@@ -61,7 +62,8 @@ function PivotTeamPage() {
 						/>
 					))}
 				</div>
-				<h2 className="operation-title title mt-3 mb-5">Operations</h2>
+				<h2 className="operation-title title mt-3 mb-2">Operations</h2>
+				<hr></hr>
 				<div className="d-flex flex-wrap home-flex justify-content-around">
 					{operationsTeamMember.map((opsTeamMember) => (
 						<PivotOperationsTeamCard
@@ -71,9 +73,10 @@ function PivotTeamPage() {
 						/>
 					))}
 				</div>
-				<h2 className="data-title title mt-3 mb-5">
+				<h2 className="data-title title mt-3 mb-2">
 					Data Science and Analytics
 				</h2>
+				<hr></hr>
 				<div className="d-flex flex-wrap home-flex justify-content-around">
 					{dataTeamMembers.map((dataTeamMember) => (
 						<PivotDataTeamCard
@@ -83,7 +86,8 @@ function PivotTeamPage() {
 						/>
 					))}
 				</div>
-				<h2 className="web-title title mt-3 mb-5">Web Development</h2>
+				<h2 className="web-title title mt-3 mb-2">Web Development</h2>
+				<hr></hr>
 				<div className="d-flex flex-wrap home-flex justify-content-around">
 					{webTeamMembers.map((webTeamMember) => (
 						<PivotWebTeamCard
