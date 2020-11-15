@@ -3,7 +3,7 @@ import React from 'react';
 function PivotOpsTeamCard(props) {
 	return (
 		<>
-			<div className="pivot-card col-xs-6">
+			<div className="pivot-card col-auto">
 				<figure>
 					<div className="flip-card-inner">
 						<div className="card-back">
