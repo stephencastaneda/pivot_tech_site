@@ -1,6 +1,6 @@
 @media (max-width: 991px) {
 	.partner-page-container {
-		color: #063767;
+		color: #4d6a87;
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
@@ -23,8 +23,8 @@
 
 			.mundy-pic {
 				border-radius: 2rem;
-				height: 400px;
-				width: 400px;
+				max-height: 400px;
+				max-width: 400px;
 				margin: 10px;
 				object-fit: contain;
 			}
@@ -35,6 +35,7 @@
 				border-top: 3px solid#4d6a87;
 				border-bottom: 3px solid #4d6a87;
 				padding: 10px 0;
+				margin-bottom: 30px !important;
 
 				.quote-person {
 					font-size: 16px;
@@ -55,13 +56,15 @@
 		.programs-text-card {
 			padding: 20px;
 			margin-top: 0 !important;
+			margin-bottom: 0 !important;
+		}
+
+		.partner-header {
+			margin-bottom: 30px;
 		}
 
 		.bold-text {
 			text-decoration: none;
-		}
-
-		h3 {
 			margin-top: 30px;
 		}
 
@@ -170,8 +173,8 @@
 			text-decoration: none;
 		}
 
-		h3 {
-			margin-top: 30px;
+		.partner-header {
+			margin-bottom: 30px;
 		}
 
 		.sponsor-student-div {

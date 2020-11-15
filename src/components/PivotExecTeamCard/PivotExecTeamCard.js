@@ -27,12 +27,12 @@ function PivotExecTeamCard(props) {
 							/>
 						</div>
 					</div>
-					<figCaption className="text-center team-name">
+					<h3 className="text-center team-name">
 						{props.execTeamMember.firstName} {props.execTeamMember.lastName}
-					</figCaption>
-					<figCaption className="text-center team-position">
+					</h3>
+					<h4 className="text-center team-position">
 						{props.execTeamMember.position}
-					</figCaption>
+					</h4>
 				</figure>
 			</div>
 		</>
