@@ -9,16 +9,12 @@ function PivotExecTeamCard(props) {
 						<div className="card-back">
 							<img
 								className="card-img-top"
-								style={{ width: 235, height: 235 }}
 								src={props.execTeamMember.gif}
 								stylealt="Gif"
 								alt=""
 							/>
 						</div>
-						<div
-							className="card card-front"
-							style={{ width: 235, height: 235 }}
-						>
+						<div className="card card-front">
 							<img
 								className="card-img-top team-photo"
 								src={props.execTeamMember.image}
