@@ -189,6 +189,7 @@ const getCourses = () =>
 		axios
 			.get(`${baseUrl}/courses.json`)
 			.then((response) => {
+				debugger;
 				const courseObj = response.data;
 				const courses = [];
 				if (courseObj !== null) {

@@ -7,6 +7,7 @@ import EventCard from '../../components/EventCard/EventCard';
 import MyFooter from '../../components/MyFooter/MyFooter';
 import CourseCard from '../../components/CourseCard/CourseCard';
 import requests from '../../helpers/data/pivotRequests';
+import { defaultGroupComparator } from 'ag-grid-community';
 
 function HomePage() {
 	const [events, setEvents] = useState([]);
@@ -15,6 +16,7 @@ function HomePage() {
 	const webDevCourses = courses
 		.filter((course) => course.courseName === 'Web Development')
 		.map((course) => {
+			debugger;
 			return <CourseCard key={course.id} course={course} />;
 		});
 	const dataAnalyticsCourses = courses
